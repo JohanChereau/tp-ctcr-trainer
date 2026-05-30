@@ -1,9 +1,12 @@
+import type { AnswerResult } from "../../types/quiz"
 import { QuizResults } from "../QuizResults"
 
 type ResultsScreenProps = {
   score: number
 
   totalQuestions: number
+
+  answers: AnswerResult[]
 
   failedQuestionsCount: number
 
@@ -15,6 +18,7 @@ type ResultsScreenProps = {
 export function ResultsScreen({
   score,
   totalQuestions,
+  answers,
   failedQuestionsCount,
   onRestart,
   onRetryErrors,
@@ -26,6 +30,7 @@ export function ResultsScreen({
       failedQuestionsCount={failedQuestionsCount}
       onRestart={onRestart}
       onRetryErrors={onRetryErrors}
+      answers={answers}
     />
   )
 }

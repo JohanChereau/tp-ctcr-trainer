@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import type { Question } from "~/domains/learning/types/learning"
 
-import type { QuizConfig, QuizState } from "../types/quiz"
+import type { QuizConfig, QuizState, AnswerResult } from "../types/quiz"
 
 import { isAnswerCorrect } from "../utils/isAnswerCorrect"
 import { shuffleQuestions } from "../utils/shuffleQuestions"
@@ -40,6 +40,8 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
 
   const [score, setScore] = useState(0)
 
+  const [answers, setAnswers] = useState<AnswerResult[]>([])
+
   const [failedQuestions, setFailedQuestions] = useState<Question[]>([])
 
   const currentQuestion = activeQuestions[currentIndex]
@@ -61,12 +63,23 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
     setScore(0)
 
     setFailedQuestions([])
+
+    setAnswers([])
   }
 
   function evaluateAnswer() {
     const correct = isAnswerCorrect(answer, currentQuestion.acceptedAnswers)
 
     setIsCorrect(correct)
+
+    setAnswers((current) => [
+      ...current,
+      {
+        question: currentQuestion,
+        userAnswer: answer,
+        isCorrect: correct,
+      },
+    ])
 
     if (correct) {
       setScore((current) => current + 1)
@@ -145,6 +158,8 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
     isCorrect,
 
     score,
+
+    answers,
 
     failedQuestions,
 

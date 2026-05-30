@@ -44,6 +44,7 @@ export function QuizPlayer({ title, questions, config }: QuizPlayerProps) {
         <ResultsScreen
           score={quiz.score}
           totalQuestions={quiz.totalQuestions}
+          answers={quiz.answers}
           failedQuestionsCount={quiz.failedQuestions.length}
           onRestart={quiz.restartQuiz}
           onRetryErrors={quiz.retryFailedQuestions}

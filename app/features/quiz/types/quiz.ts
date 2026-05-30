@@ -22,6 +22,14 @@ export type QuizPlayerProps = {
   config?: QuizConfig
 }
 
+export type AnswerResult = {
+  question: Question
+
+  userAnswer: string
+
+  isCorrect: boolean
+}
+
 export type QuizResult = {
   score: number
 

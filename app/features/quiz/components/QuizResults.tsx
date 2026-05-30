@@ -5,12 +5,26 @@ import { TriangleAlert } from "lucide-react"
 import { Button } from "~/components/ui/button"
 import { Card, CardContent } from "~/components/ui/card"
 
+import { ChevronDown, ClipboardList } from "lucide-react"
+
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "~/components/ui/collapsible"
+
+import { AnswerResultsAccordion } from "./results/AnswerResultsAccordion"
+
+import type { AnswerResult } from "../types/quiz"
+
 type QuizResultsProps = {
   score: number
 
   totalQuestions: number
 
   failedQuestionsCount: number
+
+  answers: AnswerResult[]
 
   onRestart: () => void
 
@@ -20,6 +34,7 @@ type QuizResultsProps = {
 export function QuizResults({
   score,
   totalQuestions,
+  answers,
   failedQuestionsCount,
   onRestart,
   onRetryErrors,
@@ -71,6 +86,22 @@ export function QuizResults({
             </CardContent>
           </Card>
         </div>
+
+        <Collapsible>
+          <CollapsibleTrigger className="flex w-full items-center justify-between rounded-xl border p-4 text-left font-medium">
+            <div className="flex items-center gap-2">
+              <ClipboardList className="h-4 w-4" />
+
+              <span>Détails des réponses ({answers.length})</span>
+            </div>
+
+            <ChevronDown className="h-4 w-4" />
+          </CollapsibleTrigger>
+
+          <CollapsibleContent className="mt-4">
+            <AnswerResultsAccordion answers={answers} />
+          </CollapsibleContent>
+        </Collapsible>
 
         <div className="flex flex-col gap-3">
           <Button size="lg" onClick={onRestart}>
