@@ -4,12 +4,22 @@ export type QuizMode = "training" | "exam"
 
 export type QuizState = "question" | "correction" | "results"
 
+export type QuizConfig = {
+  mode: QuizMode
+
+  questionCount?: number
+
+  shuffleQuestions?: boolean
+
+  durationInSeconds?: number
+}
+
 export type QuizPlayerProps = {
   title: string
 
   questions: Question[]
 
-  mode?: QuizMode
+  config?: QuizConfig
 }
 
 export type QuizResult = {

@@ -7,7 +7,15 @@ export default function Home() {
 
   return (
     <div className="p-8">
-      <QuizPlayer title={lesson.title} questions={lesson.questions} />
+      <QuizPlayer
+        title="Examen blanc"
+        questions={lesson.questions}
+        config={{
+          mode: "exam",
+          shuffleQuestions: true,
+          questionCount: 2,
+        }}
+      />
     </div>
   )
 }

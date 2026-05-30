@@ -8,9 +8,10 @@ import { useQuiz } from "./hooks/useQuiz"
 
 import type { QuizPlayerProps } from "./types/quiz"
 
-export function QuizPlayer({ title, questions }: QuizPlayerProps) {
+export function QuizPlayer({ title, questions, config }: QuizPlayerProps) {
   const quiz = useQuiz({
     questions,
+    config,
   })
 
   return (

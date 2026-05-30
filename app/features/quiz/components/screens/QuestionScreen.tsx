@@ -1,7 +1,7 @@
+import type { Question } from "~/domains/learning/types/learning"
+
 import { AnswerInput } from "../AnswerInput"
 import { QuestionCard } from "../QuestionCard"
-
-import type { Question } from "~/domains/learning/types/learning"
 
 type QuestionScreenProps = {
   question: Question

@@ -2,17 +2,34 @@ import { useState } from "react"
 
 import type { Question } from "~/domains/learning/types/learning"
 
-import type { QuizMode, QuizState } from "../types/quiz"
+import type { QuizConfig, QuizState } from "../types/quiz"
 
 import { isAnswerCorrect } from "../utils/isAnswerCorrect"
+import { shuffleQuestions } from "../utils/shuffleQuestions"
 
 type UseQuizOptions = {
   questions: Question[]
 
-  mode?: QuizMode
+  config?: QuizConfig
 }
 
-export function useQuiz({ questions, mode = "training" }: UseQuizOptions) {
+export function useQuiz({ questions, config }: UseQuizOptions) {
+  const mode = config?.mode ?? "training"
+
+  function getInitialQuestions() {
+    const preparedQuestions = config?.shuffleQuestions
+      ? shuffleQuestions(questions)
+      : questions
+
+    return config?.questionCount
+      ? preparedQuestions.slice(0, config.questionCount)
+      : preparedQuestions
+  }
+
+  const [activeQuestions, setActiveQuestions] = useState<Question[]>(() =>
+    getInitialQuestions()
+  )
+
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const [answer, setAnswer] = useState("")
@@ -25,8 +42,6 @@ export function useQuiz({ questions, mode = "training" }: UseQuizOptions) {
 
   const [failedQuestions, setFailedQuestions] = useState<Question[]>([])
 
-  const [activeQuestions, setActiveQuestions] = useState(questions)
-
   const currentQuestion = activeQuestions[currentIndex]
 
   const totalQuestions = activeQuestions.length
@@ -34,11 +49,21 @@ export function useQuiz({ questions, mode = "training" }: UseQuizOptions) {
   const progress =
     totalQuestions === 0 ? 0 : ((currentIndex + 1) / totalQuestions) * 100
 
-  function submitAnswer() {
-    if (!answer.trim()) {
-      return
-    }
+  function resetQuizState() {
+    setCurrentIndex(0)
 
+    setAnswer("")
+
+    setQuizState("question")
+
+    setIsCorrect(false)
+
+    setScore(0)
+
+    setFailedQuestions([])
+  }
+
+  function evaluateAnswer() {
     const correct = isAnswerCorrect(answer, currentQuestion.acceptedAnswers)
 
     setIsCorrect(correct)
@@ -49,9 +74,23 @@ export function useQuiz({ questions, mode = "training" }: UseQuizOptions) {
       setFailedQuestions((current) => [...current, currentQuestion])
     }
 
+    return correct
+  }
+
+  function submitAnswer() {
+    if (!answer.trim()) {
+      return
+    }
+
+    evaluateAnswer()
+
     if (mode === "training") {
       setQuizState("correction")
+
+      return
     }
+
+    nextQuestion()
   }
 
   function nextQuestion() {
@@ -71,19 +110,9 @@ export function useQuiz({ questions, mode = "training" }: UseQuizOptions) {
   }
 
   function restartQuiz() {
-    setCurrentIndex(0)
+    resetQuizState()
 
-    setAnswer("")
-
-    setQuizState("question")
-
-    setActiveQuestions(questions)
-
-    setIsCorrect(false)
-
-    setScore(0)
-
-    setFailedQuestions([])
+    setActiveQuestions(getInitialQuestions())
   }
 
   function retryFailedQuestions() {
@@ -91,19 +120,11 @@ export function useQuiz({ questions, mode = "training" }: UseQuizOptions) {
       return
     }
 
-    setActiveQuestions(failedQuestions)
+    const questionsToRetry = [...failedQuestions]
 
-    setCurrentIndex(0)
+    resetQuizState()
 
-    setAnswer("")
-
-    setQuizState("question")
-
-    setScore(0)
-
-    setFailedQuestions([])
-
-    setIsCorrect(false)
+    setActiveQuestions(questionsToRetry)
   }
 
   return {

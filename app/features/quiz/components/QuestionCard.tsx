@@ -2,6 +2,8 @@ import type { Question } from "~/domains/learning/types/learning"
 
 import { Card, CardContent } from "~/components/ui/card"
 
+import { HintCard } from "./HintCard"
+
 type QuestionCardProps = {
   question: Question
 }
@@ -24,6 +26,12 @@ export function QuestionCard({ question }: QuestionCardProps) {
           <h2 className="text-2xl leading-relaxed font-semibold tracking-tight md:text-3xl">
             {question.question}
           </h2>
+
+          {question.hint && (
+            <div className="mt-6">
+              <HintCard hint={question.hint} />
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>
