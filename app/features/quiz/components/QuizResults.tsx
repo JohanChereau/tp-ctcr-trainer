@@ -1,0 +1,90 @@
+import { RotateCcw } from "lucide-react"
+import { Target } from "lucide-react"
+import { TriangleAlert } from "lucide-react"
+
+import { Button } from "~/components/ui/button"
+import { Card, CardContent } from "~/components/ui/card"
+
+type QuizResultsProps = {
+  score: number
+
+  totalQuestions: number
+
+  failedQuestionsCount: number
+
+  onRestart: () => void
+
+  onRetryErrors: () => void
+}
+
+export function QuizResults({
+  score,
+  totalQuestions,
+  failedQuestionsCount,
+  onRestart,
+  onRetryErrors,
+}: QuizResultsProps) {
+  const percentage =
+    totalQuestions === 0 ? 0 : Math.round((score / totalQuestions) * 100)
+
+  return (
+    <Card>
+      <CardContent className="space-y-8 p-8">
+        <div className="space-y-2">
+          <h2 className="text-3xl font-bold">🎉 Quiz terminé</h2>
+
+          <p className="text-muted-foreground">Voici vos résultats.</p>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-muted-foreground">Score</p>
+
+          <p className="text-6xl font-bold">
+            {score} / {totalQuestions}
+          </p>
+
+          <p className="text-xl font-medium text-primary">{percentage}%</p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <Card>
+            <CardContent className="flex items-center gap-3 p-4">
+              <Target className="text-green-600" />
+
+              <div>
+                <p className="text-sm text-muted-foreground">Réussites</p>
+
+                <p className="font-semibold">{score}</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="flex items-center gap-3 p-4">
+              <TriangleAlert className="text-orange-500" />
+
+              <div>
+                <p className="text-sm text-muted-foreground">Erreurs</p>
+
+                <p className="font-semibold">{failedQuestionsCount}</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <Button size="lg" onClick={onRestart}>
+            <RotateCcw />
+            Refaire le quiz
+          </Button>
+
+          {failedQuestionsCount > 0 && (
+            <Button variant="secondary" size="lg" onClick={onRetryErrors}>
+              Réviser les erreurs
+            </Button>
+          )}
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
