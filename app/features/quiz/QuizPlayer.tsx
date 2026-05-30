@@ -1,4 +1,5 @@
 import { QuizHeader } from "./components/QuizHeader"
+import { QuizTimer } from "./components/QuizTimer"
 
 import { QuestionScreen } from "./components/screens/QuestionScreen"
 import { CorrectionScreen } from "./components/screens/CorrectionScreen"
@@ -21,6 +22,10 @@ export function QuizPlayer({ title, questions, config }: QuizPlayerProps) {
         currentQuestion={quiz.currentIndex}
         totalQuestions={quiz.totalQuestions}
       />
+
+      {config?.mode === "exam" && quiz.remainingSeconds != null && (
+        <QuizTimer remainingSeconds={quiz.remainingSeconds} />
+      )}
 
       {quiz.quizState === "question" && (
         <QuestionScreen

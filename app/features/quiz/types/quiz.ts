@@ -4,6 +4,8 @@ export type QuizMode = "training" | "exam"
 
 export type QuizState = "question" | "correction" | "results"
 
+export const DEFAULT_EXAM_DURATION = 360
+
 export type QuizConfig = {
   mode: QuizMode
 

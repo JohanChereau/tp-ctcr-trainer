@@ -1,6 +1,7 @@
 import { QuizPlayer } from "~/features/quiz/QuizPlayer"
 
 import { crtWrittenCategory } from "~/domains/learning/data/crt-written"
+import { DEFAULT_EXAM_DURATION } from "~/features/quiz/types/quiz"
 
 export default function Home() {
   const lesson = crtWrittenCategory.lessons[0]
@@ -14,6 +15,7 @@ export default function Home() {
           mode: "exam",
           shuffleQuestions: true,
           questionCount: 2,
+          durationInSeconds: DEFAULT_EXAM_DURATION,
         }}
       />
     </div>

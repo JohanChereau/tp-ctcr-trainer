@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useCallback, useEffect, useState } from "react"
+
+import { useQuizTimer } from "./useQuizTimer"
 
 import type { Question } from "~/domains/learning/types/learning"
 
-import type { QuizConfig, QuizState, AnswerResult } from "../types/quiz"
+import type { AnswerResult, QuizConfig, QuizState } from "../types/quiz"
 
 import { isAnswerCorrect } from "../utils/isAnswerCorrect"
 import { shuffleQuestions } from "../utils/shuffleQuestions"
@@ -13,12 +15,31 @@ type UseQuizOptions = {
   config?: QuizConfig
 }
 
+/**
+ * Quiz state management.
+ *
+ * Handles:
+ * - training mode
+ * - exam mode
+ * - score calculation
+ * - answer validation
+ * - failed questions tracking
+ * - retry failed questions
+ * - optional timer
+ */
 export function useQuiz({ questions, config }: UseQuizOptions) {
   const mode = config?.mode ?? "training"
 
+  /**
+   * Builds the initial question set based on the current configuration.
+   *
+   * Features:
+   * - optional question shuffling
+   * - optional question limit
+   */
   function getInitialQuestions() {
     const preparedQuestions = config?.shuffleQuestions
-      ? shuffleQuestions(questions)
+      ? shuffleQuestions([...questions])
       : questions
 
     return config?.questionCount
@@ -26,9 +47,7 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
       : preparedQuestions
   }
 
-  const [activeQuestions, setActiveQuestions] = useState<Question[]>(() =>
-    getInitialQuestions()
-  )
+  const [activeQuestions, setActiveQuestions] = useState<Question[]>(questions)
 
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -51,6 +70,42 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
   const progress =
     totalQuestions === 0 ? 0 : ((currentIndex + 1) / totalQuestions) * 100
 
+  /**
+   * Called when the exam timer reaches zero.
+   */
+  const handleTimeExpired = useCallback(() => {
+    setQuizState("results")
+  }, [])
+
+  const {
+    remainingSeconds,
+
+    resetTimer,
+  } = useQuizTimer({
+    enabled: mode === "exam" && quizState !== "results",
+
+    durationInSeconds: config?.durationInSeconds,
+
+    onTimeExpired: handleTimeExpired,
+  })
+
+  /**
+   * Initializes questions on the client.
+   *
+   * This avoids SSR hydration issues when
+   * question shuffling is enabled.
+   */
+  useEffect(() => {
+    setActiveQuestions(getInitialQuestions())
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  /**
+   * Resets the quiz runtime state.
+   *
+   * Does not modify the active question set.
+   */
   function resetQuizState() {
     setCurrentIndex(0)
 
@@ -67,6 +122,11 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
     setAnswers([])
   }
 
+  /**
+   * Evaluates the current answer and updates quiz statistics.
+   *
+   * Returns whether the answer is correct.
+   */
   function evaluateAnswer() {
     const correct = isAnswerCorrect(answer, currentQuestion.acceptedAnswers)
 
@@ -126,6 +186,8 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
     resetQuizState()
 
     setActiveQuestions(getInitialQuestions())
+
+    resetTimer()
   }
 
   function retryFailedQuestions() {
@@ -138,6 +200,8 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
     resetQuizState()
 
     setActiveQuestions(questionsToRetry)
+
+    resetTimer()
   }
 
   return {
@@ -162,6 +226,8 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
     answers,
 
     failedQuestions,
+
+    remainingSeconds,
 
     submitAnswer,
 
