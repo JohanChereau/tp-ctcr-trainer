@@ -15,6 +15,10 @@ export default [
     "pages/learning/lesson-quiz-page.tsx"
   ),
 
+  route("learning/:categoryId/exam", "pages/learning/exam-page.tsx"),
+
+  route("learning/:categoryId/quiz", "pages/learning/quiz-page.tsx"),
+
   route("learning/:categoryId/revision", "pages/learning/revision-page.tsx"),
 
   route("learning/:categoryId/:lessonId", "pages/learning/lesson-page.tsx"),

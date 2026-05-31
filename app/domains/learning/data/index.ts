@@ -11,3 +11,13 @@ export function getLessonById(categoryId: string, lessonId: string) {
 
   return category?.lessons.find((lesson) => lesson.id === lessonId)
 }
+
+export function getCategoryQuestions(categoryId: string) {
+  const category = getCategoryById(categoryId)
+
+  if (!category) {
+    return []
+  }
+
+  return category.lessons.flatMap((lesson) => lesson.questions)
+}

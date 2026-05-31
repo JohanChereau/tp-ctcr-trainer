@@ -22,19 +22,20 @@ import {
   SelectValue,
 } from "~/components/ui/select"
 
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group"
-
 import { Clock3, ListChecks, Play, Shuffle } from "lucide-react"
 
 import type { QuizConfig, QuizMode } from "~/domains/learning/quiz/types/quiz"
 
 type QuizSetupCardProps = {
   onStart: (config: QuizConfig) => void
+
+  defaultMode?: QuizMode
 }
 
-export function QuizSetupCard({ onStart }: QuizSetupCardProps) {
-  const [mode, setMode] = useState<QuizMode>("training")
-
+export function QuizSetupCard({
+  onStart,
+  defaultMode = "training",
+}: QuizSetupCardProps) {
   const [questionCount, setQuestionCount] = useState("10")
 
   const [durationMinutes, setDurationMinutes] = useState("6")
@@ -43,15 +44,15 @@ export function QuizSetupCard({ onStart }: QuizSetupCardProps) {
 
   function handleStart() {
     onStart({
-      mode,
+      mode: defaultMode,
 
       questionCount:
         questionCount === "all" ? undefined : Number(questionCount),
 
       durationInSeconds:
-        mode === "exam" ? Number(durationMinutes) * 60 : undefined,
+        defaultMode === "exam" ? Number(durationMinutes) * 60 : undefined,
 
-      shuffleQuestions: mode === "exam" ? true : shuffleQuestions,
+      shuffleQuestions,
     })
   }
 
@@ -66,32 +67,6 @@ export function QuizSetupCard({ onStart }: QuizSetupCardProps) {
       </CardHeader>
 
       <CardContent className="space-y-6">
-        <div className="space-y-3">
-          <Label>Mode</Label>
-
-          <RadioGroup
-            value={mode}
-            onValueChange={(value) => setMode(value as QuizMode)}
-            className="grid grid-cols-2 gap-4"
-          >
-            <div className="flex items-center space-x-3 rounded-lg border p-4">
-              <RadioGroupItem value="training" id="training" />
-
-              <Label htmlFor="training" className="cursor-pointer">
-                Révision
-              </Label>
-            </div>
-
-            <div className="flex items-center space-x-3 rounded-lg border p-4">
-              <RadioGroupItem value="exam" id="exam" />
-
-              <Label htmlFor="exam" className="cursor-pointer">
-                Examen
-              </Label>
-            </div>
-          </RadioGroup>
-        </div>
-
         <div className="space-y-2">
           <div className="flex items-center gap-2">
             <ListChecks className="h-4 w-4 text-muted-foreground" />
@@ -116,7 +91,7 @@ export function QuizSetupCard({ onStart }: QuizSetupCardProps) {
           </Select>
         </div>
 
-        {mode === "exam" && (
+        {defaultMode === "exam" && (
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Clock3 className="h-4 w-4 text-muted-foreground" />
@@ -144,7 +119,7 @@ export function QuizSetupCard({ onStart }: QuizSetupCardProps) {
           </div>
         )}
 
-        {mode === "training" && (
+        {defaultMode === "training" && (
           <div className="flex items-center gap-3 rounded-lg border p-4">
             <Checkbox
               checked={shuffleQuestions}
@@ -166,7 +141,9 @@ export function QuizSetupCard({ onStart }: QuizSetupCardProps) {
             <p className="mb-3 font-medium">Session configurée</p>
 
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Mode : {mode === "training" ? "Révision" : "Examen"}</li>
+              <li>
+                • Mode : {defaultMode === "training" ? "Révision" : "Examen"}
+              </li>
 
               <li>
                 •{" "}
@@ -175,11 +152,11 @@ export function QuizSetupCard({ onStart }: QuizSetupCardProps) {
                   : `${questionCount} questions`}
               </li>
 
-              {mode === "exam" && <li>• {durationMinutes} minutes</li>}
+              {defaultMode === "exam" && <li>• {durationMinutes} minutes</li>}
 
               <li>
                 •{" "}
-                {mode === "exam"
+                {defaultMode === "exam"
                   ? "Questions mélangées automatiquement"
                   : shuffleQuestions
                     ? "Questions mélangées"
