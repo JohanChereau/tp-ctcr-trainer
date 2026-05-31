@@ -1,3 +1,4 @@
+import { useKeyboardShortcut } from "../../hooks/useKeyboardShortcut"
 import { CorrectionCard } from "../CorrectionCard"
 
 type CorrectionScreenProps = {
@@ -16,6 +17,7 @@ export function CorrectionScreen({
   explanation,
   onNext,
 }: CorrectionScreenProps) {
+  useKeyboardShortcut(["ArrowRight"], onNext)
   return (
     <CorrectionCard
       isCorrect={isCorrect}
