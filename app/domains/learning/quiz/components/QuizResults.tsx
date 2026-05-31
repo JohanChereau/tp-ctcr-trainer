@@ -15,7 +15,7 @@ import {
 
 import { AnswerResultsAccordion } from "./results/AnswerResultsAccordion"
 
-import type { AnswerResult } from "../types/quiz"
+import type { AnswerResult } from "../../../domains/learning/quiz/types/quiz"
 
 type QuizResultsProps = {
   score: number

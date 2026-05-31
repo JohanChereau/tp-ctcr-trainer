@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from "react"
 
-import { useQuizTimer } from "./useQuizTimer"
+import { useQuizTimer } from "~/domains/learning/quiz/hooks/useQuizTimer"
 
 import type { Question } from "~/domains/learning/types/learning"
 
 import type { AnswerResult, QuizConfig, QuizState } from "../types/quiz"
 
-import { isAnswerCorrect } from "../utils/isAnswerCorrect"
-import { shuffleQuestions } from "../utils/shuffleQuestions"
+import { isAnswerCorrect } from "~/domains/learning/quiz/utils/isAnswerCorrect"
+import { shuffleQuestions } from "~/domains/learning/quiz/utils/shuffleQuestions"
 
 type UseQuizOptions = {
   questions: Question[]

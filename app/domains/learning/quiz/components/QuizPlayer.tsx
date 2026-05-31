@@ -1,13 +1,13 @@
-import { QuizHeader } from "./components/QuizHeader"
-import { QuizTimer } from "./components/QuizTimer"
+import { QuizHeader } from "./QuizHeader"
+import { QuizTimer } from "./QuizTimer"
 
-import { QuestionScreen } from "./components/screens/QuestionScreen"
-import { CorrectionScreen } from "./components/screens/CorrectionScreen"
-import { ResultsScreen } from "./components/screens/ResultsScreen"
+import { QuestionScreen } from "./screens/QuestionScreen"
+import { CorrectionScreen } from "./screens/CorrectionScreen"
+import { ResultsScreen } from "./screens/ResultsScreen"
 
-import { useQuiz } from "./hooks/useQuiz"
+import { useQuiz } from "../hooks/useQuiz"
 
-import type { QuizPlayerProps } from "./types/quiz"
+import type { QuizPlayerProps } from "../types/quiz"
 
 export function QuizPlayer({ title, questions, config }: QuizPlayerProps) {
   const quiz = useQuiz({

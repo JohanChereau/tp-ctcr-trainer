@@ -1,5 +1,5 @@
-import { CategoriesGrid } from "~/domains/categories/components/CategoriesGrid"
-import { HeroSection } from "~/domains/home/components/HeroSection"
+import { CategoriesGrid } from "~/domains/learning/categories/components/CategoriesGrid"
+import { HeroSection } from "~/components/home/HeroSection"
 
 import { learningCategories } from "~/domains/learning/data"
 

@@ -5,6 +5,8 @@ export const crtWrittenCategory: LearningCategory = {
 
   title: "Fiches écrites",
 
+  type: "written",
+
   description: "Révision des fiches écrites du TP CTCR",
 
   icon: "📖",

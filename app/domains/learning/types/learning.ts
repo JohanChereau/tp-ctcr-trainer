@@ -30,8 +30,12 @@ export type Lesson = {
   questions: Question[]
 }
 
+export type LearningCategoryType = "written" | "oral" | "rse" | "vocabulary"
+
 export type LearningCategory = {
   id: string
+
+  type: LearningCategoryType
 
   title: string
 

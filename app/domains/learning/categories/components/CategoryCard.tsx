@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 
 import { Card, CardContent } from "~/components/ui/card"
 
-import type { Category } from "../types/category"
+import type { Category } from "../../../categories/types/category"
 
 type CategoryCardProps = {
   category: Category

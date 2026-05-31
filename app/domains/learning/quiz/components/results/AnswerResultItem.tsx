@@ -1,4 +1,4 @@
-import type { AnswerResult } from "../../types/quiz"
+import type { AnswerResult } from "../../../../domains/learning/quiz/types/quiz"
 
 import {
   AccordionContent,

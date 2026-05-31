@@ -1,6 +1,6 @@
 import { learningCategories } from "~/domains/learning/data"
 
-import { CategoryCard } from "./CategoryCard"
+import { CategoryCard } from "~/domains/learning/categories/components/CategoryCard"
 
 function getQuestionCount(category: {
   lessons: {
