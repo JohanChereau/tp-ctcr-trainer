@@ -1,4 +1,4 @@
-import { crtWrittenCategory } from "./crt-written"
+import { crtWrittenCategory } from "./written/crt-written"
 
 export const learningCategories = [crtWrittenCategory]
 

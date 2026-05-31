@@ -1,4 +1,4 @@
-import type { LearningCategory } from "../types/learning"
+import type { LearningCategory } from "../../types/learning"
 
 export const crtWrittenCategory: LearningCategory = {
   id: "fiches-ecrites",

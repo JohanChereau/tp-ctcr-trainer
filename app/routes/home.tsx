@@ -1,12 +1,12 @@
 import { useState } from "react"
 
-import { ExamSetupCard } from "~/features/quiz/components/exam/ExamSetupCard"
+import { QuizSetupCard } from "~/features/quiz/components/setup/QuizSetupCard"
 
 import { QuizPlayer } from "~/features/quiz/QuizPlayer"
 
 import type { QuizConfig } from "~/features/quiz/types/quiz"
 
-import { crtWrittenCategory } from "~/domains/learning/data/crt-written"
+import { crtWrittenCategory } from "~/domains/learning/data/written/crt-written"
 
 export default function Home() {
   const [config, setConfig] = useState<QuizConfig>()
@@ -18,7 +18,7 @@ export default function Home() {
   if (!config) {
     return (
       <div className="p-8">
-        <ExamSetupCard onStart={setConfig} />
+        <QuizSetupCard onStart={setConfig} />
       </div>
     )
   }
