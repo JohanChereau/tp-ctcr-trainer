@@ -14,19 +14,16 @@ export const fiche02: Lesson = {
       type: "text",
 
       question:
-        "Quels sont les trois gestes fondamentaux de premiers secours ?",
+        "Une pierre coincée entre des roues jumelées peut entraîner l'éclatement d'un pneumatique. Vrai ou Faux ?",
 
-      canonicalAnswer: "Protéger, alerter, secourir",
+      canonicalAnswer: "Vrai",
 
-      acceptedAnswers: [
-        "protéger alerter secourir",
-        "protéger, alerter, secourir",
-      ],
+      acceptedAnswers: ["vrai"],
 
       explanation:
-        "Les trois actions fondamentales sont protéger, alerter et secourir.",
+        "Une pierre coincée entre deux roues jumelées peut provoquer une détérioration ou l'éclatement d'un pneumatique.",
 
-      tags: ["secours"],
+      tags: ["pneumatiques", "securite"],
     },
 
     {
@@ -34,15 +31,24 @@ export const fiche02: Lesson = {
 
       type: "text",
 
-      question: "Quel numéro permet de joindre les secours européens ?",
+      question:
+        "Lors d'un voyage organisé, pendant la visite programmée d'un monument, vous attendez vos passagers durant 10 minutes dans votre véhicule. Sur quel symbole devez-vous positionner le sélecteur d'activité du chronotachygraphe ?",
 
-      canonicalAnswer: "112",
+      canonicalAnswer: "Disponibilité ou Carré barré",
 
-      acceptedAnswers: ["112"],
+      acceptedAnswers: [
+        "disponibilité",
+        "disponibilite",
+        "carré barré",
+        "carre barre",
+        "symbole disponibilité",
+        "symbole disponibilite",
+      ],
 
-      explanation: "Le 112 est le numéro d'urgence européen.",
+      explanation:
+        "L'attente des passagers dans le véhicule correspond à une période de disponibilité sur le chronotachygraphe.",
 
-      tags: ["urgence"],
+      tags: ["chronotachygraphe", "activites"],
     },
 
     {
@@ -51,16 +57,141 @@ export const fiche02: Lesson = {
       type: "text",
 
       question:
-        "Avant d'intervenir sur un accident, quelle est la première action à réaliser ?",
+        "Dans un véhicule neuf, les passagers doivent-ils être prévenus de l'obligation d'attacher leur ceinture de sécurité ?",
 
-      canonicalAnswer: "Protéger",
+      canonicalAnswer: "Oui",
 
-      acceptedAnswers: ["protéger"],
+      acceptedAnswers: ["oui"],
+
+      tags: ["ceinture", "securite-passagers"],
+    },
+
+    {
+      id: "f2-q4",
+
+      type: "text",
+
+      question:
+        "Hors agglomération, sur une route à double sens, vous suivez un camion à 70 km/h. Quel intervalle de sécurité minimum devez-vous respecter ?",
+
+      canonicalAnswer: "50 m",
+
+      acceptedAnswers: ["50 m", "50m", "50 mètres", "cinquante mètres"],
 
       explanation:
-        "La protection est toujours la première étape afin d'éviter un sur-accident.",
+        "À 70 km/h, l'intervalle de sécurité minimal correspond à environ 50 mètres.",
 
-      tags: ["secours"],
+      tags: ["distance-securite", "circulation"],
+    },
+
+    {
+      id: "f2-q5",
+
+      type: "text",
+
+      question:
+        "Quel est le PTAC maximal d'un véhicule isolé de transport en commun comportant 2 essieux ?",
+
+      canonicalAnswer: "19 t",
+
+      acceptedAnswers: ["19 t", "19t", "19 tonnes"],
+
+      tags: ["ptac", "masses", "vehicule"],
+    },
+
+    {
+      id: "f2-q6",
+
+      type: "text",
+
+      question:
+        "Pour un véhicule neuf, quel document devez-vous consulter pour savoir si un accompagnateur est obligatoire lors d'un transport d'enfants ?",
+
+      canonicalAnswer: "L'attestation d'aménagement",
+
+      acceptedAnswers: [
+        "attestation d'aménagement",
+        "attestation amenagement",
+        "l'attestation d'aménagement",
+        "l attestation d amenagement",
+        "attestation d amenagement",
+      ],
+
+      explanation:
+        "L'attestation d'aménagement précise notamment les conditions d'exploitation du véhicule et les obligations liées au transport d'enfants.",
+
+      tags: ["documents", "transport-enfants"],
+    },
+
+    {
+      id: "f2-q7",
+
+      type: "text",
+
+      question:
+        "Le contrôle et le remplissage du circuit de refroidissement s'effectuent plutôt moteur chaud ou moteur froid ?",
+
+      canonicalAnswer: "Moteur à froid",
+
+      acceptedAnswers: ["moteur froid", "à froid", "a froid", "froid"],
+
+      explanation:
+        "Le contrôle et le remplissage du liquide de refroidissement doivent être effectués moteur froid afin d'éviter tout risque de brûlure.",
+
+      tags: ["mecanique", "refroidissement"],
+    },
+
+    {
+      id: "f2-q8",
+
+      type: "text",
+
+      question:
+        "En double équipage, en France, vous êtes assis à côté du conducteur. Votre temps de conduite continue est-il interrompu ?",
+
+      canonicalAnswer: "Oui",
+
+      acceptedAnswers: ["oui"],
+
+      tags: ["temps-de-conduite", "double-equipage"],
+    },
+
+    {
+      id: "f2-q9",
+
+      type: "image",
+
+      question:
+        "Ce signal concerne uniquement les véhicules affectés au transport de marchandises excédant 3 500 kg de PTAC ?",
+
+      image: "/images/traffic-signs/interdiction_tourner_gauche_livraisons.png",
+
+      imageAlt:
+        "Panneau d'interdiction de tourner à gauche avec panonceau poids lourd",
+
+      canonicalAnswer: "Non",
+
+      acceptedAnswers: ["non"],
+
+      tags: ["signalisation", "poids-lourds"],
+    },
+
+    {
+      id: "f2-q10",
+
+      type: "text",
+
+      question:
+        "Dans une longue descente, en cas de rupture de freins, si j'utilise une voie de détresse, le véhicule que je conduis sera-t-il gravement endommagé ?",
+
+      canonicalAnswer: "Non",
+
+      acceptedAnswers: ["non"],
+
+      explanation:
+        "Une voie de détresse est conçue pour arrêter un véhicule en sécurité. Elle peut occasionner des dommages mineurs mais son objectif est d'éviter un accident grave.",
+
+      tags: ["securite", "voie-de-detresse"],
     },
   ],
 }
