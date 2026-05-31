@@ -3,8 +3,8 @@ import { Link } from "react-router"
 import { BookOpen, GraduationCap, FileText, Flame } from "lucide-react"
 
 import { Card, CardContent } from "~/components/ui/card"
-import { getWeakQuestionsCount } from "../../stats/utils/getWeakQuestionsCount"
 import { Badge } from "~/components/ui/badge"
+import { useWeakQuestionsCount } from "../../stats/hooks/useWeakQuestionsCount"
 
 type WrittenCategoryActionsProps = {
   categoryId: string
@@ -13,7 +13,7 @@ type WrittenCategoryActionsProps = {
 export function WrittenCategoryActions({
   categoryId,
 }: WrittenCategoryActionsProps) {
-  const weakQuestionsCount = getWeakQuestionsCount(categoryId)
+  const weakQuestionsCount = useWeakQuestionsCount(categoryId)
 
   return (
     <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -51,7 +51,7 @@ export function WrittenCategoryActions({
             <div className="flex items-center justify-between">
               <Flame className="h-6 w-6 text-orange-500" />
 
-              {weakQuestionsCount > 0 && (
+              {weakQuestionsCount !== null && weakQuestionsCount > 0 && (
                 <Badge variant="destructive">{weakQuestionsCount}</Badge>
               )}
             </div>

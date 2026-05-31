@@ -3,6 +3,10 @@ import type { QuestionStats } from "./types"
 const STORAGE_KEY = "ctcr-question-stats"
 
 export function getAllQuestionStats(): QuestionStats[] {
+  if (typeof window === "undefined") {
+    return []
+  }
+
   const raw = localStorage.getItem(STORAGE_KEY)
 
   if (!raw) {
@@ -21,6 +25,10 @@ export function saveAllQuestionStats(stats: QuestionStats[]) {
 }
 
 export function saveQuestionResult(questionId: string, isCorrect: boolean) {
+  if (typeof window === "undefined") {
+    return
+  }
+
   const stats = getAllQuestionStats()
 
   const existing = stats.find((stat) => stat.questionId === questionId)
