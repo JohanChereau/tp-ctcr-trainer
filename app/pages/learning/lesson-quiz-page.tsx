@@ -1,11 +1,27 @@
+import { useParams } from "react-router"
+
+import { getLessonById } from "~/domains/learning/data"
+
+import { QuizPlayer } from "~/domains/learning/quiz/components/QuizPlayer"
+
 import { AppLayout } from "~/layouts/AppLayout"
 
 export default function LessonQuizPage() {
+  const { categoryId, lessonId } = useParams()
+
+  const lesson = getLessonById(categoryId ?? "", lessonId ?? "")
+
+  if (!lesson) {
+    return (
+      <AppLayout>
+        <p>Fiche introuvable.</p>
+      </AppLayout>
+    )
+  }
+
   return (
     <AppLayout>
-      <h1 className="text-4xl font-bold">Quiz de fiche</h1>
-
-      <p className="mt-4 text-muted-foreground">À implémenter.</p>
+      <QuizPlayer title={lesson.title} questions={lesson.questions} />
     </AppLayout>
   )
 }

@@ -26,10 +26,7 @@ import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group"
 
 import { Clock3, ListChecks, Play, Shuffle } from "lucide-react"
 
-import type {
-  QuizConfig,
-  QuizMode,
-} from "../../../../domains/learning/quiz/types/quiz"
+import type { QuizConfig, QuizMode } from "~/domains/learning/quiz/types/quiz"
 
 type QuizSetupCardProps = {
   onStart: (config: QuizConfig) => void
