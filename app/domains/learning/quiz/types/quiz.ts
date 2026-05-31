@@ -22,6 +22,8 @@ export type QuizPlayerProps = {
   questions: Question[]
 
   config?: QuizConfig
+
+  onBack?: () => void
 }
 
 export type AnswerResult = {

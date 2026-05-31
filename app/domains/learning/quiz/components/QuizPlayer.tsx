@@ -9,7 +9,12 @@ import { useQuiz } from "../hooks/useQuiz"
 
 import type { QuizPlayerProps } from "../types/quiz"
 
-export function QuizPlayer({ title, questions, config }: QuizPlayerProps) {
+export function QuizPlayer({
+  title,
+  questions,
+  config,
+  onBack,
+}: QuizPlayerProps) {
   const quiz = useQuiz({
     questions,
     config,
@@ -53,6 +58,7 @@ export function QuizPlayer({ title, questions, config }: QuizPlayerProps) {
           failedQuestionsCount={quiz.failedQuestions.length}
           onRestart={quiz.restartQuiz}
           onRetryErrors={quiz.retryFailedQuestions}
+          onBack={onBack}
         />
       )}
     </div>

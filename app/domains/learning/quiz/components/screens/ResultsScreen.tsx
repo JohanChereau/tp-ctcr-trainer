@@ -1,4 +1,4 @@
-import type { AnswerResult } from "../../../../domains/learning/quiz/types/quiz"
+import type { AnswerResult } from "~/domains/learning/quiz/types/quiz"
 import { QuizResults } from "../QuizResults"
 
 type ResultsScreenProps = {
@@ -13,6 +13,8 @@ type ResultsScreenProps = {
   onRestart: () => void
 
   onRetryErrors: () => void
+
+  onBack?: () => void
 }
 
 export function ResultsScreen({
@@ -22,6 +24,7 @@ export function ResultsScreen({
   failedQuestionsCount,
   onRestart,
   onRetryErrors,
+  onBack,
 }: ResultsScreenProps) {
   return (
     <QuizResults
@@ -31,6 +34,7 @@ export function ResultsScreen({
       onRestart={onRestart}
       onRetryErrors={onRetryErrors}
       answers={answers}
+      onBack={onBack}
     />
   )
 }

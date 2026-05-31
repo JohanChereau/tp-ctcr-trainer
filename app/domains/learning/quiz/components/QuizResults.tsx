@@ -15,7 +15,7 @@ import {
 
 import { AnswerResultsAccordion } from "./results/AnswerResultsAccordion"
 
-import type { AnswerResult } from "../../../domains/learning/quiz/types/quiz"
+import type { AnswerResult } from "~/domains/learning/quiz/types/quiz"
 
 type QuizResultsProps = {
   score: number
@@ -29,6 +29,8 @@ type QuizResultsProps = {
   onRestart: () => void
 
   onRetryErrors: () => void
+
+  onBack?: () => void
 }
 
 export function QuizResults({
@@ -38,6 +40,7 @@ export function QuizResults({
   failedQuestionsCount,
   onRestart,
   onRetryErrors,
+  onBack,
 }: QuizResultsProps) {
   const percentage =
     totalQuestions === 0 ? 0 : Math.round((score / totalQuestions) * 100)
@@ -112,6 +115,12 @@ export function QuizResults({
           {failedQuestionsCount > 0 && (
             <Button variant="secondary" size="lg" onClick={onRetryErrors}>
               Réviser les erreurs
+            </Button>
+          )}
+
+          {onBack && (
+            <Button variant="outline" size="lg" onClick={onBack}>
+              Retour
             </Button>
           )}
         </div>

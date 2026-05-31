@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useParams } from "react-router"
+import { useParams, useNavigate } from "react-router"
 
 import { getCategoryById, getCategoryQuestions } from "~/domains/learning/data"
 
@@ -13,6 +13,8 @@ import { AppLayout } from "~/layouts/AppLayout"
 
 export default function QuizPage() {
   const { categoryId } = useParams()
+
+  const navigate = useNavigate()
 
   const category = getCategoryById(categoryId ?? "")
 
@@ -42,6 +44,7 @@ export default function QuizPage() {
         title={`${category.title} - Quiz global`}
         questions={questions}
         config={config}
+        onBack={() => navigate(`/learning/${category.id}`)}
       />
     </AppLayout>
   )
