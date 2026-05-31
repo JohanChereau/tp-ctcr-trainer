@@ -7,6 +7,7 @@ import { QuizPlayer } from "~/domains/learning/quiz/components/QuizPlayer"
 import { getCategoryById } from "~/domains/learning/data"
 
 import { getWeakQuestions } from "~/domains/learning/stats/utils/getWeakQuestions"
+import { QuizBackButton } from "~/domains/learning/quiz/components/QuizBackButton"
 
 export default function WeakQuestionsPage() {
   const { categoryId } = useParams()
@@ -43,6 +44,7 @@ export default function WeakQuestionsPage() {
 
   return (
     <AppLayout>
+      <QuizBackButton />
       <QuizPlayer
         title="Révision des points faibles"
         questions={weakQuestions.map((item) => item.question)}

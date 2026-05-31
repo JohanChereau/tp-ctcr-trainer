@@ -1,6 +1,7 @@
 import { writtenCategory } from "./written"
+import { rseCategory } from "./rse"
 
-export const learningCategories = [writtenCategory]
+export const learningCategories = [writtenCategory, rseCategory]
 
 export function getCategoryById(categoryId: string) {
   return learningCategories.find((category) => category.id === categoryId)

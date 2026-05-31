@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router"
 
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 import { getCategoryById } from "~/domains/learning/data"
 
@@ -10,9 +10,8 @@ import { SuccessRateBadge } from "~/domains/learning/stats/components/SuccessRat
 
 import { AppLayout } from "~/layouts/AppLayout"
 
-import { Button } from "~/components/ui/button"
-
 import { Card, CardContent } from "~/components/ui/card"
+import { BackButton } from "~/components/navigation/BackButton"
 
 export default function RevisionPage() {
   const { categoryId } = useParams()
@@ -30,12 +29,7 @@ export default function RevisionPage() {
   return (
     <AppLayout>
       <div className="space-y-10">
-        <Link to={`/learning/${category.id}`}>
-          <Button variant="ghost">
-            <ArrowLeft />
-            Retour
-          </Button>
-        </Link>
+        <BackButton />
 
         <div className="space-y-3">
           <h1 className="text-4xl font-bold">Révision fiche par fiche</h1>

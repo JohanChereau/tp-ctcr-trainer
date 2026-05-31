@@ -10,6 +10,7 @@ import { useQuiz } from "../hooks/useQuiz"
 import type { QuizPlayerProps } from "../types/quiz"
 import { useEffect, useRef } from "react"
 import { saveQuestionResult } from "../../stats/storage"
+import { useQuizExitGuard } from "../hooks/useQuizExitGuard"
 
 export function QuizPlayer({
   title,
@@ -20,6 +21,10 @@ export function QuizPlayer({
   const quiz = useQuiz({
     questions,
     config,
+  })
+
+  useQuizExitGuard({
+    enabled: quiz.quizState !== "results",
   })
 
   const statsSavedRef = useRef(false)

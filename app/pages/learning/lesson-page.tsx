@@ -1,14 +1,13 @@
 import { Link, useParams } from "react-router"
 
-import { ArrowLeft, ArrowRight, BookOpen, GraduationCap } from "lucide-react"
+import { ArrowRight, BookOpen, GraduationCap } from "lucide-react"
 
 import { getCategoryById, getLessonById } from "~/domains/learning/data"
 
 import { AppLayout } from "~/layouts/AppLayout"
 
-import { Button } from "~/components/ui/button"
-
 import { Card, CardContent } from "~/components/ui/card"
+import { BackButton } from "~/components/navigation/BackButton"
 
 export default function LessonPage() {
   const { categoryId, lessonId } = useParams()
@@ -28,12 +27,7 @@ export default function LessonPage() {
   return (
     <AppLayout>
       <div className="space-y-10">
-        <Link to={`/learning/${category.id}/revision`}>
-          <Button variant="ghost">
-            <ArrowLeft />
-            Retour
-          </Button>
-        </Link>
+        <BackButton />
 
         <div className="space-y-3">
           <h1 className="text-4xl font-bold">{lesson.title}</h1>

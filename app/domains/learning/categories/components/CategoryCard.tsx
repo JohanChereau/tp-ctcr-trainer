@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 
 import { Card, CardContent } from "~/components/ui/card"
 
-import type { Category } from "../../../categories/types/category"
+import type { Category } from "~/domains/learning/categories/types/category"
 
 type CategoryCardProps = {
   category: Category
@@ -22,9 +22,11 @@ export function CategoryCard({ category }: CategoryCardProps) {
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold">{category.title}</h3>
+            <h3 className="line-clamp-2 min-h-16 text-xl font-semibold">
+              {category.title}
+            </h3>
 
-            <p className="text-sm text-muted-foreground">
+            <p className="line-clamp-2 min-h-12 text-sm text-muted-foreground">
               {category.description}
             </p>
           </div>
