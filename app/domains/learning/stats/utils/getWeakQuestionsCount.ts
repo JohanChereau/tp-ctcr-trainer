@@ -1,5 +1,7 @@
-import { getWeakQuestionIds } from "./getWeakQuestions"
+import { getWeakQuestions } from "./getWeakQuestions"
 
-export function getWeakQuestionsCount(maxSuccessRate = 70) {
-  return getWeakQuestionIds(maxSuccessRate).length
+export function getWeakQuestionsCount(categoryId?: string) {
+  return getWeakQuestions({
+    categoryId,
+  }).length
 }

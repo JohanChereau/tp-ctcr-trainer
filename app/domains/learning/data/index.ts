@@ -21,3 +21,17 @@ export function getCategoryQuestions(categoryId: string) {
 
   return category.lessons.flatMap((lesson) => lesson.questions)
 }
+
+export function getAllQuestions() {
+  return learningCategories.flatMap((category) =>
+    category.lessons.flatMap((lesson) =>
+      lesson.questions.map((question) => ({
+        categoryId: category.id,
+
+        lessonId: lesson.id,
+
+        question,
+      }))
+    )
+  )
+}

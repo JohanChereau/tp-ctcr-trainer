@@ -1,17 +1,37 @@
-import { getAllQuestionStats } from "../storage"
+import { getAllQuestions } from "~/domains/learning/data"
 
-export function getWeakQuestionIds(maxSuccessRate = 70) {
-  return getAllQuestionStats()
-    .filter((stat) => {
-      const total = stat.correctCount + stat.incorrectCount
+import { getQuestionStats } from "../storage"
 
-      if (total === 0) {
-        return false
-      }
+type GetWeakQuestionsOptions = {
+  categoryId?: string
 
-      const successRate = (stat.correctCount / total) * 100
+  maxSuccessRate?: number
+}
 
-      return successRate < maxSuccessRate
-    })
-    .map((stat) => stat.questionId)
+export function getWeakQuestions({
+  categoryId,
+
+  maxSuccessRate = 70,
+}: GetWeakQuestionsOptions = {}) {
+  return getAllQuestions().filter((item) => {
+    if (categoryId && item.categoryId !== categoryId) {
+      return false
+    }
+
+    const stats = getQuestionStats(item.question.id)
+
+    if (!stats) {
+      return false
+    }
+
+    const total = stats.correctCount + stats.incorrectCount
+
+    if (total === 0) {
+      return false
+    }
+
+    const successRate = (stats.correctCount / total) * 100
+
+    return successRate < maxSuccessRate
+  })
 }

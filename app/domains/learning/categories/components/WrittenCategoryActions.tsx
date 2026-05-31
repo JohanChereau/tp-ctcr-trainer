@@ -13,7 +13,7 @@ type WrittenCategoryActionsProps = {
 export function WrittenCategoryActions({
   categoryId,
 }: WrittenCategoryActionsProps) {
-  const weakQuestionsCount = getWeakQuestionsCount()
+  const weakQuestionsCount = getWeakQuestionsCount(categoryId)
 
   return (
     <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
