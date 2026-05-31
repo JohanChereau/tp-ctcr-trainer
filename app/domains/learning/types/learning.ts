@@ -22,12 +22,18 @@ export type Question = {
   tags?: string[]
 }
 
+export type LessonContentType = "questions" | "markdown"
+
 export type Lesson = {
   id: string
 
   title: string
 
+  contentType: LessonContentType
+
   questions: Question[]
+
+  markdown?: string
 }
 
 export type LearningCategoryType = "written" | "oral" | "rse" | "vocabulary"

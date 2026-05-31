@@ -1,0 +1,1 @@
+export { writtenCategory } from "./category"

@@ -1,6 +1,6 @@
-import { crtWrittenCategory } from "./written/crt-written"
+import { writtenCategory } from "./written"
 
-export const learningCategories = [crtWrittenCategory]
+export const learningCategories = [writtenCategory]
 
 export function getCategoryById(categoryId: string) {
   return learningCategories.find((category) => category.id === categoryId)
