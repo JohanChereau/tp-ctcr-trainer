@@ -31,7 +31,7 @@ export default function CategoryPage() {
   return (
     <AppLayout>
       <div className="space-y-10">
-        <BackButton />
+        <BackButton to="/" />
 
         <div className="space-y-3">
           <h1 className="text-4xl font-bold">{category.title}</h1>

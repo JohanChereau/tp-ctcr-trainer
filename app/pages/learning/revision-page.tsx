@@ -29,7 +29,7 @@ export default function RevisionPage() {
   return (
     <AppLayout>
       <div className="space-y-10">
-        <BackButton />
+        <BackButton to={`/learning/${categoryId}`} />
 
         <div className="space-y-3">
           <h1 className="text-4xl font-bold">Révision fiche par fiche</h1>
