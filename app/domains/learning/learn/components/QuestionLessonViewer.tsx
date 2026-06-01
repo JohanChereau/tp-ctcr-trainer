@@ -15,12 +15,12 @@ type QuestionLessonViewerProps = {
 
 export function QuestionLessonViewer({ lesson }: QuestionLessonViewerProps) {
   return (
-    <Accordion type="multiple" className="space-y-4">
+    <Accordion type="multiple" className="space-y-5">
       {lesson.questions.map((question, index) => (
         <AccordionItem
           key={question.id}
           value={question.id}
-          className="overflow-hidden rounded-xl border"
+          className="overflow-hidden rounded-xl border bg-card shadow-sm transition-shadow hover:shadow-md"
         >
           <AccordionTrigger className="px-6 py-5 text-left hover:no-underline">
             <div className="flex w-full items-start justify-between gap-6">

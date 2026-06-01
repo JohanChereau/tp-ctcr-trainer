@@ -21,7 +21,7 @@ export function BackButton({ onBeforeBack }: BackButtonProps) {
   }
 
   return (
-    <Button variant="ghost" onClick={handleBack}>
+    <Button variant="ghost" onClick={handleBack} className="mb-4">
       <ArrowLeft />
       Retour
     </Button>
