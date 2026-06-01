@@ -221,62 +221,6 @@ avant la fin de la troisième semaine suivante.
 
   questions: [
     {
-      id: "rse01-q99999",
-
-      type: "multiple-choice",
-
-      question: "Parmi les affirmations suivantes, lesquelles sont correctes ?",
-
-      options: [
-        "Conduite continue : 4h30",
-        "Conduite hebdomadaire : 56h",
-        "Pause obligatoire : 20 min",
-        "Repos journalier normal : 8h",
-      ],
-
-      correctOptions: [
-        "Conduite continue : 4h30",
-        "Conduite hebdomadaire : 56h",
-      ],
-    },
-    {
-      id: "rse01-q9999",
-
-      type: "yes-no",
-
-      question: "Le repos journalier normal est-il de 11 heures ?",
-
-      correctAnswer: true,
-
-      explanation: "Le repos journalier normal est bien de 11 heures.",
-    },
-    {
-      id: "rse01-q999",
-
-      type: "single-choice",
-
-      question: "Quelle est la durée maximale de conduite hebdomadaire ?",
-
-      options: ["45 heures", "56 heures", "60 heures", "90 heures"],
-
-      correctOption: "56 heures",
-
-      explanation:
-        "La durée maximale de conduite hebdomadaire est de 56 heures.",
-    },
-    {
-      id: "rse01-q99",
-
-      type: "true-false",
-
-      question: "La conduite hebdomadaire maximale est de 60 heures.",
-
-      correctAnswer: false,
-
-      explanation:
-        "La durée maximale de conduite hebdomadaire est de 56 heures.",
-    },
-    {
       id: "rse01-q01",
 
       type: "text",
@@ -286,32 +230,29 @@ avant la fin de la troisième semaine suivante.
       canonicalAnswer: "4h30",
 
       acceptedAnswers: ["4h30", "4 h 30", "4h 30", "4 heures 30"],
-
-      explanation:
-        "Après 4h30 de conduite continue, une pause devient obligatoire.",
     },
     {
       id: "rse01-q02",
 
       type: "text",
 
-      question:
-        "Quelle est la durée minimale de la pause obligatoire après une conduite continue ?",
+      question: "Quelle est la durée normale de conduite journalière ?",
 
-      canonicalAnswer: "45 minutes",
+      canonicalAnswer: "9h",
 
-      acceptedAnswers: ["45 minutes", "45 min"],
+      acceptedAnswers: ["9h", "9 heures"],
     },
     {
       id: "rse01-q03",
 
       type: "text",
 
-      question: "Comment peut être fractionnée une pause de 45 minutes ?",
+      question:
+        "Quelle est la durée maximale de conduite journalière en dérogation ?",
 
-      canonicalAnswer: "15 min + 30 min",
+      canonicalAnswer: "10h",
 
-      acceptedAnswers: ["15 min + 30 min", "15+30", "15 minutes + 30 minutes"],
+      acceptedAnswers: ["10h", "10 heures"],
     },
     {
       id: "rse01-q04",
@@ -319,38 +260,14 @@ avant la fin de la troisième semaine suivante.
       type: "text",
 
       question:
-        "Quelle est la durée normale maximale de conduite journalière ?",
-
-      canonicalAnswer: "9h",
-
-      acceptedAnswers: ["9h", "9 heures"],
-    },
-    {
-      id: "rse01-q05",
-
-      type: "text",
-
-      question:
-        "À combien d'heures peut être portée la conduite journalière en dérogation ?",
-
-      canonicalAnswer: "10h",
-
-      acceptedAnswers: ["10h", "10 heures"],
-    },
-    {
-      id: "rse01-q06",
-
-      type: "text",
-
-      question:
-        "Combien de fois par semaine la conduite journalière peut-elle être portée à 10h ?",
+        "Combien de fois par semaine la dérogation à 10h est-elle autorisée ?",
 
       canonicalAnswer: "2 fois",
 
       acceptedAnswers: ["2", "2 fois", "deux fois"],
     },
     {
-      id: "rse01-q07",
+      id: "rse01-q05",
 
       type: "text",
 
@@ -361,7 +278,7 @@ avant la fin de la troisième semaine suivante.
       acceptedAnswers: ["56h", "56 heures"],
     },
     {
-      id: "rse01-q08",
+      id: "rse01-q06",
 
       type: "text",
 
@@ -373,67 +290,83 @@ avant la fin de la troisième semaine suivante.
       acceptedAnswers: ["90h", "90 heures"],
     },
     {
+      id: "rse01-q07",
+
+      type: "true-false",
+
+      question: "La conduite journalière normale est de 10 heures.",
+
+      correctAnswer: false,
+    },
+    {
+      id: "rse01-q08",
+
+      type: "true-false",
+
+      question: "La conduite continue maximale est de 4h30.",
+
+      correctAnswer: true,
+    },
+    {
       id: "rse01-q09",
 
-      type: "text",
+      type: "true-false",
 
-      question:
-        "Un conducteur a effectué 56h de conduite la première semaine. Combien peut-il conduire au maximum la deuxième semaine ?",
+      question: "La conduite hebdomadaire maximale est de 90 heures.",
 
-      canonicalAnswer: "34h",
-
-      acceptedAnswers: ["34h", "34 heures"],
-
-      explanation:
-        "56h + 34h = 90h, soit le maximum autorisé sur deux semaines.",
+      correctAnswer: false,
     },
     {
       id: "rse01-q10",
 
-      type: "text",
+      type: "true-false",
 
-      question:
-        "Un conducteur a effectué 40h la première semaine. Peut-il conduire 56h la deuxième semaine ?",
+      question: "Un repos hebdomadaire normal est de 45 heures.",
 
-      canonicalAnswer: "Non",
-
-      acceptedAnswers: ["non"],
-
-      explanation:
-        "40h + 56h = 96h. Cela dépasse la limite de 90h sur deux semaines.",
+      correctAnswer: true,
     },
     {
       id: "rse01-q11",
 
-      type: "text",
+      type: "single-choice",
 
-      question: "Quelle est la durée minimale du repos journalier normal ?",
+      question:
+        "Quelle pause minimale doit être prise après 4h30 de conduite ?",
 
-      canonicalAnswer: "11h",
+      options: ["15 minutes", "30 minutes", "45 minutes", "1 heure"],
 
-      acceptedAnswers: ["11h", "11 heures"],
+      correctOption: "45 minutes",
     },
     {
       id: "rse01-q12",
 
-      type: "text",
+      type: "single-choice",
 
-      question: "Comment peut être fractionné un repos journalier ?",
+      question: "Quel est le repos journalier normal ?",
 
-      canonicalAnswer: "3h + 9h",
+      options: ["9 heures", "10 heures", "11 heures", "12 heures"],
 
-      acceptedAnswers: ["3h + 9h", "3+9", "3 heures + 9 heures"],
+      correctOption: "11 heures",
     },
     {
       id: "rse01-q13",
 
-      type: "text",
+      type: "multiple-choice",
 
-      question: "Quelle est la durée minimale du repos journalier réduit ?",
+      question: "Parmi les affirmations suivantes, lesquelles sont correctes ?",
 
-      canonicalAnswer: "9h",
+      options: [
+        "Conduite continue : 4h30",
+        "Conduite hebdomadaire : 56h",
+        "Repos journalier normal : 11h",
+        "Pause obligatoire : 20 min",
+      ],
 
-      acceptedAnswers: ["9h", "9 heures"],
+      correctOptions: [
+        "Conduite continue : 4h30",
+        "Conduite hebdomadaire : 56h",
+        "Repos journalier normal : 11h",
+      ],
     },
     {
       id: "rse01-q14",
@@ -441,62 +374,47 @@ avant la fin de la troisième semaine suivante.
       type: "text",
 
       question:
-        "Combien de fois par semaine le repos journalier peut-il être réduit à 9h ?",
+        "Vous avez conduit 56h la semaine dernière. Combien pouvez-vous conduire au maximum cette semaine ?",
 
-      canonicalAnswer: "3 fois",
+      canonicalAnswer: "34h",
 
-      acceptedAnswers: ["3", "3 fois", "trois fois"],
+      acceptedAnswers: ["34h", "34 heures"],
     },
     {
       id: "rse01-q15",
 
       type: "text",
 
-      question: "Quelle est la durée minimale du repos hebdomadaire normal ?",
+      question:
+        "Vous avez conduit 40h la semaine dernière. Combien pouvez-vous conduire au maximum cette semaine ?",
 
-      canonicalAnswer: "45h",
+      canonicalAnswer: "50h",
 
-      acceptedAnswers: ["45h", "45 heures"],
+      acceptedAnswers: ["50h", "50 heures"],
     },
     {
       id: "rse01-q16",
 
       type: "text",
 
-      question: "Quelle est la durée minimale du repos hebdomadaire réduit ?",
-
-      canonicalAnswer: "24h",
-
-      acceptedAnswers: ["24h", "24 heures"],
-    },
-    {
-      id: "rse01-q17",
-
-      type: "text",
-
       question:
-        "Combien d'heures doivent être récupérées après un repos hebdomadaire réduit à 24h ?",
-
-      canonicalAnswer: "21h",
-
-      acceptedAnswers: ["21h", "21 heures"],
-
-      explanation: "45h - 24h = 21h à récupérer.",
-    },
-    {
-      id: "rse01-q18",
-
-      type: "text",
-
-      question:
-        "J'ai conduit seulement 10h la semaine dernière. Combien puis-je conduire au maximum cette semaine ?",
+        "Vous avez conduit 10h la semaine dernière. Combien pouvez-vous conduire au maximum cette semaine ?",
 
       canonicalAnswer: "56h",
 
       acceptedAnswers: ["56h", "56 heures"],
+    },
+    {
+      id: "rse01-q17",
 
-      explanation:
-        "Même si la limite des 90h n'est pas atteinte, la limite hebdomadaire reste de 56h.",
+      type: "single-choice",
+
+      question:
+        "Après un repos hebdomadaire réduit de 24h, combien d'heures doivent être récupérées ?",
+
+      options: ["11h", "21h", "24h", "45h"],
+
+      correctOption: "21h",
     },
   ],
 }

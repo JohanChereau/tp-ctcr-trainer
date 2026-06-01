@@ -4,14 +4,25 @@ import { ArrowRight } from "lucide-react"
 
 import { Card, CardContent } from "~/components/ui/card"
 
-import type { Category } from "~/domains/learning/categories/types/category"
+import type { LearningCategory } from "~/domains/learning/types/learning"
+
 import { SuccessRateBadge } from "../../stats/components/SuccessRateBadge"
+import { useCategoryMastery } from "../../stats/hooks/useCategoryMastery"
 
 type CategoryCardProps = {
-  category: Category
+  category: LearningCategory
+}
+
+function getQuestionCount(category: LearningCategory) {
+  return category.lessons.reduce(
+    (total, lesson) => total + lesson.questions.length,
+    0
+  )
 }
 
 export function CategoryCard({ category }: CategoryCardProps) {
+  const masteryRate = useCategoryMastery(category)
+
   return (
     <Link to={`/learning/${category.id}`} className="block">
       <Card className="group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg">
@@ -34,10 +45,10 @@ export function CategoryCard({ category }: CategoryCardProps) {
 
           <div className="mt-auto space-y-3">
             <p className="text-sm font-medium text-muted-foreground">
-              {category.questionsCount} questions
+              {getQuestionCount(category)} questions
             </p>
 
-            <SuccessRateBadge successRate={category.masteryRate ?? null} />
+            <SuccessRateBadge successRate={masteryRate} />
           </div>
         </CardContent>
       </Card>

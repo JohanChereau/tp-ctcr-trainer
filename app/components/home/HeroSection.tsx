@@ -4,7 +4,7 @@ export function HeroSection() {
       <div className="max-w-4xl space-y-8">
         <div className="space-y-4">
           <p className="text-sm font-medium tracking-widest text-muted-foreground uppercase">
-            TP Conducteur de Transport en Commun Routier
+            TP Conducteur de Transport en Commun sur Route
           </p>
 
           <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
@@ -12,9 +12,9 @@ export function HeroSection() {
           </h1>
 
           <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Révisez les fiches écrites, les fiches orales, la RSE et le
-            vocabulaire dans une interface moderne pensée pour réussir votre
-            examen.
+            Application pédagogique pour réviser vos fiches écrites, fiches
+            orales, la RSE et le vocabulaire dans une interface simple et
+            moderne.
           </p>
         </div>
       </div>

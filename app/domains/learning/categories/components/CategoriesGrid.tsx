@@ -1,18 +1,6 @@
 import { learningCategories } from "~/domains/learning/data"
 
 import { CategoryCard } from "~/domains/learning/categories/components/CategoryCard"
-import { getCategoryMastery } from "../../stats/utils/getCategoryMastery"
-
-function getQuestionCount(category: {
-  lessons: {
-    questions: unknown[]
-  }[]
-}) {
-  return category.lessons.reduce(
-    (total, lesson) => total + lesson.questions.length,
-    0
-  )
-}
 
 export function CategoriesGrid() {
   return (
@@ -27,22 +15,7 @@ export function CategoriesGrid() {
 
       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
         {learningCategories.map((category) => (
-          <CategoryCard
-            key={category.id}
-            category={{
-              id: category.id,
-
-              title: category.title,
-
-              description: category.description,
-
-              icon: category.icon,
-
-              questionsCount: getQuestionCount(category),
-
-              masteryRate: getCategoryMastery(category),
-            }}
-          />
+          <CategoryCard key={category.id} category={category} />
         ))}
       </div>
     </section>
