@@ -7,6 +7,8 @@ import {
   AccordionTrigger,
 } from "~/components/ui/accordion"
 
+import { getQuestionExpectedAnswer } from "~/domains/learning/quiz/utils/getQuestionExpectedAnswer"
+
 type QuestionLessonViewerProps = {
   lesson: Lesson
 }
@@ -20,23 +22,23 @@ export function QuestionLessonViewer({ lesson }: QuestionLessonViewerProps) {
           value={question.id}
           className="overflow-hidden rounded-xl border"
         >
-          {question.image && (
-            <div className="border-b bg-muted/30 p-6">
-              <img
-                src={question.image}
-                alt={question.imageAlt}
-                className="mx-auto max-h-80 rounded-lg border bg-background object-contain"
-              />
-            </div>
-          )}
+          <AccordionTrigger className="px-6 py-5 text-left hover:no-underline">
+            <div className="flex w-full items-start justify-between gap-6">
+              <div className="flex min-w-0 gap-3">
+                <span className="font-semibold text-muted-foreground">
+                  {index + 1}.
+                </span>
 
-          <AccordionTrigger className="px-6 text-left hover:no-underline">
-            <div className="flex items-start gap-3">
-              <span className="font-semibold text-muted-foreground">
-                {index + 1}.
-              </span>
+                <span className="text-left">{question.question}</span>
+              </div>
 
-              <span>{question.question}</span>
+              {"image" in question && question.image && (
+                <img
+                  src={question.image}
+                  alt={question.imageAlt}
+                  className="h-20 w-20 shrink-0 rounded-md border bg-background object-contain md:h-24 md:w-24"
+                />
+              )}
             </div>
           </AccordionTrigger>
 
@@ -47,7 +49,7 @@ export function QuestionLessonViewer({ lesson }: QuestionLessonViewerProps) {
               </p>
 
               <div className="rounded-md bg-muted p-3">
-                {question.canonicalAnswer}
+                {getQuestionExpectedAnswer(question)}
               </div>
             </div>
 

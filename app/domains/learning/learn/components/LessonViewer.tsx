@@ -13,7 +13,12 @@ export function LessonViewer({ lesson }: LessonViewerProps) {
       return <QuestionLessonViewer lesson={lesson} />
 
     case "markdown":
-      return <MarkdownLessonViewer markdown={lesson.markdown ?? ""} />
+      return (
+        <MarkdownLessonViewer
+          markdown={lesson.markdown ?? ""}
+          youtubeVideoId={lesson.youtubeVideoId}
+        />
+      )
 
     default:
       return null
