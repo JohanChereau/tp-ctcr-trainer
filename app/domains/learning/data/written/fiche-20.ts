@@ -112,7 +112,7 @@ export const fiche20: Lesson = {
 
       canonicalAnswer: "100 km/h",
 
-      acceptedAnswers: ["100 km/h", "100km/h", "100"],
+      acceptedAnswers: ["100 km/h", "100km/h", "100", "100kmh"],
 
       tags: ["vitesse", "autoroute"],
     },

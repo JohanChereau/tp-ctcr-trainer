@@ -25,7 +25,7 @@ export default function LearnPage() {
   return (
     <AppLayout>
       <div className="space-y-10">
-        <BackButton />
+        <BackButton to={`/learning/${categoryId}/${lessonId}`} />
 
         <div className="space-y-3">
           <h1 className="text-4xl font-bold">{lesson.title}</h1>

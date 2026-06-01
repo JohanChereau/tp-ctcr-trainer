@@ -133,7 +133,14 @@ export const fiche02: Lesson = {
 
       canonicalAnswer: "Moteur à froid",
 
-      acceptedAnswers: ["moteur froid", "à froid", "a froid", "froid"],
+      acceptedAnswers: [
+        "moteur froid",
+        "à froid",
+        "a froid",
+        "froid",
+        "moteur à froid",
+        "moteur a froid",
+      ],
 
       explanation:
         "Le contrôle et le remplissage du liquide de refroidissement doivent être effectués moteur froid afin d'éviter tout risque de brûlure.",
