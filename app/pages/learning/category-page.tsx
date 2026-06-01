@@ -1,13 +1,15 @@
-import { Link, useParams } from "react-router"
+import { useParams } from "react-router"
 
-import { ArrowLeft } from "lucide-react"
+import { BackButton } from "~/components/navigation/BackButton"
 
-import { Button } from "~/components/ui/button"
+import { CategoryActions } from "~/domains/learning/categories/components/CategoryActions"
+import { getCategoryActions } from "~/domains/learning/categories/utils/getCategoryActions"
 
 import { getCategoryById } from "~/domains/learning/data"
 
+import { useWeakQuestionsCount } from "~/domains/learning/stats/hooks/useWeakQuestionsCount"
+
 import { AppLayout } from "~/layouts/AppLayout"
-import { WrittenCategoryActions } from "~/domains/learning/categories/components/WrittenCategoryActions"
 
 export default function CategoryPage() {
   const { categoryId } = useParams()
@@ -22,15 +24,14 @@ export default function CategoryPage() {
     )
   }
 
+  const weakQuestionsCount = useWeakQuestionsCount(category.id)
+
+  const actions = getCategoryActions(category, weakQuestionsCount)
+
   return (
     <AppLayout>
       <div className="space-y-10">
-        <Link to="/">
-          <Button variant="ghost">
-            <ArrowLeft />
-            Retour
-          </Button>
-        </Link>
+        <BackButton />
 
         <div className="space-y-3">
           <h1 className="text-4xl font-bold">{category.title}</h1>
@@ -40,9 +41,7 @@ export default function CategoryPage() {
           </p>
         </div>
 
-        {category.type === "written" && (
-          <WrittenCategoryActions categoryId={category.id} />
-        )}
+        <CategoryActions actions={actions} />
       </div>
     </AppLayout>
   )

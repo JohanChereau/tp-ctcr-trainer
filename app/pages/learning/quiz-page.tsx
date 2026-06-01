@@ -1,7 +1,9 @@
 import { useState } from "react"
 import { useParams, useNavigate } from "react-router"
+import { BackButton } from "~/components/navigation/BackButton"
 
 import { getCategoryById, getCategoryQuestions } from "~/domains/learning/data"
+import { QuizBackButton } from "~/domains/learning/quiz/components/QuizBackButton"
 
 import { QuizPlayer } from "~/domains/learning/quiz/components/QuizPlayer"
 
@@ -33,6 +35,7 @@ export default function QuizPage() {
   if (!config) {
     return (
       <AppLayout>
+        <BackButton />
         <QuizSetupCard defaultMode="training" onStart={setConfig} />
       </AppLayout>
     )
@@ -40,6 +43,7 @@ export default function QuizPage() {
 
   return (
     <AppLayout>
+      <QuizBackButton />
       <QuizPlayer
         title={`${category.title} - Quiz global`}
         questions={questions}

@@ -1,6 +1,7 @@
 import { Link } from "react-router"
 
 import { ModeToggle } from "~/components/ui/mode-toggle"
+import { FullscreenToggle } from "~/components/ui/fullscreen-toggle"
 
 import AppLogo from "./AppLogo"
 
@@ -12,7 +13,11 @@ export function AppHeader() {
           <AppLogo />
         </Link>
 
-        <ModeToggle />
+        <div className="flex items-center gap-2">
+          <FullscreenToggle />
+
+          <ModeToggle />
+        </div>
       </div>
     </header>
   )

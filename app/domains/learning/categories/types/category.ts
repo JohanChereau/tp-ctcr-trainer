@@ -8,4 +8,6 @@ export type Category = {
   icon: string
 
   questionsCount: number
+
+  masteryRate?: number | null
 }

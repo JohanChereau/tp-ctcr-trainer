@@ -36,11 +36,13 @@ export function CorrectionCard({
           </h3>
         </div>
 
-        <div className="space-y-2">
-          <p className="text-sm text-muted-foreground">Réponse attendue</p>
+        {canonicalAnswer && (
+          <div className="space-y-2">
+            <p className="text-sm text-muted-foreground">Réponse attendue</p>
 
-          <p className="text-lg font-medium">{canonicalAnswer}</p>
-        </div>
+            <p className="text-lg font-medium">{canonicalAnswer}</p>
+          </div>
+        )}
 
         {explanation && (
           <div className="space-y-2">

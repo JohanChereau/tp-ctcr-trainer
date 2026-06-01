@@ -1,21 +1,39 @@
-# React Router + shadcn/ui
+# CTCR Trainer
 
-This is a template for a new React Router project with React, TypeScript, and shadcn/ui.
+Application web de révision pour la préparation du titre professionnel Conducteur de Transport en Commun sur Route (CTCR).
 
-## Adding components
+## Fonctionnalités
 
-To add components to your app, run the following command:
+- Révision fiche par fiche
+- Quiz d'entraînement
+- Examen blanc
+- Statistiques de progression
+- Révision des points faibles
+- Leçons interactives (RSE, fiches écrites, etc.)
+- Mode sombre
+- Mode plein écran
+
+## Technologies
+
+- React Router v7
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- Vite
+
+## Installation
 
 ```bash
-npx shadcn@latest add button
+pnpm install
+pnpm dev
 ```
 
-This will place the ui components in the `components` directory.
+## Build
 
-## Using components
-
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
+```bash
+pnpm build
 ```
+
+## Licence
+
+Projet personnel développé dans le cadre de la préparation au TP CTCR.

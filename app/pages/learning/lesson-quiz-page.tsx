@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router"
 
 import { getLessonById } from "~/domains/learning/data"
+import { QuizBackButton } from "~/domains/learning/quiz/components/QuizBackButton"
 
 import { QuizPlayer } from "~/domains/learning/quiz/components/QuizPlayer"
 
@@ -23,6 +24,7 @@ export default function LessonQuizPage() {
 
   return (
     <AppLayout>
+      <QuizBackButton />
       <QuizPlayer
         title={lesson.title}
         questions={lesson.questions}

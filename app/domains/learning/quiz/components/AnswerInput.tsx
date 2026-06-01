@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react"
+
 import { SendHorizontal } from "lucide-react"
 
 import { Button } from "~/components/ui/button"
@@ -12,9 +14,16 @@ type AnswerInputProps = {
 }
 
 export function AnswerInput({ value, onChange, onSubmit }: AnswerInputProps) {
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    inputRef.current?.focus()
+  }, [])
+
   return (
     <div className="space-y-4">
       <Input
+        ref={inputRef}
         value={value}
         placeholder="Saisissez votre réponse..."
         onChange={(event) => onChange(event.target.value)}

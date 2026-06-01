@@ -1,6 +1,7 @@
 import type { Lesson } from "~/domains/learning/types/learning"
 
 import { QuestionLessonViewer } from "./QuestionLessonViewer"
+import { MarkdownLessonViewer } from "./MarkdownLessonViewer"
 
 type LessonViewerProps = {
   lesson: Lesson
@@ -12,7 +13,7 @@ export function LessonViewer({ lesson }: LessonViewerProps) {
       return <QuestionLessonViewer lesson={lesson} />
 
     case "markdown":
-      return <div>Markdown renderer coming soon.</div>
+      return <MarkdownLessonViewer markdown={lesson.markdown ?? ""} />
 
     default:
       return null

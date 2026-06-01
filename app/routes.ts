@@ -22,4 +22,9 @@ export default [
   route("learning/:categoryId/revision", "pages/learning/revision-page.tsx"),
 
   route("learning/:categoryId/:lessonId", "pages/learning/lesson-page.tsx"),
+
+  route(
+    "learning/:categoryId/weak-questions",
+    "pages/learning/weak-questions-page.tsx"
+  ),
 ] satisfies RouteConfig

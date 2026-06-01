@@ -1,14 +1,17 @@
 import { Link, useParams } from "react-router"
 
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 import { getCategoryById } from "~/domains/learning/data"
 
+import { getLessonSuccessRate } from "~/domains/learning/stats/utils/getLessonSuccessRate"
+
+import { SuccessRateBadge } from "~/domains/learning/stats/components/SuccessRateBadge"
+
 import { AppLayout } from "~/layouts/AppLayout"
 
-import { Button } from "~/components/ui/button"
-
 import { Card, CardContent } from "~/components/ui/card"
+import { BackButton } from "~/components/navigation/BackButton"
 
 export default function RevisionPage() {
   const { categoryId } = useParams()
@@ -26,12 +29,7 @@ export default function RevisionPage() {
   return (
     <AppLayout>
       <div className="space-y-10">
-        <Link to={`/learning/${category.id}`}>
-          <Button variant="ghost">
-            <ArrowLeft />
-            Retour
-          </Button>
-        </Link>
+        <BackButton />
 
         <div className="space-y-3">
           <h1 className="text-4xl font-bold">Révision fiche par fiche</h1>
@@ -42,25 +40,38 @@ export default function RevisionPage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {category.lessons.map((lesson) => (
-            <Link key={lesson.id} to={`/learning/${category.id}/${lesson.id}`}>
-              <Card className="group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg">
-                <CardContent className="space-y-4 p-8">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Fiche</span>
+          {category.lessons.map((lesson) => {
+            const successRate = getLessonSuccessRate(lesson)
 
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </div>
+            return (
+              <Link
+                key={lesson.id}
+                to={`/learning/${category.id}/${lesson.id}`}
+              >
+                <Card className="group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <CardContent className="space-y-4 p-8">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">
+                        Fiche
+                      </span>
 
-                  <h2 className="text-xl font-semibold">{lesson.title}</h2>
+                      <div className="flex items-center gap-2">
+                        <SuccessRateBadge successRate={successRate} />
 
-                  <p className="text-sm text-muted-foreground">
-                    {lesson.questions.length} questions
-                  </p>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </div>
+
+                    <h2 className="text-xl font-semibold">{lesson.title}</h2>
+
+                    <p className="text-sm text-muted-foreground">
+                      {lesson.questions.length} questions
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </AppLayout>

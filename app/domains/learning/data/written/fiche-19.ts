@@ -9,7 +9,7 @@ export const fiche19: Lesson = {
 
   questions: [
     {
-      id: "f19-q1",
+      id: "fep19-q1",
 
       type: "text",
 
@@ -24,7 +24,7 @@ export const fiche19: Lesson = {
     },
 
     {
-      id: "f19-q2",
+      id: "fep19-q2",
 
       type: "text",
 
@@ -39,7 +39,7 @@ export const fiche19: Lesson = {
     },
 
     {
-      id: "f19-q3",
+      id: "fep19-q3",
 
       type: "text",
 
@@ -54,7 +54,7 @@ export const fiche19: Lesson = {
     },
 
     {
-      id: "f19-q4",
+      id: "fep19-q4",
 
       type: "image",
 
@@ -76,7 +76,7 @@ export const fiche19: Lesson = {
     },
 
     {
-      id: "f19-q5",
+      id: "fep19-q5",
 
       type: "text",
 
@@ -91,7 +91,7 @@ export const fiche19: Lesson = {
     },
 
     {
-      id: "f19-q6",
+      id: "fep19-q6",
 
       type: "text",
 
@@ -109,7 +109,7 @@ export const fiche19: Lesson = {
     },
 
     {
-      id: "f19-q7",
+      id: "fep19-q7",
 
       type: "text",
 
@@ -127,7 +127,7 @@ export const fiche19: Lesson = {
     },
 
     {
-      id: "f19-q8",
+      id: "fep19-q8",
 
       type: "text",
 
@@ -142,7 +142,7 @@ export const fiche19: Lesson = {
     },
 
     {
-      id: "f19-q9",
+      id: "fep19-q9",
 
       type: "text",
 
@@ -157,7 +157,7 @@ export const fiche19: Lesson = {
     },
 
     {
-      id: "f19-q10",
+      id: "fep19-q10",
 
       type: "text",
 

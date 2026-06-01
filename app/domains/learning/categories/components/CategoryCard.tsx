@@ -4,13 +4,25 @@ import { ArrowRight } from "lucide-react"
 
 import { Card, CardContent } from "~/components/ui/card"
 
-import type { Category } from "../../../categories/types/category"
+import type { LearningCategory } from "~/domains/learning/types/learning"
+
+import { SuccessRateBadge } from "../../stats/components/SuccessRateBadge"
+import { useCategoryMastery } from "../../stats/hooks/useCategoryMastery"
 
 type CategoryCardProps = {
-  category: Category
+  category: LearningCategory
+}
+
+function getQuestionCount(category: LearningCategory) {
+  return category.lessons.reduce(
+    (total, lesson) => total + lesson.questions.length,
+    0
+  )
 }
 
 export function CategoryCard({ category }: CategoryCardProps) {
+  const masteryRate = useCategoryMastery(category)
+
   return (
     <Link to={`/learning/${category.id}`} className="block">
       <Card className="group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg">
@@ -22,15 +34,21 @@ export function CategoryCard({ category }: CategoryCardProps) {
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold">{category.title}</h3>
+            <h3 className="line-clamp-2 min-h-16 text-xl font-semibold">
+              {category.title}
+            </h3>
 
-            <p className="text-sm text-muted-foreground">
+            <p className="line-clamp-2 min-h-12 text-sm text-muted-foreground">
               {category.description}
             </p>
           </div>
 
-          <div className="mt-auto text-sm font-medium text-muted-foreground">
-            {category.questionsCount} questions
+          <div className="mt-auto space-y-3">
+            <p className="text-sm font-medium text-muted-foreground">
+              {getQuestionCount(category)} questions
+            </p>
+
+            <SuccessRateBadge successRate={masteryRate} />
           </div>
         </CardContent>
       </Card>

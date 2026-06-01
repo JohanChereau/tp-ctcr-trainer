@@ -1,5 +1,8 @@
 import { useParams } from "react-router"
 
+import { BackButton } from "~/components/navigation/BackButton"
+import { Separator } from "~/components/ui/separator"
+
 import { getLessonById } from "~/domains/learning/data"
 
 import { LessonViewer } from "~/domains/learning/learn/components/LessonViewer"
@@ -21,14 +24,18 @@ export default function LearnPage() {
 
   return (
     <AppLayout>
-      <div className="space-y-8">
-        <div>
+      <div className="space-y-10">
+        <BackButton />
+
+        <div className="space-y-3">
           <h1 className="text-4xl font-bold">{lesson.title}</h1>
 
           <p className="text-muted-foreground">
-            Consultez les questions et réponses de la fiche.
+            Consultez le contenu pédagogique de cette leçon.
           </p>
         </div>
+
+        <Separator />
 
         <LessonViewer lesson={lesson} />
       </div>

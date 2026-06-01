@@ -22,7 +22,7 @@ import { fiche19 } from "./fiche-19"
 import { fiche20 } from "./fiche-20"
 
 export const writtenCategory: LearningCategory = {
-  id: "fiches-ecrites",
+  id: "fiches-ecrites-plateau",
 
   type: "written",
 
