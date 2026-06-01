@@ -1,0 +1,1 @@
+export { oralCategory } from "./category"

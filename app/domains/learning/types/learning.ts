@@ -78,6 +78,8 @@ export type Lesson = {
   questions: Question[]
 
   markdown?: string
+
+  youtubeVideoId?: string
 }
 
 export type LearningCategoryType = "written" | "oral" | "rse" | "vocabulary"

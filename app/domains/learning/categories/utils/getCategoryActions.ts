@@ -71,6 +71,34 @@ export function getCategoryActions(
         },
       ]
 
+    case "oral":
+      return [
+        {
+          title: "Consulter les fiches",
+          description: "Parcourez les fiches d'interrogation orale du TP CTCR.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+
+        {
+          title: "Quiz oral",
+          description:
+            "Entraînez-vous sur les questions d'interrogation orale.",
+          href: `/learning/${category.id}/quiz`,
+          icon: GraduationCap,
+        },
+
+        {
+          title: "Réviser mes points faibles",
+          description:
+            "Travaillez uniquement les notions orales où vous avez le plus de difficultés.",
+          href: `/learning/${category.id}/weak-questions`,
+          icon: Flame,
+          badge: weakQuestionsCount,
+          iconClassName: "text-orange-500",
+        },
+      ]
+
     default:
       return []
   }
