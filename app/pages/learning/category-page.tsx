@@ -1,11 +1,15 @@
 import { useParams } from "react-router"
 
+import { BackButton } from "~/components/navigation/BackButton"
+
+import { CategoryActions } from "~/domains/learning/categories/components/CategoryActions"
+import { getCategoryActions } from "~/domains/learning/categories/utils/getCategoryActions"
+
 import { getCategoryById } from "~/domains/learning/data"
 
+import { useWeakQuestionsCount } from "~/domains/learning/stats/hooks/useWeakQuestionsCount"
+
 import { AppLayout } from "~/layouts/AppLayout"
-import { WrittenCategoryActions } from "~/domains/learning/categories/components/WrittenCategoryActions"
-import { RseCategoryActions } from "~/domains/learning/categories/components/RseCategoryActions"
-import { BackButton } from "~/components/navigation/BackButton"
 
 export default function CategoryPage() {
   const { categoryId } = useParams()
@@ -20,6 +24,10 @@ export default function CategoryPage() {
     )
   }
 
+  const weakQuestionsCount = useWeakQuestionsCount(category.id)
+
+  const actions = getCategoryActions(category, weakQuestionsCount)
+
   return (
     <AppLayout>
       <div className="space-y-10">
@@ -33,13 +41,7 @@ export default function CategoryPage() {
           </p>
         </div>
 
-        {category.type === "written" && (
-          <WrittenCategoryActions categoryId={category.id} />
-        )}
-
-        {category.type === "rse" && (
-          <RseCategoryActions categoryId={category.id} />
-        )}
+        <CategoryActions actions={actions} />
       </div>
     </AppLayout>
   )
