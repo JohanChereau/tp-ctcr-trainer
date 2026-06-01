@@ -54,6 +54,27 @@ export function QuestionScreen({
           </div>
         )
 
+      case "yes-no":
+        return (
+          <div className="flex gap-4">
+            <Button
+              variant={answer === "true" ? "default" : "outline"}
+              onClick={() => onAnswerChange("true")}
+              className="flex-1"
+            >
+              Oui
+            </Button>
+
+            <Button
+              variant={answer === "false" ? "default" : "outline"}
+              onClick={() => onAnswerChange("false")}
+              className="flex-1"
+            >
+              Non
+            </Button>
+          </div>
+        )
+
       case "single-choice":
         return (
           <div className="flex flex-col gap-3">
@@ -75,7 +96,9 @@ export function QuestionScreen({
   }
 
   const requiresValidationButton =
-    question.type === "true-false" || question.type === "single-choice"
+    question.type === "true-false" ||
+    question.type === "yes-no" ||
+    question.type === "single-choice"
 
   return (
     <>

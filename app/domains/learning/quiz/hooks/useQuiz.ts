@@ -137,6 +137,7 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
         break
 
       case "true-false":
+      case "yes-no":
         correct = answer === String(currentQuestion.correctAnswer)
 
         break

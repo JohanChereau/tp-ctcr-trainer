@@ -221,6 +221,17 @@ avant la fin de la troisième semaine suivante.
 
   questions: [
     {
+      id: "rse01-q9999",
+
+      type: "yes-no",
+
+      question: "Le repos journalier normal est-il de 11 heures ?",
+
+      correctAnswer: true,
+
+      explanation: "Le repos journalier normal est bien de 11 heures.",
+    },
+    {
       id: "rse01-q999",
 
       type: "single-choice",
