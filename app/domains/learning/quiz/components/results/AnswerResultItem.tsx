@@ -1,4 +1,4 @@
-import type { AnswerResult } from "../../../../domains/learning/quiz/types/quiz"
+import type { AnswerResult } from "~/domains/learning/quiz/types/quiz"
 
 import {
   AccordionContent,
@@ -6,9 +6,10 @@ import {
   AccordionTrigger,
 } from "~/components/ui/accordion"
 
-import { Card, CardContent } from "~/components/ui/card"
-
 import { CheckCircle2, Lightbulb, XCircle } from "lucide-react"
+
+import { getQuestionExpectedAnswer } from "../../utils/getQuestionExpectedAnswer"
+import { formatQuizAnswer } from "../../utils/formatQuizAnswer"
 
 type AnswerResultItemProps = {
   answer: AnswerResult
@@ -39,7 +40,7 @@ export function AnswerResultItem({ answer }: AnswerResultItemProps) {
             </p>
 
             <div className="mt-2 rounded-md bg-muted p-3 font-medium">
-              {answer.userAnswer}
+              {formatQuizAnswer(answer.userAnswer, answer.question)}
             </div>
           </div>
 
@@ -49,7 +50,7 @@ export function AnswerResultItem({ answer }: AnswerResultItemProps) {
             </p>
 
             <div className="mt-2 rounded-md bg-muted p-3 font-medium">
-              {answer.question.canonicalAnswer}
+              {getQuestionExpectedAnswer(answer.question)}
             </div>
           </div>
 
