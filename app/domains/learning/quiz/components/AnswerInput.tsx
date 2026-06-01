@@ -17,6 +17,12 @@ export function AnswerInput({ value, onChange, onSubmit }: AnswerInputProps) {
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches
+
+    if (isTouchDevice) {
+      return
+    }
+
     inputRef.current?.focus()
   }, [])
 
