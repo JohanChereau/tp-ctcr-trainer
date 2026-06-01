@@ -128,7 +128,22 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
    * Returns whether the answer is correct.
    */
   function evaluateAnswer() {
-    const correct = isAnswerCorrect(answer, currentQuestion.acceptedAnswers)
+    let correct = false
+
+    switch (currentQuestion.type) {
+      case "text":
+      case "image":
+        correct = isAnswerCorrect(answer, currentQuestion.acceptedAnswers)
+        break
+
+      case "true-false":
+        correct = answer === String(currentQuestion.correctAnswer)
+
+        break
+
+      default:
+        correct = false
+    }
 
     setIsCorrect(correct)
 

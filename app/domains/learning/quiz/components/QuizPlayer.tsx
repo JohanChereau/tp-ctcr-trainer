@@ -11,6 +11,7 @@ import type { QuizPlayerProps } from "../types/quiz"
 import { useEffect, useRef } from "react"
 import { saveQuestionResult } from "../../stats/storage"
 import { useQuizExitGuard } from "../hooks/useQuizExitGuard"
+import { getQuestionExpectedAnswer } from "../utils/getQuestionExpectedAnswer"
 
 export function QuizPlayer({
   title,
@@ -77,7 +78,7 @@ export function QuizPlayer({
       {quiz.quizState === "correction" && (
         <CorrectionScreen
           isCorrect={quiz.isCorrect}
-          canonicalAnswer={quiz.currentQuestion.canonicalAnswer}
+          canonicalAnswer={getQuestionExpectedAnswer(quiz.currentQuestion)}
           explanation={quiz.currentQuestion.explanation}
           onNext={quiz.nextQuestion}
         />
