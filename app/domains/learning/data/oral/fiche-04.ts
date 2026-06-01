@@ -465,6 +465,8 @@ Les risques peuvent varier selon le type de véhicule.
         "garder le dos droit",
         "utiliser les jambes",
         "dos droit utiliser les jambes",
+        "dos droit et utiliser les jambes",
+        "garder dos droit et utiliser les jambes",
       ],
     },
   ],

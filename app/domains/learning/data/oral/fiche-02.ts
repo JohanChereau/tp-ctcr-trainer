@@ -434,6 +434,12 @@ Je peux indiquer l'emplacement :
       acceptedAnswers: [
         "proteger alerter secourir",
         "protéger alerter secourir",
+        "protéger, alerter, secourir",
+        "proteger, alerter, secourir",
+        "protéger,alerter,secourir",
+        "proteger,alerter,secourir",
+        "protéger-alerter-secourir",
+        "proteger-alerter-secourir",
       ],
     },
   ],
