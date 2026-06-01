@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react"
 import { Card, CardContent } from "~/components/ui/card"
 
 import type { Category } from "~/domains/learning/categories/types/category"
+import { SuccessRateBadge } from "../../stats/components/SuccessRateBadge"
 
 type CategoryCardProps = {
   category: Category
@@ -31,8 +32,12 @@ export function CategoryCard({ category }: CategoryCardProps) {
             </p>
           </div>
 
-          <div className="mt-auto text-sm font-medium text-muted-foreground">
-            {category.questionsCount} questions
+          <div className="mt-auto space-y-3">
+            <p className="text-sm font-medium text-muted-foreground">
+              {category.questionsCount} questions
+            </p>
+
+            <SuccessRateBadge successRate={category.masteryRate ?? null} />
           </div>
         </CardContent>
       </Card>

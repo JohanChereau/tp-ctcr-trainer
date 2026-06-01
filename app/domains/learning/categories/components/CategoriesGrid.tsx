@@ -1,6 +1,7 @@
 import { learningCategories } from "~/domains/learning/data"
 
 import { CategoryCard } from "~/domains/learning/categories/components/CategoryCard"
+import { getCategoryMastery } from "../../stats/utils/getCategoryMastery"
 
 function getQuestionCount(category: {
   lessons: {
@@ -38,6 +39,8 @@ export function CategoriesGrid() {
               icon: category.icon,
 
               questionsCount: getQuestionCount(category),
+
+              masteryRate: getCategoryMastery(category),
             }}
           />
         ))}
