@@ -15,6 +15,9 @@ export function getQuestionExpectedAnswer(question: Question): string {
     case "single-choice":
       return question.correctOption
 
+    case "multiple-choice":
+      return question.correctOptions.join(", ")
+
     default:
       return ""
   }

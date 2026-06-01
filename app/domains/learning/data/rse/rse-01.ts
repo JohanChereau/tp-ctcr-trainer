@@ -221,6 +221,25 @@ avant la fin de la troisième semaine suivante.
 
   questions: [
     {
+      id: "rse01-q99999",
+
+      type: "multiple-choice",
+
+      question: "Parmi les affirmations suivantes, lesquelles sont correctes ?",
+
+      options: [
+        "Conduite continue : 4h30",
+        "Conduite hebdomadaire : 56h",
+        "Pause obligatoire : 20 min",
+        "Repos journalier normal : 8h",
+      ],
+
+      correctOptions: [
+        "Conduite continue : 4h30",
+        "Conduite hebdomadaire : 56h",
+      ],
+    },
+    {
       id: "rse01-q9999",
 
       type: "yes-no",

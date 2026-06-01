@@ -90,6 +90,33 @@ export function QuestionScreen({
           </div>
         )
 
+      case "multiple-choice":
+        const selectedOptions = answer ? (JSON.parse(answer) as string[]) : []
+
+        return (
+          <div className="flex flex-col gap-3">
+            {question.options.map((option) => {
+              const selected = selectedOptions.includes(option)
+
+              return (
+                <Button
+                  key={option}
+                  variant={selected ? "default" : "outline"}
+                  onClick={() => {
+                    const nextSelection = selected
+                      ? selectedOptions.filter((item) => item !== option)
+                      : [...selectedOptions, option]
+
+                    onAnswerChange(JSON.stringify(nextSelection))
+                  }}
+                >
+                  {option}
+                </Button>
+              )
+            })}
+          </div>
+        )
+
       default:
         return null
     }
@@ -98,7 +125,8 @@ export function QuestionScreen({
   const requiresValidationButton =
     question.type === "true-false" ||
     question.type === "yes-no" ||
-    question.type === "single-choice"
+    question.type === "single-choice" ||
+    question.type === "multiple-choice"
 
   return (
     <>

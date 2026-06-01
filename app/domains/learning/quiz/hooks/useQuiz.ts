@@ -147,6 +147,15 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
 
         break
 
+      case "multiple-choice":
+        const selected = answer ? (JSON.parse(answer) as string[]) : []
+
+        const expected = [...currentQuestion.correctOptions].sort()
+
+        correct = JSON.stringify(selected.sort()) === JSON.stringify(expected)
+
+        break
+
       default:
         correct = false
     }
