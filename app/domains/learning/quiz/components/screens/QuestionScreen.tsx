@@ -21,37 +21,69 @@ export function QuestionScreen({
   onAnswerChange,
   onSubmit,
 }: QuestionScreenProps) {
+  function renderAnswerInput() {
+    switch (question.type) {
+      case "text":
+      case "image":
+        return (
+          <AnswerInput
+            value={answer}
+            onChange={onAnswerChange}
+            onSubmit={onSubmit}
+          />
+        )
+
+      case "true-false":
+        return (
+          <div className="flex gap-4">
+            <Button
+              variant={answer === "true" ? "default" : "outline"}
+              onClick={() => onAnswerChange("true")}
+              className="flex-1"
+            >
+              Vrai
+            </Button>
+
+            <Button
+              variant={answer === "false" ? "default" : "outline"}
+              onClick={() => onAnswerChange("false")}
+              className="flex-1"
+            >
+              Faux
+            </Button>
+          </div>
+        )
+
+      case "single-choice":
+        return (
+          <div className="flex flex-col gap-3">
+            {question.options.map((option) => (
+              <Button
+                key={option}
+                variant={answer === option ? "default" : "outline"}
+                onClick={() => onAnswerChange(option)}
+              >
+                {option}
+              </Button>
+            ))}
+          </div>
+        )
+
+      default:
+        return null
+    }
+  }
+
+  const requiresValidationButton =
+    question.type === "true-false" || question.type === "single-choice"
+
   return (
     <>
       <QuestionCard question={question} />
 
-      {question.type === "true-false" ? (
-        <div className="flex gap-4">
-          <Button
-            variant={answer === "true" ? "default" : "outline"}
-            onClick={() => onAnswerChange("true")}
-            className="flex-1"
-          >
-            Vrai
-          </Button>
+      {renderAnswerInput()}
 
-          <Button
-            variant={answer === "false" ? "default" : "outline"}
-            onClick={() => onAnswerChange("false")}
-            className="flex-1"
-          >
-            Faux
-          </Button>
-        </div>
-      ) : (
-        <AnswerInput
-          value={answer}
-          onChange={onAnswerChange}
-          onSubmit={onSubmit}
-        />
-      )}
-
-      {question.type === "true-false" && answer && (
+      {requiresValidationButton && answer && (
         <Button onClick={onSubmit}>Valider</Button>
       )}
     </>

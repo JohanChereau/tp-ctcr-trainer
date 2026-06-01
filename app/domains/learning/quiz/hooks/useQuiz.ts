@@ -141,6 +141,11 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
 
         break
 
+      case "single-choice":
+        correct = answer === currentQuestion.correctOption
+
+        break
+
       default:
         correct = false
     }

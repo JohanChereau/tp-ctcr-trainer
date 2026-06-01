@@ -221,6 +221,20 @@ avant la fin de la troisième semaine suivante.
 
   questions: [
     {
+      id: "rse01-q999",
+
+      type: "single-choice",
+
+      question: "Quelle est la durée maximale de conduite hebdomadaire ?",
+
+      options: ["45 heures", "56 heures", "60 heures", "90 heures"],
+
+      correctOption: "56 heures",
+
+      explanation:
+        "La durée maximale de conduite hebdomadaire est de 56 heures.",
+    },
+    {
       id: "rse01-q99",
 
       type: "true-false",

@@ -12,6 +12,9 @@ export function getQuestionExpectedAnswer(question: Question): string {
     case "yes-no":
       return question.correctAnswer ? "Oui" : "Non"
 
+    case "single-choice":
+      return question.correctOption
+
     default:
       return ""
   }
