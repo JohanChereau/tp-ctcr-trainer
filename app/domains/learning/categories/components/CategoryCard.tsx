@@ -26,19 +26,19 @@ export function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link to={`/learning/${category.id}`} className="block">
       <Card className="group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg">
-        <CardContent className="flex h-full flex-col gap-6 p-8">
+        <CardContent className="flex h-full flex-col gap-5 p-6 md:gap-6 md:p-8">
           <div className="flex items-center justify-between">
-            <span className="text-3xl">{category.icon}</span>
+            <span className="text-2xl md:text-3xl">{category.icon}</span>
 
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </div>
 
           <div className="space-y-3">
-            <h3 className="line-clamp-2 min-h-16 text-xl font-semibold">
+            <h3 className="line-clamp-2 text-lg font-semibold md:min-h-16 md:text-xl">
               {category.title}
             </h3>
 
-            <p className="line-clamp-2 min-h-12 text-sm text-muted-foreground">
+            <p className="line-clamp-2 text-sm text-muted-foreground md:min-h-12">
               {category.description}
             </p>
           </div>
