@@ -38,7 +38,7 @@ export function AnswerInput({ value, onChange, onSubmit }: AnswerInputProps) {
             onSubmit()
           }
         }}
-        className="h-12 text-base"
+        className="h-12 border-neutral-300 text-base shadow-sm focus-visible:border-neutral-500 dark:border-input"
       />
 
       <Button size="lg" className="h-12 w-full" onClick={onSubmit}>
