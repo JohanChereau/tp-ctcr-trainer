@@ -151,7 +151,7 @@ export const fiche08: Lesson = {
     {
       id: "fep8-q9",
 
-      type: "image",
+      type: "text",
 
       question:
         "Je circule, à vide, avec un véhicule de 5 tonnes de poids à vide et de 15 tonnes de PTAC. À hauteur de ce signal, puis-je passer ?",

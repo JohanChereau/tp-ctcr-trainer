@@ -62,7 +62,7 @@ export const fiche14: Lesson = {
     {
       id: "fep14-q4",
 
-      type: "image",
+      type: "text",
 
       question: "Par temps sec, ce signal me concerne-t-il ?",
 

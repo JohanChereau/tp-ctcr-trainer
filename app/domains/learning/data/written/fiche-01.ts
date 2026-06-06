@@ -155,7 +155,7 @@ export const fiche01: Lesson = {
     {
       id: "fep1-q8",
 
-      type: "image",
+      type: "text",
 
       question:
         "Cette limitation de vitesse peut-elle concerner les véhicules autres que les trains routiers, trains doubles et véhicules articulés ?",

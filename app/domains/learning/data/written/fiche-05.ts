@@ -132,7 +132,7 @@ export const fiche05: Lesson = {
     {
       id: "fep5-q8",
 
-      type: "image",
+      type: "text",
 
       question:
         "Je circule avec un autocar d'une longueur de 12 m. Ce signal me concerne-t-il ?",

@@ -166,7 +166,7 @@ export const fiche02: Lesson = {
     {
       id: "fep2-q9",
 
-      type: "image",
+      type: "text",
 
       question:
         "Ce signal concerne uniquement les véhicules affectés au transport de marchandises excédant 3 500 kg de PTAC ?",

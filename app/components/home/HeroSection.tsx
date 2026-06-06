@@ -12,9 +12,8 @@ export function HeroSection() {
           </h1>
 
           <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Application pédagogique pour réviser vos fiches écrites, fiches
-            orales, la RSE et le vocabulaire dans une interface simple et
-            moderne.
+            Révisez efficacement votre titre professionnel avec des quiz clairs,
+            un suivi de progression et des modules pensés pour l'examen.
           </p>
         </div>
       </div>

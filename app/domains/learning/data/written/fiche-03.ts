@@ -158,7 +158,7 @@ export const fiche03: Lesson = {
     {
       id: "fep3-q9",
 
-      type: "image",
+      type: "text",
 
       question:
         "La descente dangereuse annoncée possède-t-elle un dénivelé de 100 mètres pour chaque kilomètre parcouru ?",

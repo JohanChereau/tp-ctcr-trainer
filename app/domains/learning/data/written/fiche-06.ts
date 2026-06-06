@@ -116,7 +116,7 @@ export const fiche06: Lesson = {
     {
       id: "fep6-q7",
 
-      type: "image",
+      type: "text",
 
       question:
         "Je circule avec un véhicule mesurant 2,30 m de large. À hauteur de ce signal, puis-je continuer sur cette route ?",

@@ -3,6 +3,10 @@ export type BaseQuestion = {
 
   question: string
 
+  image?: string
+
+  imageAlt?: string
+
   hint?: string
 
   explanation?: string
@@ -16,18 +20,6 @@ export type TextQuestion = BaseQuestion & {
   canonicalAnswer: string
 
   acceptedAnswers: string[]
-}
-
-export type ImageQuestion = BaseQuestion & {
-  type: "image"
-
-  canonicalAnswer: string
-
-  acceptedAnswers: string[]
-
-  image: string
-
-  imageAlt?: string
 }
 
 export type TrueFalseQuestion = BaseQuestion & {
@@ -60,7 +52,6 @@ export type MultipleChoiceQuestion = BaseQuestion & {
 
 export type Question =
   | TextQuestion
-  | ImageQuestion
   | TrueFalseQuestion
   | YesNoQuestion
   | SingleChoiceQuestion

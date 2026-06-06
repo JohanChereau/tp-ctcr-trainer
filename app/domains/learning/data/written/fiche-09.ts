@@ -113,7 +113,7 @@ export const fiche09: Lesson = {
     {
       id: "fep9-q7",
 
-      type: "image",
+      type: "text",
 
       question:
         "Cette signalisation de présignalisation peut annoncer une barrière de dégel : vrai ou faux ?",

@@ -56,7 +56,7 @@ export const fiche19: Lesson = {
     {
       id: "fep19-q4",
 
-      type: "image",
+      type: "text",
 
       question:
         "Mon véhicule a un poids à vide de 5 tonnes et un PTAC de 12 tonnes. Ce signal me concerne-t-il ?",

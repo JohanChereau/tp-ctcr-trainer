@@ -116,7 +116,7 @@ export const fiche10: Lesson = {
     {
       id: "fep10-q7",
 
-      type: "image",
+      type: "text",
 
       question:
         "Ce signal interdit-il l'accès aux véhicules mesurant plus de 3,50 m de hauteur, chargement compris ?",
