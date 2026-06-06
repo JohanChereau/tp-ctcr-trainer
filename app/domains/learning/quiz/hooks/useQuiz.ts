@@ -132,7 +132,6 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
 
     switch (currentQuestion.type) {
       case "text":
-      case "image":
         correct = isAnswerCorrect(answer, currentQuestion.acceptedAnswers)
         break
 

@@ -56,7 +56,7 @@ export const fiche20: Lesson = {
     {
       id: "fep20-q4",
 
-      type: "image",
+      type: "text",
 
       question:
         "Sur cette chaussée la hauteur des arbres est susceptible d'être inférieure à 4,30 m. Vrai ou faux ?",

@@ -29,7 +29,7 @@ export const fiche15: Lesson = {
     {
       id: "fep15-q2",
 
-      type: "image",
+      type: "text",
 
       question:
         "Ce signal interdit le dépassement à tous les véhicules dont le PTAC est supérieur à 3,5 tonnes ?",

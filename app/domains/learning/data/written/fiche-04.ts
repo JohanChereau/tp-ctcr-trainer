@@ -154,7 +154,7 @@ export const fiche04: Lesson = {
     {
       id: "fep4-q9",
 
-      type: "image",
+      type: "text",
 
       question: "Ce signal concerne-t-il uniquement les véhicules isolés ?",
 

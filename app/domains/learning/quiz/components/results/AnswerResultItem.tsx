@@ -19,11 +19,11 @@ export function AnswerResultItem({ answer }: AnswerResultItemProps) {
   return (
     <AccordionItem value={answer.question.id}>
       <AccordionTrigger>
-        <div className="flex items-center gap-3">
+        <div className="flex items-start gap-3">
           {answer.isCorrect ? (
-            <CheckCircle2 className="h-4 w-4 text-green-600" />
+            <CheckCircle2 className="h-4 w-4 shrink-0 text-green-600" />
           ) : (
-            <XCircle className="h-4 w-4 text-red-600" />
+            <XCircle className="h-4 w-4 shrink-0 text-red-600" />
           )}
 
           <span className="text-left font-medium">

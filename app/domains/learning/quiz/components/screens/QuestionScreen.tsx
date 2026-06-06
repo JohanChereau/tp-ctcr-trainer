@@ -24,7 +24,6 @@ export function QuestionScreen({
   function renderAnswerInput() {
     switch (question.type) {
       case "text":
-      case "image":
         return (
           <AnswerInput
             value={answer}

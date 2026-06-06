@@ -62,7 +62,7 @@ export const fiche17: Lesson = {
     {
       id: "fep17-q4",
 
-      type: "image",
+      type: "text",
 
       question:
         "Hors agglomération, ce signal est-il implanté 100 mètres avant le carrefour à sens giratoire ?",

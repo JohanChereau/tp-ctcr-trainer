@@ -62,7 +62,7 @@ export const fiche12: Lesson = {
     {
       id: "fep12-q4",
 
-      type: "image",
+      type: "text",
 
       question: "Ce signal m'indique un arrêt d'autobus. Vrai ou Faux ?",
 

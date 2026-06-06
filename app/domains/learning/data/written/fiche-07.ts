@@ -140,7 +140,7 @@ export const fiche07: Lesson = {
     {
       id: "fep7-q8",
 
-      type: "image",
+      type: "text",
 
       question:
         "Ce signal m'annonce-t-il une voie de détresse qui sera située sur ma gauche ?",

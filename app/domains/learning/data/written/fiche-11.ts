@@ -62,7 +62,7 @@ export const fiche11: Lesson = {
     {
       id: "fep11-q4",
 
-      type: "image",
+      type: "text",
 
       question:
         "Ce signal peut m'autoriser à emprunter une voie de bus en agglomération, si je réalise un service régulier interurbain. Vrai ou faux ?",

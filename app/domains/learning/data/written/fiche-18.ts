@@ -69,7 +69,7 @@ export const fiche18: Lesson = {
     {
       id: "fep18-q4",
 
-      type: "image",
+      type: "text",
 
       question:
         "Le poids indiqué dans ce signal concerne-t-il le poids maximal autorisé que peut supporter l'essieu ?",

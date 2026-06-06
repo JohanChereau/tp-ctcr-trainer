@@ -11,8 +11,8 @@ type QuestionCardProps = {
 export function QuestionCard({ question }: QuestionCardProps) {
   return (
     <Card className="overflow-hidden">
-      <CardContent className="p-8 md:p-10">
-        <div className="space-y-8">
+      <CardContent className="p-6 md:p-10">
+        <div className="space-y-6 md:space-y-8">
           {question.image && (
             <div className="overflow-hidden rounded-2xl border bg-muted">
               <img
@@ -23,7 +23,7 @@ export function QuestionCard({ question }: QuestionCardProps) {
             </div>
           )}
 
-          <h2 className="text-2xl leading-relaxed font-semibold tracking-tight md:text-3xl">
+          <h2 className="text-xl leading-relaxed font-semibold tracking-tight sm:text-2xl md:text-3xl">
             {question.question}
           </h2>
 

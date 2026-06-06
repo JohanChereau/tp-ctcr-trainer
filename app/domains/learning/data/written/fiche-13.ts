@@ -62,7 +62,7 @@ export const fiche13: Lesson = {
     {
       id: "fep13-q4",
 
-      type: "image",
+      type: "text",
 
       question:
         "Les véhicules de transport en commun tractant une remorque sont-ils concernés par ce signal ?",
