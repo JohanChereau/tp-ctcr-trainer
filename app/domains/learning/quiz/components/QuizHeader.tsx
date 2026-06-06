@@ -20,15 +20,17 @@ export function QuizHeader({
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-4">
-        <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+        <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
           <BookOpen className="size-6 text-primary" />
         </div>
 
-        <div>
-          <h1 className="text-4xl font-bold tracking-tight">{title}</h1>
+        <div className="min-w-0">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            {title}
+          </h1>
 
-          <p className="text-sm text-muted-foreground">
+          <p className="mt-2 text-sm text-muted-foreground">
             {currentQuestion + 1} sur {totalQuestions} questions
           </p>
         </div>
