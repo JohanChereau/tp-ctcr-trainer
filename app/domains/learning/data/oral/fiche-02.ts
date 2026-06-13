@@ -7,7 +7,7 @@ export const fiche02: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "j27SX8iOFeI",
+  youtubeVideoId: "UCRjQfmcGE4",
 
   markdown: `
 # Comportement en cas d'accident

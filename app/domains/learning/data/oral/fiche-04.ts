@@ -7,7 +7,7 @@ export const fiche04: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "lAtO3h9sjMw",
+  youtubeVideoId: "c8Yn4tyLZIg",
 
   markdown: `
 # Gestes et postures - Accidents du travail
@@ -38,6 +38,7 @@ Pour limiter ces risques :
 * Je ne saute jamais les marches.
 * Je vérifie que les marches ne sont pas glissantes.
 * Je me tiens correctement aux poignées prévues à cet effet.
+* Je conserve trois points d'appui lorsque cela est possible.
 
 ### Côté conducteur
 
@@ -108,34 +109,60 @@ L'accident de trajet est un accident qui survient :
 
 ## Quelques chiffres
 
-⚠️ Ces chiffres doivent être actualisés auprès du formateur.
+Selon les données les plus récentes :
 
-On recense approximativement :
-
-* 75 000 salariés.
-* 2 900 accidents du travail.
-* 3 décès.
-
-Concernant les accidents de circulation :
-
-* 95 conducteurs blessés.
-* 0 conducteur tué.
+* En 2024, 223 accidents corporels ont impliqué un autocar.
+* 36 personnes ont été tuées.
+* La moitié des personnes tuées l'ont été sur les routes hors agglomération et hors autoroute.
+* L'autocar reste environ 14 fois plus sûr que l'automobile.
 
 ---
 
 # 3. Dangers et risques
 
-## Véhicule à l'arrêt
+## Quelques chiffres
 
-Il faut retenir qu'il existe :
+Il est important de retenir qu'un véhicule lourd est :
 
-**13 fois plus d'accidents du travail lorsque le véhicule est à l'arrêt que lorsqu'il est en circulation.**
+**13 fois plus dangereux à l'arrêt qu'en circulation.**
 
-Par exemple :
+En 2022, on a recensé :
 
-* Environ 10 000 accidents par an concernent la montée ou la descente de cabine.
+* 2 914 accidents du travail.
+* 479 accidents de trajet.
 
-Je dois donc rester vigilant même lorsque le véhicule est immobilisé.
+Ces chiffres concernent plus de 100 000 conducteurs salariés.
+
+---
+
+## Principales causes d'accidents du travail
+
+Les accidents du travail sont principalement liés à :
+
+* La montée et la descente du véhicule.
+* Les chutes de hauteur.
+* Les chutes de plain-pied.
+* Les risques routiers.
+* Les agressions.
+
+---
+
+## Principales lésions observées
+
+Les accidents du travail peuvent entraîner :
+
+* Des traumatismes physiques ou psychiques.
+* Des entorses.
+* Des douleurs au dos, aux bras ou aux épaules.
+* Des intoxications.
+* Des allergies.
+* Des brûlures liées aux produits de nettoyage.
+
+Les causes les plus fréquentes sont :
+
+* Une mauvaise posture.
+* Une position assise prolongée.
+* Le port de charges lourdes (valises, vélos, etc.).
 
 ---
 
@@ -167,8 +194,15 @@ Les risques peuvent varier selon le type de véhicule.
 
 ## Accidents du travail
 
-* Ils peuvent survenir à l'arrêt comme en circulation.
-* Les accidents à l'arrêt sont beaucoup plus fréquents.
+* 2 914 accidents du travail recensés en 2022.
+* 479 accidents de trajet.
+* Les accidents peuvent survenir à l'arrêt comme en circulation.
+* Un véhicule lourd est 13 fois plus dangereux à l'arrêt qu'en circulation.
+
+## Sécurité
+
+* L'autocar est environ 14 fois plus sûr que l'automobile.
+* Même à l'arrêt, la vigilance reste indispensable.
 
 ## Principaux risques
 
@@ -176,6 +210,7 @@ Les risques peuvent varier selon le type de véhicule.
 * Coincements.
 * Écrasements.
 * Mauvaises manipulations de charges.
+* Risques routiers.
 
 `,
 
@@ -462,11 +497,138 @@ Les risques peuvent varier selon le type de véhicule.
 
       acceptedAnswers: [
         "dos droit et jambes",
+        "dos droit et jambes fléchies",
         "garder le dos droit",
         "utiliser les jambes",
         "dos droit utiliser les jambes",
         "dos droit et utiliser les jambes",
         "garder dos droit et utiliser les jambes",
+      ],
+    },
+    {
+      id: "fop04-q21",
+
+      type: "text",
+
+      question:
+        "Combien d'accidents du travail ont été recensés en 2022 chez les conducteurs salariés ?",
+
+      canonicalAnswer: "2914",
+
+      acceptedAnswers: ["2914", "2 914"],
+    },
+
+    {
+      id: "fop04-q22",
+
+      type: "text",
+
+      question: "Combien d'accidents de trajet ont été recensés en 2022 ?",
+
+      canonicalAnswer: "479",
+
+      acceptedAnswers: ["479"],
+    },
+
+    {
+      id: "fop04-q23",
+
+      type: "single-choice",
+
+      question:
+        "Combien de fois un véhicule lourd est-il plus dangereux à l'arrêt qu'en circulation ?",
+
+      options: ["5 fois", "10 fois", "13 fois", "20 fois"],
+
+      correctOption: "13 fois",
+    },
+
+    {
+      id: "fop04-q24",
+
+      type: "text",
+
+      question:
+        "Combien d'accidents corporels impliquant un autocar ont été recensés en 2024 ?",
+
+      canonicalAnswer: "223",
+
+      acceptedAnswers: ["223"],
+    },
+
+    {
+      id: "fop04-q25",
+
+      type: "text",
+
+      question:
+        "Combien de personnes ont été tuées dans les accidents corporels impliquant un autocar en 2024 ?",
+
+      canonicalAnswer: "36",
+
+      acceptedAnswers: ["36"],
+    },
+
+    {
+      id: "fop04-q26",
+
+      type: "single-choice",
+
+      question:
+        "L'autocar est environ combien de fois plus sûr que l'automobile ?",
+
+      options: ["5 fois", "8 fois", "10 fois", "14 fois"],
+
+      correctOption: "14 fois",
+    },
+
+    {
+      id: "fop04-q27",
+
+      type: "multiple-choice",
+
+      question: "Quelles sont les principales causes d'accidents du travail ?",
+
+      options: [
+        "Montée et descente du véhicule",
+        "Chutes de hauteur",
+        "Chutes de plain-pied",
+        "Risques routiers",
+        "Agressions",
+        "Panne moteur",
+      ],
+
+      correctOptions: [
+        "Montée et descente du véhicule",
+        "Chutes de hauteur",
+        "Chutes de plain-pied",
+        "Risques routiers",
+        "Agressions",
+      ],
+    },
+
+    {
+      id: "fop04-q28",
+
+      type: "multiple-choice",
+
+      question: "Quelles lésions peuvent résulter d'un accident du travail ?",
+
+      options: [
+        "Entorses",
+        "Douleurs au dos",
+        "Brûlures",
+        "Allergies",
+        "Intoxications",
+        "Myopie",
+      ],
+
+      correctOptions: [
+        "Entorses",
+        "Douleurs au dos",
+        "Brûlures",
+        "Allergies",
+        "Intoxications",
       ],
     },
   ],

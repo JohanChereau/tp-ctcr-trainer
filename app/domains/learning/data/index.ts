@@ -1,8 +1,14 @@
 import { writtenCategory } from "./written"
 import { rseCategory } from "./rse"
 import { oralCategory } from "./oral"
+import { socle1Category } from "./socle_1"
 
-export const learningCategories = [writtenCategory, rseCategory, oralCategory]
+export const learningCategories = [
+  writtenCategory,
+  rseCategory,
+  oralCategory,
+  socle1Category,
+]
 
 export function getCategoryById(categoryId: string) {
   return learningCategories.find((category) => category.id === categoryId)
