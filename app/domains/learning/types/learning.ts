@@ -73,7 +73,12 @@ export type Lesson = {
   youtubeVideoId?: string
 }
 
-export type LearningCategoryType = "written" | "oral" | "rse" | "vocabulary"
+export type LearningCategoryType =
+  | "written"
+  | "oral"
+  | "rse"
+  | "vocabulary"
+  | "Socle 1"
 
 export type LearningCategory = {
   id: string

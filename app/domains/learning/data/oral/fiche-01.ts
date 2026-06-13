@@ -7,7 +7,7 @@ export const fiche01: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "fSytVMpDL-Q",
+  youtubeVideoId: "KuV5Bdd9Aew",
 
   markdown: `
 # Conduite dans des conditions atmosphériques difficiles, route de nuit

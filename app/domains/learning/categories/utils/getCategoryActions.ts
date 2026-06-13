@@ -99,6 +99,34 @@ export function getCategoryActions(
         },
       ]
 
+    case "Socle 1":
+      return [
+        {
+          title: "Consulter les leçons",
+          description: "Parcourez les contenus pédagogiques du socle 1.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+
+        {
+          title: "Quiz Socle 1",
+          description:
+            "Testez vos connaissances sur les vérifications de sécurité.",
+          href: `/learning/${category.id}/quiz`,
+          icon: GraduationCap,
+        },
+
+        {
+          title: "Réviser mes points faibles",
+          description:
+            "Travaillez uniquement les notions du socle 1 où vous avez le plus de difficultés.",
+          href: `/learning/${category.id}/weak-questions`,
+          icon: Flame,
+          badge: weakQuestionsCount,
+          iconClassName: "text-orange-500",
+        },
+      ]
+
     default:
       return []
   }
