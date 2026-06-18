@@ -1,4 +1,10 @@
-import { BookOpen, GraduationCap, FileText, Flame } from "lucide-react"
+import {
+  BookOpen,
+  GraduationCap,
+  FileText,
+  Flame,
+  ScrollText,
+} from "lucide-react"
 
 import type { LearningCategory } from "~/domains/learning/types/learning"
 
@@ -96,6 +102,15 @@ export function getCategoryActions(
           icon: Flame,
           badge: weakQuestionsCount,
           iconClassName: "text-orange-500",
+        },
+        {
+          title: "Carte d'examen",
+
+          description: "Tirez une fiche orale au hasard comme à l'examen.",
+
+          href: `/learning/${category.id}/oral-card`,
+
+          icon: ScrollText,
         },
       ]
 
