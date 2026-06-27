@@ -1,9 +1,11 @@
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 
+import { parseMarkdown } from "./markdown/parseMarkdown"
+import { VideoEmbed } from "./VideoEmbed"
+
 type MarkdownLessonViewerProps = {
   markdown: string
-
   youtubeVideoId?: string
 }
 
@@ -11,23 +13,44 @@ export function MarkdownLessonViewer({
   markdown,
   youtubeVideoId,
 }: MarkdownLessonViewerProps) {
+  const parts = parseMarkdown(markdown)
+
   return (
     <div className="space-y-8">
       {youtubeVideoId && (
-        <div className="overflow-hidden rounded-xl border">
-          <div className="aspect-video">
-            <iframe
-              className="h-full w-full"
-              src={`https://www.youtube.com/embed/${youtubeVideoId}`}
-              title="Lesson video"
-              allowFullScreen
-            />
-          </div>
-        </div>
+        <VideoEmbed
+          provider="youtube"
+          videoId={youtubeVideoId}
+          title="Lesson video"
+        />
       )}
 
       <article className="prose max-w-none prose-neutral dark:prose-invert">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+        <div className="space-y-6">
+          {parts.map((part, index) => {
+            if (part.type === "video") {
+              if (!part.videoId) {
+                return null
+              }
+
+              return (
+                <VideoEmbed
+                  key={index}
+                  provider={part.provider}
+                  videoId={part.videoId}
+                  hash={part.hash}
+                  start={part.start}
+                />
+              )
+            }
+
+            return (
+              <ReactMarkdown key={index} remarkPlugins={[remarkGfm]}>
+                {part.content}
+              </ReactMarkdown>
+            )
+          })}
+        </div>
       </article>
     </div>
   )
