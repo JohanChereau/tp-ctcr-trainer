@@ -28,5 +28,8 @@ export default [
     "pages/learning/weak-questions-page.tsx"
   ),
 
-  route("learning/:categoryId/oral-card", "pages/learning/oral-exam-page.tsx"),
+  route(
+    "learning/:categoryId/oral-card/:lessonId?",
+    "pages/learning/oral-exam-page.tsx"
+  ),
 ] satisfies RouteConfig

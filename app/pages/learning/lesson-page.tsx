@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router"
 
-import { ArrowRight, BookOpen, GraduationCap } from "lucide-react"
+import { ArrowRight, BookOpen, GraduationCap, ScrollText } from "lucide-react"
 
 import { getCategoryById, getLessonById } from "~/domains/learning/data"
 
@@ -13,7 +13,6 @@ export default function LessonPage() {
   const { categoryId, lessonId } = useParams()
 
   const category = getCategoryById(categoryId ?? "")
-
   const lesson = getLessonById(categoryId ?? "", lessonId ?? "")
 
   if (!category || !lesson) {
@@ -23,6 +22,8 @@ export default function LessonPage() {
       </AppLayout>
     )
   }
+
+  const isOralCategory = category.type === "oral"
 
   return (
     <AppLayout>
@@ -73,6 +74,26 @@ export default function LessonPage() {
               </CardContent>
             </Card>
           </Link>
+
+          {isOralCategory && (
+            <Link to={`/learning/${category.id}/oral-card/${lesson.id}`}>
+              <Card className="group h-full cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg">
+                <CardContent className="space-y-4 p-8">
+                  <div className="flex items-center justify-between">
+                    <ScrollText className="h-6 w-6" />
+
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+
+                  <h2 className="text-xl font-semibold">Mode examen</h2>
+
+                  <p className="text-muted-foreground">
+                    Consultez cette fiche orale dans sa version examen.
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+          )}
         </div>
       </div>
     </AppLayout>
