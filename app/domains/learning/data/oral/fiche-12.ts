@@ -7,7 +7,10 @@ export const fiche12: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "kOR-LmKqS0w",
+  video: {
+    provider: "youtube",
+    videoId: "kOR-LmKqS0w",
+  },
 
   markdown: `
 # Systèmes de sécurité et d'aides à la conduite

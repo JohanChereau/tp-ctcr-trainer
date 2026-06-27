@@ -7,7 +7,10 @@ export const fiche03: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "pO5GXhRdTUY",
+  video: {
+    provider: "youtube",
+    videoId: "pO5GXhRdTUY",
+  },
 
   markdown: `
 # Conduite en montagne ou en zone accidentée

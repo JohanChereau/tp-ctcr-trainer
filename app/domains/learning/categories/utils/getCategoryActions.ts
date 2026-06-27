@@ -50,18 +50,19 @@ export function getCategoryActions(
         },
       ]
 
-    case "rse":
+    case "socle 1":
       return [
         {
           title: "Consulter les leçons",
-          description: "Parcourez les contenus pédagogiques de la RSE.",
+          description: "Parcourez les contenus pédagogiques du socle 1.",
           href: `/learning/${category.id}/revision`,
           icon: BookOpen,
         },
 
         {
-          title: "Quiz RSE",
-          description: "Testez vos connaissances.",
+          title: "Quiz Socle 1",
+          description:
+            "Testez vos connaissances sur les vérifications de sécurité.",
           href: `/learning/${category.id}/quiz`,
           icon: GraduationCap,
         },
@@ -69,11 +70,21 @@ export function getCategoryActions(
         {
           title: "Réviser mes points faibles",
           description:
-            "Travaillez uniquement les notions de RSE où vous avez le plus de difficultés.",
+            "Travaillez uniquement les notions du socle 1 où vous avez le plus de difficultés.",
           href: `/learning/${category.id}/weak-questions`,
           icon: Flame,
           badge: weakQuestionsCount,
           iconClassName: "text-orange-500",
+        },
+      ]
+
+    case "themes":
+      return [
+        {
+          title: "Consulter les thèmes",
+          description: "Parcourez les fiches de thèmes du véhicule.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
         },
       ]
 
@@ -114,19 +125,18 @@ export function getCategoryActions(
         },
       ]
 
-    case "Socle 1":
+    case "rse":
       return [
         {
           title: "Consulter les leçons",
-          description: "Parcourez les contenus pédagogiques du socle 1.",
+          description: "Parcourez les contenus pédagogiques de la RSE.",
           href: `/learning/${category.id}/revision`,
           icon: BookOpen,
         },
 
         {
-          title: "Quiz Socle 1",
-          description:
-            "Testez vos connaissances sur les vérifications de sécurité.",
+          title: "Quiz RSE",
+          description: "Testez vos connaissances.",
           href: `/learning/${category.id}/quiz`,
           icon: GraduationCap,
         },
@@ -134,7 +144,7 @@ export function getCategoryActions(
         {
           title: "Réviser mes points faibles",
           description:
-            "Travaillez uniquement les notions du socle 1 où vous avez le plus de difficultés.",
+            "Travaillez uniquement les notions de RSE où vous avez le plus de difficultés.",
           href: `/learning/${category.id}/weak-questions`,
           icon: Flame,
           badge: weakQuestionsCount,

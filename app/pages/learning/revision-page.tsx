@@ -39,7 +39,7 @@ export default function RevisionPage() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid auto-rows-fr gap-6 md:grid-cols-2 xl:grid-cols-3">
           {category.lessons.map((lesson) => {
             const successRate = getLessonSuccessRate(lesson)
 
@@ -47,24 +47,27 @@ export default function RevisionPage() {
               <Link
                 key={lesson.id}
                 to={`/learning/${category.id}/${lesson.id}`}
+                className="h-full"
               >
-                <Card className="group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg">
-                  <CardContent className="space-y-4 p-8">
-                    <div className="flex items-center justify-between">
+                <Card className="group h-full cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <CardContent className="flex h-full flex-col p-8">
+                    <div className="flex items-center justify-between gap-4">
                       <span className="text-sm text-muted-foreground">
                         Fiche
                       </span>
 
-                      <div className="flex items-center gap-2">
+                      <div className="flex shrink-0 items-center gap-2">
                         <SuccessRateBadge successRate={successRate} />
 
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
 
-                    <h2 className="text-xl font-semibold">{lesson.title}</h2>
+                    <h2 className="mt-4 text-xl font-semibold">
+                      {lesson.title}
+                    </h2>
 
-                    <p className="text-sm text-muted-foreground">
+                    <p className="mt-auto pt-6 text-sm text-muted-foreground">
                       {lesson.questions.length} questions
                     </p>
                   </CardContent>

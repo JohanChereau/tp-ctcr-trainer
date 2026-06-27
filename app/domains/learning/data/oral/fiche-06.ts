@@ -7,7 +7,10 @@ export const fiche06: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "g1UVQCceG78",
+  video: {
+    provider: "youtube",
+    videoId: "g1UVQCceG78",
+  },
 
   markdown: `
 # Dépassement

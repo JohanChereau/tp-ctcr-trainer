@@ -7,7 +7,10 @@ export const fiche07: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "TCwBLu7BoVw",
+  video: {
+    provider: "youtube",
+    videoId: "TCwBLu7BoVw",
+  },
 
   markdown: `
 # Dynamique du véhicule

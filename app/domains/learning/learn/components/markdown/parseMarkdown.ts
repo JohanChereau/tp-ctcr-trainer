@@ -1,4 +1,7 @@
-type VideoProvider = "youtube" | "vimeo"
+import type {
+  LessonVideo,
+  VideoProvider,
+} from "~/domains/learning/types/learning"
 
 type MarkdownTextPart = {
   type: "text"
@@ -7,11 +10,7 @@ type MarkdownTextPart = {
 
 type MarkdownVideoPart = {
   type: "video"
-  provider: VideoProvider
-  videoId: string
-  hash?: string
-  start?: number
-}
+} & LessonVideo
 
 export type MarkdownPart = MarkdownTextPart | MarkdownVideoPart
 
@@ -36,13 +35,12 @@ export function parseMarkdown(markdown: string): MarkdownPart[] {
 
       return {
         type: "video",
-        provider,
         ...parseVideoValue(provider, value),
       }
     })
 }
 
-function parseVideoValue(provider: VideoProvider, value: string) {
+function parseVideoValue(provider: VideoProvider, value: string): LessonVideo {
   if (provider === "youtube") {
     return parseYoutubeValue(value)
   }
@@ -50,7 +48,7 @@ function parseVideoValue(provider: VideoProvider, value: string) {
   return parseVimeoValue(value)
 }
 
-function parseYoutubeValue(value: string) {
+function parseYoutubeValue(value: string): LessonVideo {
   const start = parseStartTime(value)
 
   try {
@@ -58,6 +56,7 @@ function parseYoutubeValue(value: string) {
 
     if (url.hostname.includes("youtu.be")) {
       return {
+        provider: "youtube",
         videoId: cleanVideoId(url.pathname.replace("/", "")),
         start,
       }
@@ -67,6 +66,7 @@ function parseYoutubeValue(value: string) {
 
     if (videoId) {
       return {
+        provider: "youtube",
         videoId: cleanVideoId(videoId),
         start,
       }
@@ -76,6 +76,7 @@ function parseYoutubeValue(value: string) {
 
     if (embedMatch) {
       return {
+        provider: "youtube",
         videoId: cleanVideoId(embedMatch[1]),
         start,
       }
@@ -85,12 +86,13 @@ function parseYoutubeValue(value: string) {
   }
 
   return {
+    provider: "youtube",
     videoId: cleanVideoId(removeTimeFragment(value)),
     start,
   }
 }
 
-function parseVimeoValue(value: string) {
+function parseVimeoValue(value: string): LessonVideo {
   const start = parseStartTime(value)
 
   try {
@@ -99,6 +101,7 @@ function parseVimeoValue(value: string) {
     const pathParts = url.pathname.split("/").filter(Boolean)
 
     return {
+      provider: "vimeo",
       videoId: pathParts[0] ?? "",
       hash: url.searchParams.get("h") ?? pathParts[1],
       start,
@@ -114,13 +117,14 @@ function parseVimeoValue(value: string) {
     .filter(Boolean)
 
   return {
+    provider: "vimeo",
     videoId,
     hash,
     start,
   }
 }
 
-function parseStartTime(value: string): number | undefined {
+function parseStartTime(value: string): LessonVideo["start"] | undefined {
   try {
     const url = new URL(value)
 
@@ -129,29 +133,23 @@ function parseStartTime(value: string): number | undefined {
       url.searchParams.get("start") ??
       url.hash.replace("#t=", "")
 
-    return time ? parseTimeToSeconds(time) : undefined
+    return time ? normalizeStartTime(time) : undefined
   } catch {
     const hashMatch = value.match(/#t=([^&]+)/)
     const queryMatch = value.match(/[?&](?:t|start)=([^&]+)/)
 
     const time = hashMatch?.[1] ?? queryMatch?.[1]
 
-    return time ? parseTimeToSeconds(time) : undefined
+    return time ? normalizeStartTime(time) : undefined
   }
 }
 
-function parseTimeToSeconds(value: string): number {
+function normalizeStartTime(value: string): LessonVideo["start"] {
   if (/^\d+$/.test(value)) {
     return Number(value)
   }
 
-  const hours = value.match(/(\d+)h/)?.[1]
-  const minutes = value.match(/(\d+)m/)?.[1]
-  const seconds = value.match(/(\d+)s/)?.[1]
-
-  return (
-    Number(hours ?? 0) * 3600 + Number(minutes ?? 0) * 60 + Number(seconds ?? 0)
-  )
+  return value as LessonVideo["start"]
 }
 
 function removeTimeFragment(value: string) {

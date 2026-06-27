@@ -7,7 +7,10 @@ export const fiche10: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "r1DmThMwh_g",
+  video: {
+    provider: "youtube",
+    videoId: "r1DmThMwh_g",
+  },
 
   markdown: `
 # Porte-à-faux et angles morts

@@ -7,6 +7,13 @@ export const socle101: Lesson = {
 
   contentType: "markdown",
 
+  video: {
+    provider: "vimeo",
+    videoId: "395399562",
+    hash: "383d21c8dd",
+    start: "0m54s",
+  },
+
   markdown: `
 # Socle 1 - Vérifications courantes de sécurité
 
@@ -191,15 +198,6 @@ Feux stop : pas d'anomalie.
 ---
 
 # Socle 1 terminé
-
----
-
-## Ressources complémentaires
-
-🎥 Vidéo AFTRAL - Vérifications de sécurité véhicule voyageurs
-
-https://vimeo.com/395399562/383d21c8dd
-
   `,
 
   questions: [

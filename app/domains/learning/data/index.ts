@@ -2,12 +2,14 @@ import { writtenCategory } from "./written"
 import { rseCategory } from "./rse"
 import { oralCategory } from "./oral"
 import { socle1Category } from "./socle_1"
+import { themesCategory } from "./themes"
 
 export const learningCategories = [
   writtenCategory,
-  rseCategory,
-  oralCategory,
   socle1Category,
+  themesCategory,
+  oralCategory,
+  rseCategory,
 ]
 
 export function getCategoryById(categoryId: string) {

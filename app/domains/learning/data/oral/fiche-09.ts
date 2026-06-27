@@ -7,7 +7,10 @@ export const fiche09: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "jfLQYvLZ2MA",
+  video: {
+    provider: "youtube",
+    videoId: "jfLQYvLZ2MA",
+  },
 
   markdown: `
 # Écoconduite - Conduite citoyenne

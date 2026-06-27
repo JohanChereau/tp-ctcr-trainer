@@ -1,3 +1,5 @@
+import type { LessonVideo } from "~/domains/learning/types/learning"
+
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 
@@ -6,24 +8,18 @@ import { VideoEmbed } from "./VideoEmbed"
 
 type MarkdownLessonViewerProps = {
   markdown: string
-  youtubeVideoId?: string
+  video?: LessonVideo
 }
 
 export function MarkdownLessonViewer({
   markdown,
-  youtubeVideoId,
+  video,
 }: MarkdownLessonViewerProps) {
   const parts = parseMarkdown(markdown)
 
   return (
     <div className="space-y-8">
-      {youtubeVideoId && (
-        <VideoEmbed
-          provider="youtube"
-          videoId={youtubeVideoId}
-          title="Lesson video"
-        />
-      )}
+      {video && <VideoEmbed {...video} title="Lesson video" />}
 
       <article className="prose max-w-none prose-neutral dark:prose-invert">
         <div className="space-y-6">
@@ -33,15 +29,7 @@ export function MarkdownLessonViewer({
                 return null
               }
 
-              return (
-                <VideoEmbed
-                  key={index}
-                  provider={part.provider}
-                  videoId={part.videoId}
-                  hash={part.hash}
-                  start={part.start}
-                />
-              )
+              return <VideoEmbed key={index} {...part} />
             }
 
             return (

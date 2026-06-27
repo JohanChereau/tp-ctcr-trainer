@@ -1,10 +1,6 @@
-type VideoProvider = "youtube" | "vimeo"
+import type { LessonVideo } from "~/domains/learning/types/learning"
 
-type VideoEmbedProps = {
-  provider: VideoProvider
-  videoId: string
-  hash?: string
-  start?: number
+type VideoEmbedProps = LessonVideo & {
   title?: string
 }
 
@@ -15,10 +11,12 @@ export function VideoEmbed({
   start,
   title,
 }: VideoEmbedProps) {
+  const startInSeconds = parseVideoStart(start)
+
   const src =
     provider === "youtube"
-      ? buildYoutubeSrc(videoId, start)
-      : buildVimeoSrc(videoId, hash, start)
+      ? buildYoutubeSrc(videoId, startInSeconds)
+      : buildVimeoSrc(videoId, hash, startInSeconds)
 
   return (
     <div className="not-prose overflow-hidden rounded-xl border bg-muted">
@@ -58,4 +56,18 @@ function buildVimeoSrc(videoId: string, hash?: string, start?: number) {
   const fragment = start ? `#t=${start}s` : ""
 
   return `https://player.vimeo.com/video/${videoId}${query ? `?${query}` : ""}${fragment}`
+}
+
+function parseVideoStart(start?: LessonVideo["start"]) {
+  if (!start) return undefined
+
+  if (typeof start === "number") return start
+
+  const hours = start.match(/(\d+)h/)?.[1]
+  const minutes = start.match(/(\d+)m/)?.[1]
+  const seconds = start.match(/(\d+)s/)?.[1]
+
+  return (
+    Number(hours ?? 0) * 3600 + Number(minutes ?? 0) * 60 + Number(seconds ?? 0)
+  )
 }

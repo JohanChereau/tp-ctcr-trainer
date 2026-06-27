@@ -7,7 +7,10 @@ export const fiche11: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "Qf2Y1sZ-94g",
+  video: {
+    provider: "youtube",
+    videoId: "Qf2Y1sZ-94g",
+  },
 
   markdown: `
 # Comportement en tunnels et aux passages à niveau

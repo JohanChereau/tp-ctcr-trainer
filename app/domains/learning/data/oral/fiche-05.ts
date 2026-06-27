@@ -7,7 +7,10 @@ export const fiche05: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "QkXF_qTzJyg",
+  video: {
+    provider: "youtube",
+    videoId: "QkXF_qTzJyg",
+  },
 
   markdown: `
 # Chargement - Surcharge
