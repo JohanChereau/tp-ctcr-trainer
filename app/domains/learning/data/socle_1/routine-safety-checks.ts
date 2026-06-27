@@ -3,7 +3,7 @@ import type { Lesson } from "../../types/learning"
 export const socle101: Lesson = {
   id: "socle1-01",
 
-  title: "Vérifications courantes de sécurité",
+  title: "Socle 1 - Vérifications courantes de sécurité",
 
   contentType: "markdown",
 

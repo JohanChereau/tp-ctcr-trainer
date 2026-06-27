@@ -78,6 +78,26 @@ export function getCategoryActions(
         },
       ]
 
+    case "socle 2":
+      return [
+        {
+          title: "Consulter les leçons",
+          description: "Parcourez les contenus pédagogiques du socle 2.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+      ]
+
+    case "maneuvers":
+      return [
+        {
+          title: "Consulter les leçons",
+          description: "Parcourez les contenus pédagogiques des manœuvres.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+      ]
+
     case "themes":
       return [
         {

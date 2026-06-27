@@ -3,12 +3,16 @@ import { rseCategory } from "./rse"
 import { oralCategory } from "./oral"
 import { socle1Category } from "./socle_1"
 import { themesCategory } from "./themes"
+import { socle2Category } from "./socle-2"
+import { maneuversCategory } from "./maneuvers"
 
 export const learningCategories = [
   writtenCategory,
   socle1Category,
   themesCategory,
   oralCategory,
+  socle2Category,
+  maneuversCategory,
   rseCategory,
 ]
 

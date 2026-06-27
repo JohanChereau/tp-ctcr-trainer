@@ -97,7 +97,9 @@ export type LearningCategoryType =
   | "rse"
   | "vocabulary"
   | "socle 1"
+  | "socle 2"
   | "themes"
+  | "maneuvers"
 
 export type LearningCategory = {
   id: string
