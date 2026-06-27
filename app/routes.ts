@@ -32,4 +32,7 @@ export default [
     "learning/:categoryId/oral-card/:lessonId?",
     "pages/learning/oral-exam-page.tsx"
   ),
+  route("training-calendar", "pages/training-calendar-page.tsx"),
+
+  route("api/training-calendar", "routes/api.training-calendar.ts"),
 ] satisfies RouteConfig

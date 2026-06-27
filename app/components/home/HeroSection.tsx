@@ -14,6 +14,8 @@ import { Button } from "~/components/ui/button"
 import { getCategoryById } from "~/domains/learning/data"
 import { useLearningDashboardStats } from "~/domains/learning/stats/hooks/useLearningDashboardStats"
 import { useWeakQuestionsCount } from "~/domains/learning/stats/hooks/useWeakQuestionsCount"
+import { TrainingCalendarCard } from "~/domains/training-calendar/components/TrainingCalendarCard"
+import { useTrainingCalendar } from "~/domains/training-calendar/hooks/useTrainingCalendar"
 
 export function HeroSection() {
   const { answeredQuestionsCount, totalAnswers, successRate } =
@@ -23,36 +25,44 @@ export function HeroSection() {
 
   const writtenCategory = getCategoryById("fiches-ecrites-plateau")
 
+  const {
+    data: trainingCalendar,
+    loading: trainingCalendarLoading,
+    error: trainingCalendarError,
+  } = useTrainingCalendar()
+
   return (
     <section className="pb-10">
       <div className="relative overflow-hidden rounded-3xl border bg-linear-to-br from-background via-background to-muted/40 p-6 md:p-12">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--primary)/0.12),transparent_42%)]" />
 
-        <div className="relative grid gap-8 lg:grid-cols-[1.4fr_0.9fr] lg:items-center">
-          <div className="space-y-6 md:space-y-8">
-            <div className="inline-flex max-w-full items-center gap-2 rounded-full border bg-background/80 px-4 py-2 text-xs font-medium backdrop-blur md:text-sm">
-              <BusFront className="size-4 shrink-0 text-primary" />
-              <span className="line-clamp-2">
-                TP Conducteur de Transport en Commun sur Route
-              </span>
-            </div>
-
-            <div className="space-y-4">
-              <h1 className="max-w-2xl text-4xl leading-[0.95] font-black tracking-tight sm:text-5xl md:text-6xl">
-                Réviser moins au hasard.
-                <span className="block text-primary">
-                  Progresser pour de vrai.
+        <div className="relative grid gap-8 lg:grid-cols-[1.4fr_0.9fr] lg:items-stretch">
+          <div className="flex flex-col gap-8">
+            <div className="space-y-6 md:space-y-8">
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border bg-background/80 px-4 py-2 text-xs font-medium backdrop-blur md:text-sm">
+                <BusFront className="size-4 shrink-0 text-primary" />
+                <span className="line-clamp-2">
+                  TP Conducteur de Transport en Commun sur Route
                 </span>
-              </h1>
+              </div>
 
-              <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                Fiches, quiz, examens blancs, oraux, socles, thèmes et manœuvres
-                réunis dans une seule application pour préparer le TP CTCR
-                sereinement.
-              </p>
+              <div className="space-y-4">
+                <h1 className="max-w-2xl text-4xl leading-[0.95] font-black tracking-tight sm:text-5xl md:text-6xl">
+                  Réviser moins au hasard.
+                  <span className="block text-primary">
+                    Progresser pour de vrai.
+                  </span>
+                </h1>
+
+                <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                  Fiches, quiz, examens blancs, oraux, socles, thèmes et
+                  manœuvres réunis dans une seule application pour préparer le
+                  TP CTCR sereinement.
+                </p>
+              </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-3">
+            <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-3 lg:mt-auto">
               <HeroFeature
                 icon={BookOpen}
                 title="Leçons"
@@ -107,8 +117,15 @@ export function HeroSection() {
                 />
               </div>
 
+              <TrainingCalendarCard
+                today={trainingCalendar?.today ?? []}
+                tomorrow={trainingCalendar?.tomorrow ?? []}
+                loading={trainingCalendarLoading}
+                error={trainingCalendarError}
+              />
+
               <div className="rounded-2xl border bg-muted/30 p-4">
-                <div className="mb-2 flex items-center gap-2">
+                <div className="mb-3 flex items-center gap-2">
                   <Target className="size-4 text-primary" />
                   <p className="text-sm font-semibold">Mission du jour</p>
                 </div>
