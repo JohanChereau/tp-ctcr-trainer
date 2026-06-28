@@ -1,5 +1,4 @@
-import type { Lesson } from "~/domains/learning/types/learning"
-import type { Question } from "~/domains/learning/types/learning"
+import type { Lesson, Question } from "~/domains/learning/types/learning"
 
 import {
   Accordion,
@@ -19,7 +18,7 @@ type QuestionLessonViewerProps = {
 
 export function QuestionLessonViewer({ lesson }: QuestionLessonViewerProps) {
   return (
-    <Accordion type="multiple" className="space-y-5">
+    <Accordion type="multiple" className="space-y-4">
       {lesson.questions.map((question, index) => (
         <QuestionAccordionItem
           key={question.id}
@@ -52,17 +51,19 @@ function QuestionAccordionItem({
   return (
     <AccordionItem
       value={question.id}
-      className="overflow-hidden rounded-xl border bg-card shadow-sm transition-shadow hover:shadow-md"
+      className="overflow-hidden rounded-3xl border bg-background/80 shadow-sm transition-all hover:bg-background hover:shadow-md"
     >
-      <AccordionTrigger className="px-6 py-5 text-left hover:no-underline">
-        <div className="flex w-full items-start justify-between gap-6">
-          <div className="flex min-w-0 gap-3">
-            <span className="font-semibold text-muted-foreground">
-              {index + 1}.
-            </span>
+      <AccordionTrigger className="px-5 py-5 text-left hover:no-underline md:px-6">
+        <div className="flex w-full items-start justify-between gap-4 md:gap-6">
+          <div className="flex min-w-0 gap-3 md:gap-4">
+            <div className="flex size-8 shrink-0 items-center justify-center rounded-full border bg-muted/40 text-sm font-semibold text-muted-foreground">
+              {index + 1}
+            </div>
 
             <div className="min-w-0 space-y-2">
-              <span className="block text-left">{question.question}</span>
+              <span className="block text-left leading-relaxed font-medium">
+                {question.question}
+              </span>
 
               <ProgressBadge
                 status={status}
@@ -77,56 +78,74 @@ function QuestionAccordionItem({
             <img
               src={question.image}
               alt={question.imageAlt}
-              className="h-20 w-20 shrink-0 rounded-md border bg-background object-contain md:h-24 md:w-24"
+              className="h-16 w-16 shrink-0 rounded-xl border bg-background object-contain md:h-24 md:w-24"
             />
           )}
         </div>
       </AccordionTrigger>
 
-      <AccordionContent className="space-y-6 px-6 pb-6">
-        <div className="space-y-2">
-          <p className="text-sm font-medium tracking-wide text-muted-foreground uppercase">
-            Réponse
-          </p>
-
-          <div className="rounded-md bg-muted p-3">
+      <AccordionContent className="px-5 pb-5 md:px-6 md:pb-6">
+        <div className="space-y-5">
+          <QuestionInfoBlock title="Réponse" variant="muted">
             {getQuestionExpectedAnswer(question)}
-          </div>
+          </QuestionInfoBlock>
+
+          {question.explanation && (
+            <QuestionInfoBlock title="Explication">
+              {question.explanation}
+            </QuestionInfoBlock>
+          )}
+
+          {question.hint && (
+            <QuestionInfoBlock title="Indice">
+              {question.hint}
+            </QuestionInfoBlock>
+          )}
+
+          {question.tags && question.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 pt-1">
+              {question.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border bg-muted/30 px-2.5 py-1 text-xs font-medium text-muted-foreground"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
-
-        {question.explanation && (
-          <div className="space-y-2">
-            <p className="text-sm font-medium tracking-wide text-muted-foreground uppercase">
-              Explication
-            </p>
-
-            <div className="rounded-md border p-3">{question.explanation}</div>
-          </div>
-        )}
-
-        {question.hint && (
-          <div className="space-y-2">
-            <p className="text-sm font-medium tracking-wide text-muted-foreground uppercase">
-              Indice
-            </p>
-
-            <div className="rounded-md border p-3">{question.hint}</div>
-          </div>
-        )}
-
-        {question.tags && question.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {question.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border px-2 py-1 text-xs text-muted-foreground"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
       </AccordionContent>
     </AccordionItem>
+  )
+}
+
+type QuestionInfoBlockProps = {
+  title: string
+  children: React.ReactNode
+  variant?: "default" | "muted"
+}
+
+function QuestionInfoBlock({
+  title,
+  children,
+  variant = "default",
+}: QuestionInfoBlockProps) {
+  return (
+    <section className="space-y-2">
+      <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+        {title}
+      </p>
+
+      <div
+        className={
+          variant === "muted"
+            ? "rounded-2xl border bg-muted/40 p-4 text-sm leading-relaxed"
+            : "rounded-2xl border bg-background p-4 text-sm leading-relaxed"
+        }
+      >
+        {children}
+      </div>
+    </section>
   )
 }

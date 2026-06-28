@@ -66,7 +66,10 @@ export function HomeDashboard() {
         />
 
         {writtenCategory && (
-          <DailyMissionCard categoryId={writtenCategory.id} />
+          <DailyMissionCard
+            categoryId={writtenCategory.id}
+            weakQuestionsCount={weakQuestionsCount}
+          />
         )}
       </div>
     </div>
