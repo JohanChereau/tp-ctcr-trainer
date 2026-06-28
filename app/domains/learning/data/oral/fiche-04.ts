@@ -7,7 +7,10 @@ export const fiche04: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "c8Yn4tyLZIg",
+  video: {
+    provider: "youtube",
+    videoId: "c8Yn4tyLZIg",
+  },
 
   markdown: `
 # Gestes et postures - Accidents du travail

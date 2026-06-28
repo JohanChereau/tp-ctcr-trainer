@@ -59,6 +59,24 @@ export type Question =
 
 export type LessonContentType = "questions" | "markdown"
 
+export type VideoProvider = "youtube" | "vimeo"
+
+export type VideoStart =
+  | number
+  | `${number}s`
+  | `${number}m${number}s`
+  | `${number}h${number}m${number}s`
+
+export type LessonVideo = {
+  provider: VideoProvider
+
+  videoId: string
+
+  hash?: string
+
+  start?: VideoStart
+}
+
 export type Lesson = {
   id: string
 
@@ -70,7 +88,7 @@ export type Lesson = {
 
   markdown?: string
 
-  youtubeVideoId?: string
+  video?: LessonVideo
 }
 
 export type LearningCategoryType =
@@ -78,7 +96,12 @@ export type LearningCategoryType =
   | "oral"
   | "rse"
   | "vocabulary"
-  | "Socle 1"
+  | "socle 1"
+  | "socle 2"
+  | "themes"
+  | "maneuvers"
+  | "circulation"
+  | "road-code"
 
 export type LearningCategory = {
   id: string

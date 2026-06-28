@@ -4,14 +4,14 @@ import { getQuestionStats } from "../storage"
 
 type GetWeakQuestionsOptions = {
   categoryId?: string
-
   maxSuccessRate?: number
+  includeUnanswered?: boolean
 }
 
 export function getWeakQuestions({
   categoryId,
-
   maxSuccessRate = 70,
+  includeUnanswered = true,
 }: GetWeakQuestionsOptions = {}) {
   return getAllQuestions().filter((item) => {
     if (categoryId && item.categoryId !== categoryId) {
@@ -21,16 +21,16 @@ export function getWeakQuestions({
     const stats = getQuestionStats(item.question.id)
 
     if (!stats) {
-      return false
+      return includeUnanswered
     }
 
-    const total = stats.correctCount + stats.incorrectCount
+    const totalAnswers = stats.correctCount + stats.incorrectCount
 
-    if (total === 0) {
-      return false
+    if (totalAnswers === 0) {
+      return includeUnanswered
     }
 
-    const successRate = (stats.correctCount / total) * 100
+    const successRate = (stats.correctCount / totalAnswers) * 100
 
     return successRate < maxSuccessRate
   })

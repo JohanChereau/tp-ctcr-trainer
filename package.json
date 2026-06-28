@@ -1,5 +1,6 @@
 {
   "name": "tp-ctcr-trainer",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,6 +19,7 @@
     "clsx": "^2.1.1",
     "isbot": "^5",
     "lucide-react": "^1.17.0",
+    "node-ical": "^0.26.1",
     "radix-ui": "^1.4.3",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

@@ -50,18 +50,19 @@ export function getCategoryActions(
         },
       ]
 
-    case "rse":
+    case "socle 1":
       return [
         {
           title: "Consulter les leçons",
-          description: "Parcourez les contenus pédagogiques de la RSE.",
+          description: "Parcourez les contenus pédagogiques du socle 1.",
           href: `/learning/${category.id}/revision`,
           icon: BookOpen,
         },
 
         {
-          title: "Quiz RSE",
-          description: "Testez vos connaissances.",
+          title: "Quiz Socle 1",
+          description:
+            "Testez vos connaissances sur les vérifications de sécurité.",
           href: `/learning/${category.id}/quiz`,
           icon: GraduationCap,
         },
@@ -69,11 +70,41 @@ export function getCategoryActions(
         {
           title: "Réviser mes points faibles",
           description:
-            "Travaillez uniquement les notions de RSE où vous avez le plus de difficultés.",
+            "Travaillez uniquement les notions du socle 1 où vous avez le plus de difficultés.",
           href: `/learning/${category.id}/weak-questions`,
           icon: Flame,
           badge: weakQuestionsCount,
           iconClassName: "text-orange-500",
+        },
+      ]
+
+    case "socle 2":
+      return [
+        {
+          title: "Consulter les leçons",
+          description: "Parcourez les contenus pédagogiques du socle 2.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+      ]
+
+    case "maneuvers":
+      return [
+        {
+          title: "Consulter les leçons",
+          description: "Parcourez les contenus pédagogiques des manœuvres.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+      ]
+
+    case "themes":
+      return [
+        {
+          title: "Consulter les thèmes",
+          description: "Parcourez les fiches de thèmes du véhicule.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
         },
       ]
 
@@ -114,19 +145,47 @@ export function getCategoryActions(
         },
       ]
 
-    case "Socle 1":
+    case "road-code":
       return [
         {
           title: "Consulter les leçons",
-          description: "Parcourez les contenus pédagogiques du socle 1.",
+          description: "Révisez les notions importantes du code de la route.",
           href: `/learning/${category.id}/revision`,
           icon: BookOpen,
         },
 
         {
-          title: "Quiz Socle 1",
+          title: "Quiz Code",
           description:
-            "Testez vos connaissances sur les vérifications de sécurité.",
+            "Testez vos connaissances sur les règles et calculs du code.",
+          href: `/learning/${category.id}/quiz`,
+          icon: GraduationCap,
+        },
+      ]
+
+    case "circulation":
+      return [
+        {
+          title: "Consulter les leçons",
+          description:
+            "Révisez les vérifications et annonces à effectuer avant le départ en circulation.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+      ]
+
+    case "rse":
+      return [
+        {
+          title: "Consulter les leçons",
+          description: "Parcourez les contenus pédagogiques de la RSE.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+
+        {
+          title: "Quiz RSE",
+          description: "Testez vos connaissances.",
           href: `/learning/${category.id}/quiz`,
           icon: GraduationCap,
         },
@@ -134,7 +193,7 @@ export function getCategoryActions(
         {
           title: "Réviser mes points faibles",
           description:
-            "Travaillez uniquement les notions du socle 1 où vous avez le plus de difficultés.",
+            "Travaillez uniquement les notions de RSE où vous avez le plus de difficultés.",
           href: `/learning/${category.id}/weak-questions`,
           icon: Flame,
           badge: weakQuestionsCount,

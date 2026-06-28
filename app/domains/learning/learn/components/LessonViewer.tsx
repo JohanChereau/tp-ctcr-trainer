@@ -16,7 +16,7 @@ export function LessonViewer({ lesson }: LessonViewerProps) {
       return (
         <MarkdownLessonViewer
           markdown={lesson.markdown ?? ""}
-          youtubeVideoId={lesson.youtubeVideoId}
+          video={lesson.video}
         />
       )
 

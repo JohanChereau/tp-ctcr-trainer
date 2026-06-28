@@ -7,7 +7,10 @@ export const fiche08: Lesson = {
 
   contentType: "markdown",
 
-  youtubeVideoId: "s4sN9spec58",
+  video: {
+    provider: "youtube",
+    videoId: "s4sN9spec58",
+  },
 
   markdown: `
 # Alcool, stupéfiants, médicaments

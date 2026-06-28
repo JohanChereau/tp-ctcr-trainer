@@ -4,7 +4,7 @@ import { socle101 } from "./routine-safety-checks"
 export const socle1Category: LearningCategory = {
   id: "socle_1",
 
-  type: "Socle 1",
+  type: "socle 1",
 
   title: "Socle 1",
 
