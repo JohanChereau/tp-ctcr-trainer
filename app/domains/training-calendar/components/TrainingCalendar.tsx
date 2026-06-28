@@ -401,11 +401,13 @@ function getEventKind(event: TrainingCalendarEvent): TrainingEventKind {
     event.description ?? ""
   }`.toLowerCase()
 
+  if (text.includes("examen")) return "exam"
+
   if (text.includes("simulateur")) return "simulator"
   if (text.includes("conduite")) return "driving"
   if (text.includes("plateau")) return "plateau"
   if (text.includes("salle") || text.includes("cours")) return "classroom"
-  if (text.includes("examen")) return "exam"
+
   if (
     text.includes("repos") ||
     text.includes("weekend") ||

@@ -1,5 +1,7 @@
 import { Link } from "react-router"
 
+import { ChangelogButton } from "~/domains/changelog/components/ChangelogButton"
+
 import { ModeToggle } from "~/components/ui/mode-toggle"
 import { FullscreenToggle } from "~/components/ui/fullscreen-toggle"
 
@@ -14,6 +16,8 @@ export function AppHeader() {
         </Link>
 
         <div className="flex items-center gap-2">
+          <ChangelogButton />
+
           <FullscreenToggle />
 
           <ModeToggle />
