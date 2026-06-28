@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react"
 
 import { getCategoryById } from "~/domains/learning/data"
 
-import { SuccessRateBadge } from "~/domains/learning/stats/components/SuccessRateBadge"
-import { useLessonSuccessRate } from "~/domains/learning/stats/hooks/useLessonSuccessRate"
+import { ProgressBadge } from "~/domains/learning/stats/components/ProgressBadge"
+import { useLessonProgress } from "~/domains/learning/stats/hooks/useLessonProgress"
 
 import { AppLayout } from "~/layouts/AppLayout"
 
@@ -58,7 +58,7 @@ type RevisionLessonCardProps = {
 }
 
 function RevisionLessonCard({ categoryId, lesson }: RevisionLessonCardProps) {
-  const successRate = useLessonSuccessRate(lesson)
+  const progress = useLessonProgress(lesson)
 
   return (
     <Link to={`/learning/${categoryId}/${lesson.id}`} className="h-full">
@@ -68,7 +68,12 @@ function RevisionLessonCard({ categoryId, lesson }: RevisionLessonCardProps) {
             <span className="text-sm text-muted-foreground">Fiche</span>
 
             <div className="flex shrink-0 items-center gap-2">
-              <SuccessRateBadge successRate={successRate} />
+              <ProgressBadge
+                status={progress.status}
+                successRate={progress.successRate}
+                answeredCount={progress.answeredQuestionsCount}
+                labelType="lesson"
+              />
 
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </div>
@@ -77,7 +82,8 @@ function RevisionLessonCard({ categoryId, lesson }: RevisionLessonCardProps) {
           <h2 className="mt-4 text-xl font-semibold">{lesson.title}</h2>
 
           <p className="mt-auto pt-6 text-sm text-muted-foreground">
-            {lesson.questions.length} questions
+            {progress.answeredQuestionsCount} / {lesson.questions.length}{" "}
+            questions travaillées
           </p>
         </CardContent>
       </Card>

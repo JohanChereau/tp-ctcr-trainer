@@ -1,5 +1,5 @@
-import type { Question } from "~/domains/learning/types/learning"
 import type { Lesson } from "~/domains/learning/types/learning"
+import type { Question } from "~/domains/learning/types/learning"
 
 import {
   Accordion,
@@ -9,7 +9,9 @@ import {
 } from "~/components/ui/accordion"
 
 import { getQuestionExpectedAnswer } from "~/domains/learning/quiz/utils/getQuestionExpectedAnswer"
+import { ProgressBadge } from "~/domains/learning/stats/components/ProgressBadge"
 import { useQuestionStats } from "~/domains/learning/stats/hooks/useQuestionStats"
+import { getProgressStatus } from "~/domains/learning/stats/utils/getProgressStatus"
 
 type QuestionLessonViewerProps = {
   lesson: Lesson
@@ -40,6 +42,13 @@ function QuestionAccordionItem({
 }: QuestionAccordionItemProps) {
   const { stats, successRate } = useQuestionStats(question.id)
 
+  const totalAnswers = stats ? stats.correctCount + stats.incorrectCount : 0
+
+  const status = getProgressStatus({
+    successRate: stats ? successRate : null,
+    answeredCount: totalAnswers,
+  })
+
   return (
     <AccordionItem
       value={question.id}
@@ -55,7 +64,12 @@ function QuestionAccordionItem({
             <div className="min-w-0 space-y-2">
               <span className="block text-left">{question.question}</span>
 
-              <QuestionSuccessBadge stats={stats} successRate={successRate} />
+              <ProgressBadge
+                status={status}
+                successRate={stats ? successRate : null}
+                answeredCount={totalAnswers}
+                labelType="question"
+              />
             </div>
           </div>
 
@@ -114,50 +128,5 @@ function QuestionAccordionItem({
         )}
       </AccordionContent>
     </AccordionItem>
-  )
-}
-
-type QuestionSuccessBadgeProps = {
-  stats: ReturnType<typeof useQuestionStats>["stats"]
-  successRate: number
-}
-
-function QuestionSuccessBadge({
-  stats,
-  successRate,
-}: QuestionSuccessBadgeProps) {
-  if (!stats) {
-    return (
-      <span className="inline-flex w-fit items-center rounded-full border bg-muted/40 px-2.5 py-1 text-xs font-medium text-muted-foreground">
-        Jamais faite
-      </span>
-    )
-  }
-
-  const totalAnswers = stats.correctCount + stats.incorrectCount
-
-  if (successRate < 70) {
-    return (
-      <span className="inline-flex w-fit items-center rounded-full border border-rose-200 bg-rose-50 px-2.5 py-1 text-xs font-medium text-rose-700">
-        À retravailler · {successRate}% · {totalAnswers} essai
-        {totalAnswers > 1 ? "s" : ""}
-      </span>
-    )
-  }
-
-  if (successRate < 90) {
-    return (
-      <span className="inline-flex w-fit items-center rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-700">
-        Correct · {successRate}% · {totalAnswers} essai
-        {totalAnswers > 1 ? "s" : ""}
-      </span>
-    )
-  }
-
-  return (
-    <span className="inline-flex w-fit items-center rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
-      Maîtrisée · {successRate}% · {totalAnswers} essai
-      {totalAnswers > 1 ? "s" : ""}
-    </span>
   )
 }

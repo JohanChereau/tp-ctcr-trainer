@@ -4,8 +4,8 @@ import { ArrowRight, BookOpen, CheckCircle2 } from "lucide-react"
 
 import type { LearningCategory } from "~/domains/learning/types/learning"
 
-import { SuccessRateBadge } from "../../stats/components/SuccessRateBadge"
-import { useCategoryMastery } from "../../stats/hooks/useCategoryMastery"
+import { ProgressBadge } from "../../stats/components/ProgressBadge"
+import { useCategoryProgress } from "../../stats/hooks/useCategoryProgress"
 
 type CategoryCardProps = {
   category: LearningCategory
@@ -19,7 +19,7 @@ function getQuestionCount(category: LearningCategory) {
 }
 
 export function CategoryCard({ category }: CategoryCardProps) {
-  const masteryRate = useCategoryMastery(category)
+  const progress = useCategoryProgress(category)
 
   const questionCount = getQuestionCount(category)
   const lessonCount = category.lessons.length
@@ -57,12 +57,17 @@ export function CategoryCard({ category }: CategoryCardProps) {
 
             {questionCount > 0 && (
               <CategoryMetaItem icon={CheckCircle2}>
-                {questionCount} questions
+                {progress.answeredQuestionsCount} / {questionCount} questions
               </CategoryMetaItem>
             )}
           </div>
 
-          <SuccessRateBadge successRate={masteryRate} />
+          <ProgressBadge
+            status={progress.status}
+            successRate={progress.successRate}
+            answeredCount={progress.answeredQuestionsCount}
+            labelType="category"
+          />
         </div>
       </article>
     </Link>

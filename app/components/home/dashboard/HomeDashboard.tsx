@@ -53,7 +53,7 @@ export function HomeDashboard() {
           />
 
           <DashboardStatCard
-            label="Points faibles"
+            label="À travailler"
             value={weakQuestionsCount ?? "—"}
           />
         </div>
