@@ -1,8 +1,6 @@
 import { Link } from "react-router"
 
-import { ArrowRight } from "lucide-react"
-
-import { Card, CardContent } from "~/components/ui/card"
+import { ArrowRight, BookOpen, CheckCircle2 } from "lucide-react"
 
 import type { LearningCategory } from "~/domains/learning/types/learning"
 
@@ -23,35 +21,64 @@ function getQuestionCount(category: LearningCategory) {
 export function CategoryCard({ category }: CategoryCardProps) {
   const masteryRate = useCategoryMastery(category)
 
+  const questionCount = getQuestionCount(category)
+  const lessonCount = category.lessons.length
+
   return (
-    <Link to={`/learning/${category.id}`} className="block">
-      <Card className="group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg">
-        <CardContent className="flex h-full flex-col gap-5 p-6 md:gap-6 md:p-8">
-          <div className="flex items-center justify-between">
-            <span className="text-2xl md:text-3xl">{category.icon}</span>
+    <Link to={`/learning/${category.id}`} className="group block h-full">
+      <article className="relative flex h-full min-h-56 flex-col overflow-hidden rounded-3xl border bg-background/80 p-6 shadow-sm transition-all hover:-translate-y-1 hover:bg-background hover:shadow-md">
+        <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-muted/50 to-transparent opacity-70" />
 
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        <div className="relative flex items-start justify-between gap-4">
+          <div className="flex size-12 items-center justify-center rounded-2xl border bg-muted/40 text-2xl">
+            {category.icon}
           </div>
 
-          <div className="space-y-3">
-            <h3 className="line-clamp-2 text-lg font-semibold md:min-h-16 md:text-xl">
-              {category.title}
-            </h3>
+          <div className="rounded-full border bg-background/80 p-2 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-foreground">
+            <ArrowRight className="size-4" />
+          </div>
+        </div>
 
-            <p className="line-clamp-2 text-sm text-muted-foreground md:min-h-12">
-              {category.description}
-            </p>
+        <div className="relative mt-6 space-y-3">
+          <h3 className="line-clamp-2 text-xl font-black tracking-tight">
+            {category.title}
+          </h3>
+
+          <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+            {category.description}
+          </p>
+        </div>
+
+        <div className="relative mt-auto pt-6">
+          <div className="mb-4 flex flex-wrap gap-2">
+            <CategoryMetaItem icon={BookOpen}>
+              {lessonCount} fiche{lessonCount > 1 ? "s" : ""}
+            </CategoryMetaItem>
+
+            {questionCount > 0 && (
+              <CategoryMetaItem icon={CheckCircle2}>
+                {questionCount} questions
+              </CategoryMetaItem>
+            )}
           </div>
 
-          <div className="mt-auto space-y-3">
-            <p className="text-sm font-medium text-muted-foreground">
-              {getQuestionCount(category)} questions
-            </p>
-
-            <SuccessRateBadge successRate={masteryRate} />
-          </div>
-        </CardContent>
-      </Card>
+          <SuccessRateBadge successRate={masteryRate} />
+        </div>
+      </article>
     </Link>
+  )
+}
+
+type CategoryMetaItemProps = {
+  icon: typeof BookOpen
+  children: React.ReactNode
+}
+
+function CategoryMetaItem({ icon: Icon, children }: CategoryMetaItemProps) {
+  return (
+    <div className="inline-flex items-center gap-1.5 rounded-full border bg-muted/30 px-3 py-1 text-xs font-medium text-muted-foreground">
+      <Icon className="size-3.5" />
+      {children}
+    </div>
   )
 }
