@@ -13,9 +13,15 @@ export function HomeDashboard() {
   const { answeredQuestionsCount, totalAnswers, successRate } =
     useLearningDashboardStats()
 
-  const weakQuestionsCount = useWeakQuestionsCount()
-
   const writtenCategory = getCategoryById("fiches-ecrites-plateau")
+
+  const allWeakQuestionsCount = useWeakQuestionsCount(undefined, {
+    includeUnanswered: true,
+  })
+
+  const writtenWeakQuestionsCount = useWeakQuestionsCount(writtenCategory?.id, {
+    includeUnanswered: true,
+  })
 
   const {
     data: trainingCalendar,
@@ -54,7 +60,7 @@ export function HomeDashboard() {
 
           <DashboardStatCard
             label="À travailler"
-            value={weakQuestionsCount ?? "—"}
+            value={allWeakQuestionsCount ?? "—"}
           />
         </div>
 
@@ -68,7 +74,7 @@ export function HomeDashboard() {
         {writtenCategory && (
           <DailyMissionCard
             categoryId={writtenCategory.id}
-            weakQuestionsCount={weakQuestionsCount}
+            weakQuestionsCount={writtenWeakQuestionsCount}
           />
         )}
       </div>

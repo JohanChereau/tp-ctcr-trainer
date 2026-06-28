@@ -1,7 +1,16 @@
 import { getWeakQuestions } from "./getWeakQuestions"
 
-export function getWeakQuestionsCount(categoryId?: string) {
+type GetWeakQuestionsCountOptions = {
+  categoryId?: string
+  includeUnanswered?: boolean
+}
+
+export function getWeakQuestionsCount({
+  categoryId,
+  includeUnanswered = true,
+}: GetWeakQuestionsCountOptions = {}) {
   return getWeakQuestions({
     categoryId,
+    includeUnanswered,
   }).length
 }
