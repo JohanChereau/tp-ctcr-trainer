@@ -54,7 +54,7 @@ function QuestionAccordionItem({
       className="overflow-hidden rounded-3xl border bg-background/80 shadow-sm transition-all hover:bg-background hover:shadow-md"
     >
       <AccordionTrigger className="px-5 py-5 text-left hover:no-underline md:px-6">
-        <div className="flex w-full items-start justify-between gap-4 md:gap-6">
+        <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-start sm:justify-between md:gap-6">
           <div className="flex min-w-0 gap-3 md:gap-4">
             <div className="flex size-8 shrink-0 items-center justify-center rounded-full border bg-muted/40 text-sm font-semibold text-muted-foreground">
               {index + 1}
@@ -75,11 +75,13 @@ function QuestionAccordionItem({
           </div>
 
           {"image" in question && question.image && (
-            <img
-              src={question.image}
-              alt={question.imageAlt}
-              className="h-16 w-16 shrink-0 rounded-xl border bg-background object-contain md:h-24 md:w-24"
-            />
+            <div className="w-full sm:w-auto sm:shrink-0">
+              <img
+                src={question.image}
+                alt={question.imageAlt}
+                className="max-h-40 w-full rounded-xl border bg-background object-contain sm:size-24"
+              />
+            </div>
           )}
         </div>
       </AccordionTrigger>
