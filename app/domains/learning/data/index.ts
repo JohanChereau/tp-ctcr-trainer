@@ -5,6 +5,8 @@ import { socle1Category } from "./socle_1"
 import { themesCategory } from "./themes"
 import { socle2Category } from "./socle-2"
 import { maneuversCategory } from "./maneuvers"
+import { circulationCategory } from "./circulation"
+import { roadCodeCategory } from "./road-code"
 
 export const learningCategories = [
   writtenCategory,
@@ -13,6 +15,8 @@ export const learningCategories = [
   oralCategory,
   socle2Category,
   maneuversCategory,
+  roadCodeCategory,
+  circulationCategory,
   rseCategory,
 ]
 

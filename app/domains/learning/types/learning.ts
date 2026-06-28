@@ -100,6 +100,8 @@ export type LearningCategoryType =
   | "socle 2"
   | "themes"
   | "maneuvers"
+  | "circulation"
+  | "road-code"
 
 export type LearningCategory = {
   id: string

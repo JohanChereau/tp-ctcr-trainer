@@ -145,6 +145,35 @@ export function getCategoryActions(
         },
       ]
 
+    case "road-code":
+      return [
+        {
+          title: "Consulter les leçons",
+          description: "Révisez les notions importantes du code de la route.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+
+        {
+          title: "Quiz Code",
+          description:
+            "Testez vos connaissances sur les règles et calculs du code.",
+          href: `/learning/${category.id}/quiz`,
+          icon: GraduationCap,
+        },
+      ]
+
+    case "circulation":
+      return [
+        {
+          title: "Consulter les leçons",
+          description:
+            "Révisez les vérifications et annonces à effectuer avant le départ en circulation.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+      ]
+
     case "rse":
       return [
         {
