@@ -26,6 +26,7 @@ export function VideoEmbed({
           src={src}
           title={title ?? `${provider} video`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         />
       </div>
