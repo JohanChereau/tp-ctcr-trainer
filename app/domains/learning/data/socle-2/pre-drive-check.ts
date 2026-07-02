@@ -17,19 +17,21 @@ export const socle201: Lesson = {
   markdown: `
 # Socle 2 - Mise en marche, installation et essai des freins
 
-Le socle 2 consiste à préparer le véhicule avant les manœuvres en réalisant la mise en marche, l'installation au poste de conduite et les essais de freins.
+Le socle 2 consiste à préparer le véhicule avant les manœuvres en réalisant la mise en marche, l'installation au poste de conduite et les essais de frein.
 
----
+## 1. Mise en marche du moteur
 
-# 1. Mise en marche du moteur
+- Mettre le contact.
+- Attendre l'extinction des voyants.
+- Démarrer le moteur en contrôlant les rétroviseurs.
 
-Démarrer le moteur.
+> **J'annonce :**
+>
+> « Pas d'anomalie au démarrage.
+>
+> Au tableau de bord, seul le témoin du frein de parc est resté allumé. »
 
-Après la mise en marche, annoncer les voyants restés allumés et signaler immédiatement toute anomalie.
-
----
-
-# 2. Installation au poste de conduite
+## 2. Installation au poste de conduite
 
 Régler successivement :
 
@@ -37,69 +39,74 @@ Régler successivement :
 - Le volant.
 - Les rétroviseurs.
 
-⚠️ Respecter la chronologie des réglages.
+> ⚠️ Respecter impérativement cet ordre de réglage.
 
----
+## 3. Contrôle de l'ouverture et de la fermeture des portes
 
-# 3. Contrôle de l'ouverture et de la fermeture des portes
+- Ouvrir les portes.
+- Refermer les portes.
 
-Vérifier le bon fonctionnement :
+> **J'annonce :**
+>
+> « Pas d'anomalie liée à l'ouverture et à la fermeture des portes.
+>
+> Pas de voyant d'alerte allumé.
+>
+> Ma pression d'air est suffisante pour réaliser les essais de frein. *(Pression suffisante : entre 8 et 12 bar.)*
+>
+> Nous allons maintenant réaliser les essais de frein en commençant par le frein de parc. »
 
-- De l'ouverture des portes.
-- De la fermeture des portes.
+## 4. Essai du frein de parc
 
----
+- Sélectionner la position **D**.
+- Accélérer légèrement jusqu'à atteindre le début de la zone verte du compte-tours.
+- Relâcher l'accélérateur.
 
-# 4. Essai des freins
+> **J'annonce :**
+>
+> « Bonne retenue du frein de parc. »
 
-## a) Frein de parc
+- Desserrer progressivement le frein de parc.
+- Maintenir le véhicule immobilisé avec le **frein d'arrêt (H)**.
+- Lorsque le témoin **H** est affiché au tableau de bord, relâcher les commandes.
 
-S'assurer et annoncer que la pression d'air dans les réservoirs est suffisante :
+> **J'annonce :**
+>
+> « Pas de baisse de pression anormale.
+>
+> Pas de voyant d'alerte allumé.
+>
+> L'essai du frein de parc est concluant.
+>
+> Nous allons maintenant passer à l'essai du frein de service. »
 
-- Entre **8 et 10 bars**.
+## 5. Essai du frein de service
 
-Mettre la première vitesse, embrayer légèrement puis vérifier :
-
-- La bonne retenue du véhicule.
-
-Desserrer ensuite le frein de parc, sans freiner, puis annoncer :
-
-- L'absence de chute d'air anormale.
-
-Conclure par :
-
-> **Essai du frein de parc concluant.**
-
----
-
-## b) Frein principal
-
-En laissant le frein de parc desserré :
-
-S'assurer et annoncer que la pression d'air dans les réservoirs est suffisante.
-
-Avancer de quelques mètres puis :
-
+- Accélérer légèrement afin de mettre le véhicule en mouvement.
 - Freiner.
 - Maintenir le pied sur la pédale de frein.
-- Annoncer la bonne retenue du véhicule.
-- Annoncer l'absence de chute d'air anormale (pression suffisante).
 
-Conclure par :
+> **J'annonce :**
+>
+> « Bonne retenue du frein de service.
+>
+> Pas de baisse de pression anormale.
+>
+> Pas de voyant d'alerte allumé.
+>
+> L'essai du frein de service est concluant. »
 
-> **Essai du frein principal concluant.**
+- Sélectionner la position **N** (Neutre).
+- Serrer le frein de parc.
+- Retirer le pied de la pédale de frein.
 
-Puis annoncer :
+## 6. Fin du socle 2
 
-> **Fin des essais de frein.**
-
----
-
-# 5. Fin du socle 2
-
-Une fois les essais terminés, annoncer :
-
-> **Fin du socle 2.**
+> **J'annonce :**
+>
+> « Fin des essais de frein.
+>
+> Fin du socle 2. »
   `,
 
   questions: [

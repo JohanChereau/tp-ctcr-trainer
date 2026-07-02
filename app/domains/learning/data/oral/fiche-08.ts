@@ -39,8 +39,8 @@ L'alcool est un danger grave pour le conducteur car il agit directement sur le c
 
 Chaque verre consommé représente en moyenne :
 
-* Entre 0,20 et 0,25 g/L de sang.
-* Soit environ 0,10 mg/L d'air expiré.
+* Entre **0,20 et 0,25 g/L** de sang.
+* Soit environ **0,10 mg/L** d'air expiré.
 
 Ce taux varie selon :
 
@@ -56,8 +56,8 @@ Ce taux varie selon :
 
 Le taux maximal est atteint :
 
-* Environ 30 minutes après le dernier verre à jeun.
-* Environ 1 heure après le dernier verre lors d'un repas.
+* Environ **30 minutes** après le dernier verre à jeun.
+* Environ **1 heure** après le dernier verre lors d'un repas.
 
 ---
 
@@ -65,7 +65,7 @@ Le taux maximal est atteint :
 
 L'élimination est lente :
 
-* Entre 0,10 et 0,15 g/L par heure.
+* Entre **0,10 et 0,15 g/L** par heure.
 
 À part le temps, aucun moyen ne permet d'éliminer l'alcool plus rapidement.
 
@@ -94,15 +94,20 @@ L'alcool provoque :
 
 ### Contravention
 
-Pour les conducteurs de transport en commun :
+Pour les conducteurs de transport en commun **et les conducteurs en permis probatoire** :
 
-* À partir de 0,20 g/L de sang.
-* Ou 0,10 mg/L d'air expiré.
+* À partir de **0,20 g/L** de sang.
+* Ou **0,10 mg/L** d'air expiré.
+
+Pour les autres conducteurs :
+
+* À partir de **0,50 g/L** de sang.
+* Ou **0,25 mg/L** d'air expiré.
 
 Sanctions :
 
-* Amende de 135 €.
-* Retrait de 6 points.
+* Amende de **135 €**.
+* Retrait de **6 points**.
 
 ---
 
@@ -110,17 +115,16 @@ Sanctions :
 
 À partir de :
 
-* 0,80 g/L de sang.
-* Ou 0,40 mg/L d'air expiré.
+* **0,80 g/L** de sang.
+* Ou **0,40 mg/L** d'air expiré.
 
 Sanctions possibles :
 
-* Retrait de 6 points.
-* Jusqu'à 4 500 € d'amende.
+* Retrait de **6 points**.
+* Jusqu'à **9 000 €** d'amende.
 * Immobilisation du véhicule.
-* Suspension du permis jusqu'à 3 ans.
-* Annulation du permis.
-* Jusqu'à 2 ans d'emprisonnement.
+* Suspension du permis jusqu'à **5 ans**, voire annulation du permis.
+* Jusqu'à **3 ans** d'emprisonnement.
 
 ---
 
@@ -147,8 +151,8 @@ Les stupéfiants provoquent :
 
 Le cannabis :
 
-* Multiplie le risque d'accident.
-* Associé à l'alcool, le risque devient extrêmement élevé.
+* Multiplie le risque d'accident par **1,8**.
+* Associé à l'alcool, le risque d'accident est multiplié par **29**.
 
 ---
 
@@ -158,12 +162,11 @@ La conduite sous l'emprise de stupéfiants constitue directement un délit.
 
 Sanctions possibles :
 
-* Retrait de 6 points.
-* Jusqu'à 4 500 € d'amende.
+* Retrait de **6 points**.
+* Jusqu'à **9 000 €** d'amende.
 * Immobilisation du véhicule.
-* Suspension du permis jusqu'à 3 ans.
-* Annulation du permis.
-* Jusqu'à 2 ans d'emprisonnement.
+* Suspension du permis jusqu'à **5 ans**, voire annulation du permis.
+* Jusqu'à **3 ans** d'emprisonnement.
 
 ---
 
@@ -173,8 +176,9 @@ Le cumul alcool et stupéfiants aggrave les sanctions.
 
 Sanctions possibles :
 
-* Jusqu'à 9 000 € d'amende.
-* Jusqu'à 3 ans d'emprisonnement.
+* Retrait de **9 points**.
+* Jusqu'à **15 000 €** d'amende.
+* Jusqu'à **5 ans** d'emprisonnement.
 
 ---
 
@@ -251,7 +255,7 @@ Les principaux signes sont :
 
 Un microsommeil peut durer :
 
-* Entre 1 et 4 secondes.
+* Entre **1 et 4 secondes**.
 
 ---
 
@@ -259,24 +263,28 @@ Un microsommeil peut durer :
 
 ## Alcool
 
-* 1 verre ≈ 0,20 à 0,25 g/L.
+* **1 verre** ≈ **0,20 à 0,25 g/L**.
 * Pic d'alcoolémie :
 
-  * 30 min à jeun.
-  * 1 h après un repas.
+  * **30 min** à jeun.
+  * **1 h** après un repas.
+
 * Élimination :
 
-  * 0,10 à 0,15 g/L par heure.
-* Limite conducteur transport en commun :
+  * **0,10 à 0,15 g/L** par heure.
 
-  * 0,20 g/L de sang.
-  * 0,10 mg/L d'air expiré.
+* Limite conducteur transport en commun et permis probatoire :
+
+  * **0,20 g/L** de sang.
+  * **0,10 mg/L** d'air expiré.
 
 ## Stupéfiants
 
 * Temps de réaction allongé.
 * Perte de vigilance.
 * Perte de maîtrise des trajectoires.
+* Cannabis : risque d'accident × **1,8**.
+* Cannabis + alcool : risque d'accident × **29**.
 * Délit systématique.
 
 ## Médicaments
@@ -291,21 +299,40 @@ Un microsommeil peut durer :
 
 * Contravention :
 
-  * 135 €.
-  * 6 points.
+  * **135 €**.
+  * **6 points**.
 
 * Délit :
 
-  * 4 500 €.
-  * 6 points.
-  * Suspension jusqu'à 3 ans.
-  * 2 ans de prison.
+  * **9 000 €**.
+  * **6 points**.
+  * Suspension jusqu'à **5 ans**, voire annulation du permis.
+  * **3 ans** de prison.
+
+### Stupéfiants
+
+* Délit systématique.
+* **9 000 €**.
+* **6 points**.
+* Suspension jusqu'à **5 ans**, voire annulation du permis.
+* **3 ans** de prison.
 
 ### Alcool + stupéfiants
 
-* 9 000 € d'amende.
-* 3 ans de prison.
+* **15 000 €** d'amende.
+* **9 points**.
+* **5 ans** de prison.
 
+---
+
+# Sources
+
+Les informations réglementaires de cette fiche sont basées sur les textes officiels suivants :
+
+- [Legifrance – Code de la route : alcool au volant (article L234-1)](https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006159521/)
+- [Legifrance – Code de la route : conduite sous stupéfiants (article L235-1)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051877265)
+- [Service-Public.fr – Alcool au volant](https://www.service-public.fr/particuliers/vosdroits/F36485)
+- [Service-Public.fr – Drogue au volant](https://www.service-public.fr/particuliers/vosdroits/F2886)
 `,
   questions: [
     {
@@ -534,16 +561,16 @@ Un microsommeil peut durer :
       question:
         "Quel est le montant maximal de l'amende en cas de délit lié à l'alcool ?",
 
-      canonicalAnswer: "4 500 €",
+      canonicalAnswer: "9 000 €",
 
       acceptedAnswers: [
-        "4500",
-        "4 500",
-        "4 500 euros",
-        "4500€",
-        "4500 €",
-        "4 500€",
-        "4 500 €",
+        "9000",
+        "9 000",
+        "9 000 euros",
+        "9000€",
+        "9000 €",
+        "9 000€",
+        "9 000 €",
       ],
     },
 
@@ -568,9 +595,9 @@ Un microsommeil peut durer :
       question:
         "Quelle peine maximale d'emprisonnement est encourue pour un délit lié à l'alcool ?",
 
-      canonicalAnswer: "2 ans",
+      canonicalAnswer: "3 ans",
 
-      acceptedAnswers: ["2", "2 ans"],
+      acceptedAnswers: ["3", "3 ans"],
     },
 
     {
@@ -628,15 +655,16 @@ Un microsommeil peut durer :
       question:
         "Quel est le montant maximal de l'amende pour conduite sous l'emprise de stupéfiants ?",
 
-      canonicalAnswer: "4 500 €",
+      canonicalAnswer: "9 000 €",
 
       acceptedAnswers: [
-        "4500",
-        "4 500",
-        "4500€",
-        "4500 €",
-        "4 500€",
-        "4 500 €",
+        "9000",
+        "9 000",
+        "9 000 euros",
+        "9000€",
+        "9000 €",
+        "9 000€",
+        "9 000 €",
       ],
     },
 
@@ -648,9 +676,9 @@ Un microsommeil peut durer :
       question:
         "Quelle peine maximale d'emprisonnement est encourue pour conduite sous l'emprise de stupéfiants ?",
 
-      canonicalAnswer: "2 ans",
+      canonicalAnswer: "3 ans",
 
-      acceptedAnswers: ["2", "2 ans"],
+      acceptedAnswers: ["3", "3 ans"],
     },
 
     {
@@ -661,15 +689,16 @@ Un microsommeil peut durer :
       question:
         "Quel est le montant maximal de l'amende lorsque alcool et stupéfiants sont associés ?",
 
-      canonicalAnswer: "9 000 €",
+      canonicalAnswer: "15 000 €",
 
       acceptedAnswers: [
-        "9000",
-        "9 000",
-        "9000€",
-        "9000 €",
-        "9 000€",
-        "9 000 €",
+        "15000",
+        "15 000",
+        "15 000 euros",
+        "15000€",
+        "15000 €",
+        "15 000€",
+        "15 000 €",
       ],
     },
 
@@ -681,9 +710,9 @@ Un microsommeil peut durer :
       question:
         "Quelle peine maximale d'emprisonnement est encourue lorsque alcool et stupéfiants sont associés ?",
 
-      canonicalAnswer: "3 ans",
+      canonicalAnswer: "5 ans",
 
-      acceptedAnswers: ["3", "3 ans"],
+      acceptedAnswers: ["5", "5 ans"],
     },
 
     {
