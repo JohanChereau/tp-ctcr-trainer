@@ -1,6 +1,6 @@
 import type { Lesson } from "../../types/learning"
 
-export const socle201: Lesson = {
+export const brakeCheckLesson: Lesson = {
   id: "socle2-01",
 
   title: "Socle 2 - Mise en marche, installation et essai des freins",
