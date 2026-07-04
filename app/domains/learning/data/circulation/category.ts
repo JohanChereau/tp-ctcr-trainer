@@ -1,6 +1,6 @@
 import type { LearningCategory } from "../../types/learning"
 
-import { circulation01 } from "./circulation-01"
+import { preDriveCheckLesson } from "./pre-drive-check"
 
 export const circulationCategory: LearningCategory = {
   id: "circulation",
@@ -14,5 +14,5 @@ export const circulationCategory: LearningCategory = {
 
   icon: "🚦",
 
-  lessons: [circulation01],
+  lessons: [preDriveCheckLesson],
 }

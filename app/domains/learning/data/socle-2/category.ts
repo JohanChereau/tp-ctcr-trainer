@@ -1,5 +1,5 @@
 import type { LearningCategory } from "../../types/learning"
-import { socle201 } from "./pre-drive-check"
+import { brakeCheckLesson } from "./brake-test"
 
 export const socle2Category: LearningCategory = {
   id: "socle_2",
@@ -13,5 +13,5 @@ export const socle2Category: LearningCategory = {
 
   icon: "🛑",
 
-  lessons: [socle201],
+  lessons: [brakeCheckLesson],
 }

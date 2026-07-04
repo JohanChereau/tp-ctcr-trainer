@@ -1,6 +1,6 @@
 import type { Lesson } from "../../types/learning"
 
-export const circulation01: Lesson = {
+export const preDriveCheckLesson: Lesson = {
   id: "circulation-01",
 
   title: "Circulation - Vérifications avant le départ",
@@ -13,70 +13,88 @@ export const circulation01: Lesson = {
   },
 
   markdown: `
-  # Vérifications avant le départ en circulation
+# Vérification avant le départ en circulation
 
-Avant de démarrer l'épreuve de circulation, effectuer les vérifications suivantes dans l'ordre.
+Cette vérification est réalisée juste avant le départ de l'épreuve de circulation.
 
-## 1. Démarrage du véhicule
+## 1. Chronotachygraphe
 
-- Démarrer le moteur.
-- Vérifier l'absence de fumée anormale.
-- Annoncer les voyants restés allumés.
-- Vérifier que la pression d'air du système de freinage est suffisante.
+> **J'annonce :**
+>
+> « Dans ma situation professionnelle, je devrais insérer ma carte conducteur. J'en suis dispensé pour l'examen. »
 
-> Si un voyant reste allumé, l'annoncer à l'inspecteur.
-
----
-
-## 2. Installation au poste de conduite
-
-Effectuer les réglages si nécessaire :
-
-- Siège.
-- Volant.
-- Rétroviseurs.
-- Appui-tête.
-- Ceinture de sécurité.
-
-L'objectif est de voir correctement et d'atteindre facilement toutes les commandes.
-
----
-
-## 3. Sécurité du véhicule
-
-Vérifier le bon fonctionnement des ouvrants :
-
-- Ouvrir puis refermer les portes voyageurs.
-- Vérifier qu'elles se ferment correctement.
-
-Annoncer ensuite que :
-
-- Les portes sont correctement fermées.
-- Les soutes sont correctement fermées.
-
-Demander aux passagers :
-
-> « Est-ce que tout le monde a bien attaché sa ceinture de sécurité ? »
-
----
-
-## 4. Chronotachygraphe
-
-Annoncer à l'inspecteur :
-
-> « Je suis en présence d'un chronotachygraphe numérique semi-automatique. Il est réglé à la date et à l'heure du jour. Il est positionné sur **Autres tâches** et passera automatiquement sur **Conduite** dès que le véhicule commencera à rouler. Je suis dispensé de carte conducteur car je suis en examen. »
-
-Vérifier également :
+Vérifier ensuite :
 
 - La date.
 - L'heure.
 - Le mode **Autres tâches**.
 
+> **J'annonce :**
+>
+> « Je vérifie la bonne date et heure du chronotachygraphe. Je le positionne sur **Autres tâches** et il se mettra automatiquement en position **Conduite** dès les premiers tours de roue. »
+
 ---
 
-## 5. Documents de bord
+## 2. Documents de bord
 
 Vérifier la présence de la pochette contenant les documents de bord.
+
+---
+
+## 3. Mise en marche du véhicule
+
+- Démarrer le moteur en contrôlant les rétroviseurs.
+
+> **J'annonce :**
+>
+> « Pas d'anomalie au démarrage.
+>
+> Il me reste uniquement le témoin du frein de parc qui est allumé.
+>
+> Ma pression d'air est suffisante, je vais donc pouvoir m'installer au poste de conduite. »
+
+---
+
+## 4. Installation au poste de conduite
+
+Régler successivement :
+
+- Le siège.
+- Le volant.
+- Les rétroviseurs.
+
+Mettre ensuite :
+
+- La ceinture de sécurité.
+
+> ⚠️ Respecter impérativement cet ordre de réglage.
+
+---
+
+## 5. Vérification avant le départ
+
+Si les portes sont ouvertes :
+
+- Les refermer.
+
+Vérifier que :
+
+- Les portes sont bien fermées.
+- Les soutes sont bien fermées.
+
+> **J'annonce :**
+>
+> « Les portes et les soutes sont bien fermées. »
+
+Demander aux passagers :
+
+> « Est-ce que tout le monde a bien attaché sa ceinture de sécurité ? »
+
+Lorsque tous les passagers sont attachés :
+
+> **J'annonce :**
+>
+> « Nous pouvons partir en toute sécurité. »
 
 ---
 
