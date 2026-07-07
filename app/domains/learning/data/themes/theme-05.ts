@@ -45,9 +45,9 @@ Annoncer également :
 | --------------- | ------ |
 | **Marque** | Iveco |
 | **Type** | Crossway |
-| **Puissance** | À compléter |
-| **Porte-à-faux avant** | À compléter |
-| **Porte-à-faux arrière** | À compléter |
+| **Puissance** | **315 ch** |
+| **Porte-à-faux avant** | **2,60 m** |
+| **Porte-à-faux arrière** | **3,30 m** |
 
 ### MAN Lion's Intercity
 
@@ -55,9 +55,9 @@ Annoncer également :
 | --------------- | ------ |
 | **Marque** | MAN |
 | **Type** | Lion's Intercity |
-| **Puissance** | À compléter |
-| **Porte-à-faux avant** | À compléter |
-| **Porte-à-faux arrière** | À compléter |
+| **Puissance** | **290 ch** |
+| **Porte-à-faux avant** | **2,78 m** |
+| **Porte-à-faux arrière** | **3,50 m** |
 
 ---
 
