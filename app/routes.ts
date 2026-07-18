@@ -35,4 +35,6 @@ export default [
   route("training-calendar", "pages/training-calendar-page.tsx"),
 
   route("api/training-calendar", "routes/api.training-calendar.ts"),
+
+  route("docs/markdown", "routes/docs.markdown.tsx"),
 ] satisfies RouteConfig

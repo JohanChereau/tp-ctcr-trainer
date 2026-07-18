@@ -3,44 +3,10 @@ import type {
   VideoProvider,
 } from "~/domains/learning/types/learning"
 
-type MarkdownTextPart = {
-  type: "text"
-  content: string
-}
-
-type MarkdownVideoPart = {
-  type: "video"
-} & LessonVideo
-
-export type MarkdownPart = MarkdownTextPart | MarkdownVideoPart
-
-export function parseMarkdown(markdown: string): MarkdownPart[] {
-  const regex = /(::(?:youtube|vimeo)\[[^\]]+\])/g
-
-  return markdown
-    .split(regex)
-    .filter(Boolean)
-    .map((part): MarkdownPart => {
-      const match = part.match(/^::(youtube|vimeo)\[([^\]]+)\]$/)
-
-      if (!match) {
-        return {
-          type: "text",
-          content: part,
-        }
-      }
-
-      const provider = match[1] as VideoProvider
-      const value = match[2].trim()
-
-      return {
-        type: "video",
-        ...parseVideoValue(provider, value),
-      }
-    })
-}
-
-function parseVideoValue(provider: VideoProvider, value: string): LessonVideo {
+export function parseVideoValue(
+  provider: VideoProvider,
+  value: string
+): LessonVideo {
   if (provider === "youtube") {
     return parseYoutubeValue(value)
   }
@@ -82,7 +48,7 @@ function parseYoutubeValue(value: string): LessonVideo {
       }
     }
   } catch {
-    // Not an URL, probably a simple YouTube ID
+    // La valeur est probablement un identifiant YouTube simple.
   }
 
   return {
@@ -97,7 +63,6 @@ function parseVimeoValue(value: string): LessonVideo {
 
   try {
     const url = new URL(value)
-
     const pathParts = url.pathname.split("/").filter(Boolean)
 
     return {
@@ -107,11 +72,12 @@ function parseVimeoValue(value: string): LessonVideo {
       start,
     }
   } catch {
-    // Not an URL, probably a simple Vimeo ID
+    // La valeur est probablement un identifiant Vimeo simple.
   }
 
   const valueWithoutTime = removeTimeFragment(value)
-  const [videoId, hash] = valueWithoutTime
+
+  const [videoId = "", hash] = valueWithoutTime
     .replace("?h=", "/")
     .split("/")
     .filter(Boolean)
@@ -152,10 +118,10 @@ function normalizeStartTime(value: string): LessonVideo["start"] {
   return value as LessonVideo["start"]
 }
 
-function removeTimeFragment(value: string) {
+function removeTimeFragment(value: string): string {
   return value.split("#")[0].split("&t=")[0].split("?t=")[0].split("?start=")[0]
 }
 
-function cleanVideoId(value: string) {
-  return value.split("?")[0].split("&")[0].split("#")[0]
+function cleanVideoId(value: string): string {
+  return value.trim().split("?")[0].split("&")[0]
 }

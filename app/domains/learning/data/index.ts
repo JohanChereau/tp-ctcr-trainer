@@ -1,5 +1,5 @@
 import { writtenCategory } from "./written"
-import { rseCategory } from "./rse"
+import { socialRegulationsCategory } from "./social-regulations"
 import { oralCategory } from "./oral"
 import { socle1Category } from "./socle_1"
 import { themesCategory } from "./themes"
@@ -17,7 +17,7 @@ export const learningCategories = [
   maneuversCategory,
   roadCodeCategory,
   circulationCategory,
-  rseCategory,
+  socialRegulationsCategory,
 ]
 
 export function getCategoryById(categoryId: string) {

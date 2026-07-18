@@ -3,7 +3,7 @@ import type { Lesson } from "../../types/learning"
 export const rse01: Lesson = {
   id: "rse-01",
 
-  title: "Bases de la Réglementation Sociale Européenne",
+  title: "Réglementation Sociale Européenne",
 
   contentType: "markdown",
 
@@ -217,6 +217,170 @@ avant la fin de la troisième semaine suivante.
 * Repos hebdomadaire réduit : 24h
 * Compensation : 21h
 
+---
+
+# Laboratoire des composants Markdown
+
+Cette partie sert uniquement à tester les extensions pédagogiques.
+
+---
+
+## Encadré d'information
+
+:::info[Pourquoi cette règle ?]
+Cette réglementation permet de limiter la fatigue du conducteur et de protéger :
+
+- le conducteur ;
+- les passagers ;
+- les autres usagers de la route.
+:::
+
+## Encadré d'astuce
+
+:::tip[Astuce de mémorisation]
+Retenez la suite :
+
+**4h30 → 45 min → 9h → 56h → 90h**
+:::
+
+## Encadré d'avertissement
+
+:::warning[Ordre obligatoire]
+En cas de pause fractionnée, les pauses doivent être prises dans cet ordre :
+
+1. au moins **15 minutes** ;
+2. puis au moins **30 minutes**.
+:::
+
+## Encadré important
+
+:::danger[À retenir pour l'examen]
+Une pause unique de **30 minutes** après 4h30 de conduite n'est pas suffisante.
+:::
+
+---
+
+## Chiffres-clés
+
+:::metrics[Les chiffres essentiels]
+4h30 | Conduite continue maximale | Avant une pause réglementaire
+45 min | Pause réglementaire | Possible en 15 min puis 30 min
+9h | Conduite journalière normale
+10h | Conduite journalière dérogatoire | Deux fois par semaine maximum
+56h | Conduite hebdomadaire maximale
+90h | Conduite maximale sur deux semaines
+11h | Repos journalier normal
+:::
+
+---
+
+## Timeline verticale
+
+:::timeline[Déroulement d'une pause fractionnée]
+Début de la conduite | Le conducteur commence sa période de conduite
+Pause de 15 minutes | Première partie de la pause réglementaire
+Reprise de la conduite | Le conducteur reprend temporairement la route
+Pause de 30 minutes | Seconde partie obligatoire de la pause
+Nouveau cycle | Une nouvelle période de conduite peut commencer
+:::
+
+---
+
+## Comparaison
+
+:::compare[Comparaison des repos journaliers]
+Repos normal | 11 heures | Il s'agit de la règle générale
+Repos réduit | 9 heures | Trois fois maximum entre deux repos hebdomadaires
+Repos fractionné | 3h + 9h | Soit une durée totale de 12 heures
+:::
+
+---
+
+## Séquence horizontale
+
+:::sequence[Exemple de journée]
+Conduite | 4h30 | drive
+Pause | 45 min | break
+Conduite | 4h30 | conduite
+Repos journalier | 11h | repos
+:::
+
+---
+
+## Mise en situation
+
+:::scenario[La pause de 30 minutes est-elle suffisante ?]
+Un conducteur conduit pendant **4h30**.
+
+Il s'arrête ensuite pendant **30 minutes** avant de reprendre la route.
+
+Peut-il reprendre une nouvelle période complète de conduite ?
+---
+**Non.**
+
+Après 4h30 de conduite, la pause doit durer au minimum **45 minutes**.
+
+Une pause unique de 30 minutes n'est donc pas suffisante.
+:::
+
+---
+
+## Checklist
+
+:::checklist[Conditions de la pause fractionnée]
+Une première pause d'au moins **15 minutes**
+Une seconde pause d'au moins **30 minutes**
+Le respect de l'ordre **15 puis 30**
+Les deux pauses prises avant ou à l'issue des **4h30**
+:::
+
+---
+
+## Mémo
+
+:::memory[La suite essentielle]
+**4h30 → 45 min → 9h → 56h → 90h**
+---
+Conduite continue → pause → journée → semaine → deux semaines
+:::
+
+## Mémo de calcul
+
+:::memory[Repos journalier fractionné]
+**3h + 9h = 12h**
+---
+Le repos journalier fractionné dure une heure de plus que le repos journalier normal non fractionné de 11 heures.
+:::
+
+---
+
+## Tableau Markdown stylé
+
+| Type de repos | Durée minimale | Particularité |
+| --- | ---: | --- |
+| Repos journalier normal | **11h** | Règle générale |
+| Repos journalier réduit | **9h** | Trois fois maximum entre deux repos hebdomadaires |
+| Repos journalier fractionné | **3h + 9h** | 12 heures au total |
+| Repos hebdomadaire normal | **45h** | Repos de référence |
+| Repos hebdomadaire réduit | **24h** | Compensation obligatoire |
+
+---
+
+## Vidéo YouTube
+
+Remplacer l'identifiant par une véritable vidéo :
+
+::youtube[dQw4w9WgXcQ]
+
+## Vidéo YouTube avec heure de départ
+
+::youtube[https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=30]
+
+## Vidéo Vimeo
+
+Remplacer l'identifiant par une véritable vidéo Vimeo :
+
+::vimeo[76979871]
   `,
 
   questions: [

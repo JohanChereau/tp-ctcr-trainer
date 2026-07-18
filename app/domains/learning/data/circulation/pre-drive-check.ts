@@ -21,7 +21,7 @@ Cette vérification est réalisée juste avant le départ de l'épreuve de circu
 
 > **J'annonce :**
 >
-> « Dans ma situation professionnelle, je devrais insérer ma carte conducteur. J'en suis dispensé pour l'examen. »
+> « Dans ma vie professionnelle, je devrais insérer ma carte conducteur. J'en suis dispensé pour l'examen. »
 
 Vérifier ensuite :
 

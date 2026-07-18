@@ -94,7 +94,7 @@ export type Lesson = {
 export type LearningCategoryType =
   | "written"
   | "oral"
-  | "rse"
+  | "social-regulations"
   | "vocabulary"
   | "socle 1"
   | "socle 2"
