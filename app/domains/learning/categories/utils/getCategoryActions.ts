@@ -203,6 +203,17 @@ export function getCategoryActions(
         },
       ]
 
+    case "maps-and-professional-calculations":
+      return [
+        {
+          title: "Consulter les leçons",
+          description:
+            "Révisez la lecture de cartes et les calculs professionnels.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+      ]
+
     default:
       return []
   }

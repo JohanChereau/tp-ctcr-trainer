@@ -1,6 +1,8 @@
 import type { Components } from "react-markdown"
 import ReactMarkdown from "react-markdown"
+import rehypeKatex from "rehype-katex"
 import remarkGfm from "remark-gfm"
+import remarkMath from "remark-math"
 
 import { cn } from "~/lib/utils"
 
@@ -25,7 +27,16 @@ export function MarkdownContent({
       )}
     >
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[
+          [
+            rehypeKatex,
+            {
+              throwOnError: false,
+              strict: false,
+            },
+          ],
+        ]}
         components={{
           ...markdownComponents,
           ...components,

@@ -7,6 +7,7 @@ import { socle2Category } from "./socle-2"
 import { maneuversCategory } from "./maneuvers"
 import { circulationCategory } from "./circulation"
 import { roadCodeCategory } from "./road-code"
+import { mapsAndProfessionalCalculationsCategory } from "./maps-and-professional-calculations"
 
 export const learningCategories = [
   writtenCategory,
@@ -18,6 +19,7 @@ export const learningCategories = [
   roadCodeCategory,
   circulationCategory,
   socialRegulationsCategory,
+  mapsAndProfessionalCalculationsCategory,
 ]
 
 export function getCategoryById(categoryId: string) {

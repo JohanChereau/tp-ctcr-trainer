@@ -1076,3 +1076,113 @@ Ils ne seront pas interprétés comme des extensions.
 - Utiliser les noms d'extensions en minuscules.
 - Laisser le contenu commencer sur la ligne suivante.
 - Tout Markdown non reconnu est rendu normalement par React Markdown.
+
+---
+
+# Formules mathématiques
+
+Les formules mathématiques utilisent la syntaxe LaTeX et sont rendues avec KaTeX.
+
+Aucune extension personnalisée avec `:::` n’est nécessaire.
+
+## Formule intégrée
+
+Une expression entourée par un seul symbole `$` reste intégrée dans la phrase.
+
+```md
+La vitesse moyenne se calcule avec $v = \frac{d}{t}$.
+```
+
+### Rendu
+
+La vitesse moyenne se calcule avec $v = \frac{d}{t}$.
+
+## Formule centrée
+
+Une expression entourée par deux symboles `$$` est affichée dans un bloc centré.
+
+```md
+$$
+v = \frac{d}{t}
+$$
+```
+
+### Rendu
+
+$$
+v = \frac{d}{t}
+$$
+
+## Exemple de conversion
+
+```md
+$$
+0{,}15 \times 60 = 9\ \text{minutes}
+$$
+```
+
+### Rendu
+
+$$
+0{,}15 \times 60 = 9\ \text{minutes}
+$$
+
+## Exemple avec plusieurs lignes
+
+```md
+$$
+\begin{aligned}
+6{,}15\ \text{h}
+&= 6\ \text{h} + 0{,}15\ \text{h} \\
+&= 6\ \text{h} + 9\ \text{min} \\
+&= 6\ \text{h}\ 09\ \text{min}
+\end{aligned}
+$$
+```
+
+### Rendu
+
+$$
+\begin{aligned}
+6{,}15\ \text{h}
+&= 6\ \text{h} + 0{,}15\ \text{h} \\
+&= 6\ \text{h} + 9\ \text{min} \\
+&= 6\ \text{h}\ 09\ \text{min}
+\end{aligned}
+$$
+
+## Dans une extension Markdown
+
+Les formules peuvent être placées dans les extensions dont le contenu est rendu comme du Markdown.
+
+```md
+:::
+
+La vitesse moyenne se calcule avec :
+
+$$
+v = \frac{d}{t}
+$$
+
+:::
+```
+
+### Rendu
+
+:::info[Formule à retenir]
+
+La vitesse moyenne se calcule avec :
+
+$$
+v = \frac{d}{t}
+$$
+
+:::
+
+## Bonnes pratiques
+
+- Utiliser `$...$` pour une courte formule dans une phrase.
+- Utiliser `$$...$$` pour une formule importante ou complexe.
+- Utiliser `\text{...}` pour afficher des mots dans une formule.
+- Utiliser `{,}` pour obtenir une virgule décimale correctement espacée.
+- Utiliser `\ \text{unité}` pour séparer une valeur de son unité.

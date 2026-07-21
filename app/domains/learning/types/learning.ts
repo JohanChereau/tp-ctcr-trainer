@@ -102,6 +102,7 @@ export type LearningCategoryType =
   | "maneuvers"
   | "circulation"
   | "road-code"
+  | "maps-and-professional-calculations"
 
 export type LearningCategory = {
   id: string
