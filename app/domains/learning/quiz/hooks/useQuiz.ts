@@ -8,6 +8,7 @@ import type { AnswerResult, QuizConfig, QuizState } from "../types/quiz"
 
 import { isAnswerCorrect } from "~/domains/learning/quiz/utils/isAnswerCorrect"
 import { shuffleQuestions } from "~/domains/learning/quiz/utils/shuffleQuestions"
+import { shuffleQuestionOptions } from "../utils/shuffleQuestionsOptions"
 
 type UseQuizOptions = {
   questions: Question[]
@@ -38,13 +39,15 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
    * - optional question limit
    */
   function getInitialQuestions() {
-    const preparedQuestions = config?.shuffleQuestions
+    const orderedQuestions = config?.shuffleQuestions
       ? shuffleQuestions([...questions])
-      : questions
+      : [...questions]
 
-    return config?.questionCount
-      ? preparedQuestions.slice(0, config.questionCount)
-      : preparedQuestions
+    const selectedQuestions = config?.questionCount
+      ? orderedQuestions.slice(0, config.questionCount)
+      : orderedQuestions
+
+    return selectedQuestions.map(shuffleQuestionOptions)
   }
 
   const [activeQuestions, setActiveQuestions] = useState<Question[]>(questions)
@@ -224,7 +227,7 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
       return
     }
 
-    const questionsToRetry = [...failedQuestions]
+    const questionsToRetry = failedQuestions.map(shuffleQuestionOptions)
 
     resetQuizState()
 

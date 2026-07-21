@@ -174,18 +174,20 @@ export function getCategoryActions(
         },
       ]
 
-    case "rse":
+    case "social-regulations":
       return [
         {
           title: "Consulter les leçons",
-          description: "Parcourez les contenus pédagogiques de la RSE.",
+          description:
+            "Parcourez les contenus pédagogiques de la réglementation sociale.",
           href: `/learning/${category.id}/revision`,
           icon: BookOpen,
         },
 
         {
-          title: "Quiz RSE",
-          description: "Testez vos connaissances.",
+          title: "Quiz Réglementation",
+          description:
+            "Testez vos connaissances en réglementation sociale française et européenne.",
           href: `/learning/${category.id}/quiz`,
           icon: GraduationCap,
         },
@@ -193,11 +195,22 @@ export function getCategoryActions(
         {
           title: "Réviser mes points faibles",
           description:
-            "Travaillez uniquement les notions de RSE où vous avez le plus de difficultés.",
+            "Travaillez uniquement les notions où vous rencontrez le plus de difficultés.",
           href: `/learning/${category.id}/weak-questions`,
           icon: Flame,
           badge: weakQuestionsCount,
           iconClassName: "text-orange-500",
+        },
+      ]
+
+    case "maps-and-professional-calculations":
+      return [
+        {
+          title: "Consulter les leçons",
+          description:
+            "Révisez la lecture de cartes et les calculs professionnels.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
         },
       ]
 

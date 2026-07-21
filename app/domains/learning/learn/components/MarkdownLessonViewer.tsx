@@ -1,9 +1,7 @@
 import type { LessonVideo } from "~/domains/learning/types/learning"
 
-import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
-
-import { parseMarkdown } from "./markdown/parseMarkdown"
+import { MarkdownPartRenderer } from "./markdown/MarkdownPartRenderer"
+import { parseMarkdown } from "./markdown/parser/parseMarkdown"
 import { VideoEmbed } from "./VideoEmbed"
 
 type MarkdownLessonViewerProps = {
@@ -19,26 +17,12 @@ export function MarkdownLessonViewer({
 
   return (
     <div className="space-y-8">
-      {video && <VideoEmbed {...video} title="Lesson video" />}
+      {video && <VideoEmbed {...video} title="Vidéo de la leçon" />}
 
-      <article className="prose max-w-none prose-neutral dark:prose-invert">
-        <div className="space-y-6">
-          {parts.map((part, index) => {
-            if (part.type === "video") {
-              if (!part.videoId) {
-                return null
-              }
-
-              return <VideoEmbed key={index} {...part} />
-            }
-
-            return (
-              <ReactMarkdown key={index} remarkPlugins={[remarkGfm]}>
-                {part.content}
-              </ReactMarkdown>
-            )
-          })}
-        </div>
+      <article className="space-y-6">
+        {parts.map((part, index) => (
+          <MarkdownPartRenderer key={`${part.type}-${index}`} part={part} />
+        ))}
       </article>
     </div>
   )

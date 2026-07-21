@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react"
+
 import { QuizHeader } from "./QuizHeader"
 import { QuizTimer } from "./QuizTimer"
 
@@ -6,12 +8,13 @@ import { CorrectionScreen } from "./screens/CorrectionScreen"
 import { ResultsScreen } from "./screens/ResultsScreen"
 
 import { useQuiz } from "../hooks/useQuiz"
+import { useQuizExitGuard } from "../hooks/useQuizExitGuard"
+
+import { saveQuestionResult } from "../../stats/storage"
+
+import { getQuestionExpectedAnswer } from "../utils/getQuestionExpectedAnswer"
 
 import type { QuizPlayerProps } from "../types/quiz"
-import { useEffect, useRef } from "react"
-import { saveQuestionResult } from "../../stats/storage"
-import { useQuizExitGuard } from "../hooks/useQuizExitGuard"
-import { getQuestionExpectedAnswer } from "../utils/getQuestionExpectedAnswer"
 
 export function QuizPlayer({
   title,
@@ -30,15 +33,16 @@ export function QuizPlayer({
 
   const statsSavedRef = useRef(false)
 
+  const questionTopRef = useRef<HTMLDivElement>(null)
+  const correctionTopRef = useRef<HTMLDivElement>(null)
+
   function handleRestart() {
     statsSavedRef.current = false
-
     quiz.restartQuiz()
   }
 
   function handleRetryErrors() {
     statsSavedRef.current = false
-
     quiz.retryFailedQuestions()
   }
 
@@ -54,8 +58,42 @@ export function QuizPlayer({
     statsSavedRef.current = true
   }, [quiz.quizState, quiz.answers])
 
+  useEffect(() => {
+    if (quiz.quizState !== "question") {
+      return
+    }
+
+    const animationFrame = window.requestAnimationFrame(() => {
+      questionTopRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    })
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame)
+    }
+  }, [quiz.currentIndex, quiz.quizState])
+
+  useEffect(() => {
+    if (quiz.quizState !== "correction") {
+      return
+    }
+
+    const animationFrame = window.requestAnimationFrame(() => {
+      correctionTopRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    })
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame)
+    }
+  }, [quiz.quizState])
+
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col gap-8">
+    <div className="mx-auto flex w-full max-w-4xl flex-col gap-4 sm:gap-6 md:gap-8">
       <QuizHeader
         title={title}
         currentQuestion={quiz.currentIndex}
@@ -67,21 +105,38 @@ export function QuizPlayer({
       )}
 
       {quiz.quizState === "question" && (
-        <QuestionScreen
-          question={quiz.currentQuestion}
-          answer={quiz.answer}
-          onAnswerChange={quiz.setAnswer}
-          onSubmit={quiz.submitAnswer}
-        />
+        <>
+          <div
+            ref={questionTopRef}
+            className="scroll-mt-20 sm:scroll-mt-24"
+            aria-hidden="true"
+          />
+
+          <QuestionScreen
+            question={quiz.currentQuestion}
+            answer={quiz.answer}
+            onAnswerChange={quiz.setAnswer}
+            onSubmit={quiz.submitAnswer}
+          />
+        </>
       )}
 
       {quiz.quizState === "correction" && (
-        <CorrectionScreen
-          isCorrect={quiz.isCorrect}
-          canonicalAnswer={getQuestionExpectedAnswer(quiz.currentQuestion)}
-          explanation={quiz.currentQuestion.explanation}
-          onNext={quiz.nextQuestion}
-        />
+        <>
+          <div
+            ref={correctionTopRef}
+            className="scroll-mt-20 sm:scroll-mt-24"
+            aria-hidden="true"
+          />
+
+          <CorrectionScreen
+            isCorrect={quiz.isCorrect}
+            isLastQuestion={quiz.currentIndex === quiz.totalQuestions - 1}
+            canonicalAnswer={getQuestionExpectedAnswer(quiz.currentQuestion)}
+            explanation={quiz.currentQuestion.explanation}
+            onNext={quiz.nextQuestion}
+          />
+        </>
       )}
 
       {quiz.quizState === "results" && (

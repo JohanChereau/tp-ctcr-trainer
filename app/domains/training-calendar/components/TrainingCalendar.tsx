@@ -38,6 +38,7 @@ type TrainingEventKind =
   | "plateau"
   | "theory"
   | "msp"
+  | "op"
   | "exam"
   | "holiday"
   | "vacation"
@@ -658,6 +659,14 @@ function getEventKind(event: TrainingCalendarEvent): TrainingEventKind {
   }
 
   if (
+    text.includes("opération professionnelle") ||
+    containsWord(text, "op") ||
+    containsWord(text, "opération pro")
+  ) {
+    return "op"
+  }
+
+  if (
     text.includes("theorie") ||
     text.includes("cours theorique") ||
     text.includes("en salle") ||
@@ -730,6 +739,14 @@ function getEventKindStyles(kind: TrainingEventKind) {
     case "msp":
       return {
         label: "MSP",
+        card: "border-cyan-200 bg-cyan-50 text-cyan-950 dark:border-cyan-900/60 dark:bg-cyan-950/30 dark:text-cyan-100",
+        badge:
+          "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/60 dark:text-cyan-200",
+      }
+
+    case "op":
+      return {
+        label: "OP",
         card: "border-cyan-200 bg-cyan-50 text-cyan-950 dark:border-cyan-900/60 dark:bg-cyan-950/30 dark:text-cyan-100",
         badge:
           "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/60 dark:text-cyan-200",

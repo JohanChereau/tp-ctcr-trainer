@@ -1,0 +1,1 @@
+export { socialRegulationsCategory } from "./category"

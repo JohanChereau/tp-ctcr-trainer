@@ -27,23 +27,28 @@ export function AnswerInput({ value, onChange, onSubmit }: AnswerInputProps) {
   }, [])
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <Input
         ref={inputRef}
         value={value}
         placeholder="Saisissez votre réponse..."
         onChange={(event) => onChange(event.target.value)}
         onKeyDown={(event) => {
-          if (event.key === "Enter") {
+          if (event.key === "Enter" && value.trim()) {
             onSubmit()
           }
         }}
-        className="h-12 border-neutral-300 text-base shadow-sm focus-visible:border-neutral-500 dark:border-input"
+        className="h-14 rounded-xl border bg-background px-4 text-base shadow-xs"
       />
 
-      <Button size="lg" className="h-12 w-full" onClick={onSubmit}>
-        <SendHorizontal />
-        Valider
+      <Button
+        size="lg"
+        disabled={!value.trim()}
+        className="h-12 w-full rounded-xl"
+        onClick={onSubmit}
+      >
+        <SendHorizontal className="size-4" />
+        Valider ma réponse
       </Button>
     </div>
   )

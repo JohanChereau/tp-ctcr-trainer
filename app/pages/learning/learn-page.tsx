@@ -3,6 +3,7 @@ import { useParams } from "react-router"
 import { BookOpen } from "lucide-react"
 
 import { BackButton } from "~/components/navigation/BackButton"
+import { ScrollToTopButton } from "~/components/navigation/ScrollToTopButton"
 
 import { getLessonById } from "~/domains/learning/data"
 import { LessonViewer } from "~/domains/learning/learn/components/LessonViewer"
@@ -44,6 +45,8 @@ export default function LearnPage() {
 
         <LessonViewer lesson={lesson} />
       </div>
+
+      <ScrollToTopButton />
     </AppLayout>
   )
 }
