@@ -1,6 +1,7 @@
 import type { LearningCategory } from "../../types/learning"
 
 import { rse01 } from "./rse-01"
+import { rsfIntercity01 } from "./rsf-intercity"
 
 export const socialRegulationsCategory: LearningCategory = {
   id: "social-regulations",
@@ -14,5 +15,5 @@ export const socialRegulationsCategory: LearningCategory = {
 
   icon: "🕒",
 
-  lessons: [rse01],
+  lessons: [rse01, rsfIntercity01],
 }

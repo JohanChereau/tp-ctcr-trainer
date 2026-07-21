@@ -15,8 +15,6 @@ export function MarkdownLessonViewer({
 }: MarkdownLessonViewerProps) {
   const parts = parseMarkdown(markdown)
 
-  console.log(parts)
-
   return (
     <div className="space-y-8">
       {video && <VideoEmbed {...video} title="Vidéo de la leçon" />}

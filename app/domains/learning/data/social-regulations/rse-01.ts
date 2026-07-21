@@ -8,379 +8,787 @@ export const rse01: Lesson = {
   contentType: "markdown",
 
   markdown: `
-  # Réglementation Sociale Européenne (RSE)
+# Comprendre la Réglementation Sociale Européenne
 
-La Réglementation Sociale Européenne encadre les temps de conduite, de pause et de repos des conducteurs.
+La **Réglementation Sociale Européenne (RSE)** définit les règles que doivent respecter les conducteurs professionnels concernant :
 
-Son objectif est de :
+- les temps de conduite ;
+- les pauses ;
+- les temps de repos.
 
-* garantir la sécurité routière ;
-* lutter contre la fatigue ;
-* protéger les conducteurs et les usagers.
+Son objectif est simple : permettre aux conducteurs de travailler en toute sécurité tout en limitant les risques liés à la fatigue.
 
----
+:::info[Pourquoi cette réglementation ?]
 
-# Tableau récapitulatif
+La fatigue est l'une des principales causes d'accidents dans le transport routier.
 
-| Conduite (maximum)                                          | Pause / Repos (minimum)                           |
-| ----------------------------------------------------------- | ------------------------------------------------- |
-| Conduite continue : 4h30                                    | Pause : 45 min ou 15 min + 30 min                 |
-| Conduite journalière normale : 9h                           | Repos journalier normal : 11h                     |
-| Conduite journalière dérogatoire : 10h (2 fois par semaine) | Repos journalier fractionné : 3h + 9h             |
-| Conduite hebdomadaire : 56h                                 | Repos journalier réduit : 9h (3 fois par semaine) |
-| Conduite sur 2 semaines : 90h                               | Repos hebdomadaire normal : 45h                   |
-|                                                             | Repos hebdomadaire réduit : 24h                   |
+La RSE impose donc des limites de conduite et des périodes de repos afin de protéger le conducteur, ses passagers et les autres usagers de la route.
+
+:::
 
 ---
 
-# Temps de conduite
+## Qui est concerné ?
 
-## Conduite continue
+La RSE s'applique aux conducteurs utilisant un véhicule soumis à cette réglementation.
 
-Un conducteur ne peut pas conduire plus de **4h30** sans interruption.
+Elle concerne notamment :
 
-Après cette période, il doit obligatoirement prendre une pause.
+:::checklist
 
----
+Transport de voyageurs
 
-## Conduite journalière
+Transport de marchandises
 
-La durée normale maximale est de :
+Conducteurs salariés
 
-**9 heures par jour**
+Conducteurs indépendants
 
-Cette durée peut être portée à :
-
-**10 heures par jour**
-
-mais uniquement :
-
-**2 fois par semaine**
+:::
 
 ---
 
-## Conduite hebdomadaire
+## Le tachygraphe
 
-La durée maximale de conduite est de :
+Le respect de la RSE est contrôlé grâce au **tachygraphe**.
 
-**56 heures sur une semaine**
+Cet appareil enregistre automatiquement les activités du conducteur ainsi que les temps de conduite.
+
+:::tip
+
+Le tachygraphe ne décide pas si vous respectez la réglementation.
+
+Il enregistre simplement votre activité.
+
+Ce sont ensuite les contrôleurs qui vérifient si les règles ont été respectées.
+
+:::
 
 ---
 
-## Conduite sur deux semaines
+## Les 4 activités du conducteur
 
-La durée maximale de conduite est de :
+Le tachygraphe distingue **quatre activités**.
 
-**90 heures sur deux semaines consécutives**
+Toute la réglementation étudiée dans cette leçon repose sur ces quatre catégories.
+
+| Activité | Description |
+|----------|-------------|
+| 🚍 **Conduite** | Le véhicule est en circulation. |
+| 🔧 **Travail** | Chargement, déchargement, entretien, formalités administratives... |
+| ⏳ **Disponibilité** | Le conducteur attend et doit rester disponible pour reprendre son activité. |
+| 😴 **Repos** | Le conducteur dispose librement de son temps. |
+
+:::warning[Attention]
+
+La **disponibilité** n'est pas du **repos**.
+
+Même si le conducteur ne travaille pas, il doit pouvoir reprendre son activité à tout moment.
+
+:::
+
+---
 
 ### Exemple
 
-Semaine 1 :
+Imaginons la journée suivante :
 
-56h
+| Heure | Activité |
+|-------|----------|
+| 08 h → 10 h | 🚍 Conduite |
+| 10 h → 10 h 30 | 🔧 Déchargement |
+| 10 h 30 → 11 h | ⏳ Attente |
+| 11 h → 13 h | 🚍 Conduite |
+| 13 h → 14 h | 😴 Pause déjeuner |
 
-Semaine 2 :
-
-34h
-
-Total :
-
-56h + 34h = 90h
-
-Le maximum autorisé est atteint.
+Le tachygraphe enregistrera **cinq périodes**, chacune correspondant à l'une des quatre activités.
 
 ---
 
-### Attention
+### Pourquoi est-ce important ?
 
-Même si vous avez peu conduit la semaine précédente, vous ne pouvez jamais dépasser :
+Dans les chapitres suivants, vous allez apprendre :
 
-**56h sur une semaine**
+- combien de temps vous pouvez conduire ;
+- quand une pause devient obligatoire ;
+- combien de temps doit durer un repos.
 
-### Exemple
+Toutes ces règles sont calculées à partir des **quatre activités** que vous venez de découvrir.
 
-Semaine 1 :
+:::scenario[Question]
 
-10h
+Un conducteur attend pendant **45 minutes** avant son prochain départ.
 
-Semaine 2 :
+La durée de cette attente était connue à l'avance et il n'effectue aucun travail pendant cette période.
 
-56h
-
-Total :
-
-66h
-
-La réglementation est respectée.
-
-En revanche, il est impossible de conduire :
-
-70h
-
-sur une seule semaine car la limite hebdomadaire reste fixée à 56h.
+Cette période correspond-elle à du repos ?
 
 ---
 
-# Temps de pause
+Non.
 
-Après une conduite continue de 4h30, le conducteur doit prendre :
+Le conducteur doit rester disponible pour reprendre son activité.
 
-**45 minutes de pause**
+Il s'agit d'une période de **disponibilité**, et non d'un repos.
 
-Cette pause peut être prise :
-
-* en une seule fois : 45 min ;
-* ou en deux fois : 15 min puis 30 min.
-
----
-
-# Repos journalier
-
-## Repos journalier normal
-
-Durée minimale :
-
-**11 heures**
-
----
-
-## Repos journalier fractionné
-
-Le repos peut être fractionné en :
-
-* 3 heures ;
-* puis 9 heures.
-
-Total :
-
-12 heures.
-
----
-
-## Repos journalier réduit
-
-Durée minimale :
-
-**9 heures**
-
-Ce repos réduit est autorisé :
-
-**3 fois par semaine**
-
----
-
-# Repos hebdomadaire
-
-## Repos hebdomadaire normal
-
-Durée minimale :
-
-**45 heures**
-
----
-
-## Repos hebdomadaire réduit
-
-Durée minimale :
-
-**24 heures**
-
----
-
-# Compensation du repos réduit
-
-Lorsqu'un repos hebdomadaire est réduit à 24h, la différence doit être récupérée.
-
-Calcul :
-
-45h - 24h = 21h
-
-Le conducteur doit donc récupérer :
-
-**21 heures**
-
-avant la fin de la troisième semaine suivante.
-
----
-
-# À retenir pour l'examen
-
-* Conduite continue : 4h30
-* Pause : 45 min
-* Conduite journalière normale : 9h
-* Conduite journalière dérogatoire : 10h (2 fois/semaine)
-* Conduite hebdomadaire : 56h
-* Conduite sur 2 semaines : 90h
-* Repos journalier normal : 11h
-* Repos journalier réduit : 9h
-* Repos hebdomadaire normal : 45h
-* Repos hebdomadaire réduit : 24h
-* Compensation : 21h
-
----
-
-# Laboratoire des composants Markdown
-
-Cette partie sert uniquement à tester les extensions pédagogiques.
-
----
-
-## Encadré d'information
-
-:::info[Pourquoi cette règle ?]
-Cette réglementation permet de limiter la fatigue du conducteur et de protéger :
-
-- le conducteur ;
-- les passagers ;
-- les autres usagers de la route.
-:::
-
-## Encadré d'astuce
-
-:::tip[Astuce de mémorisation]
-Retenez la suite :
-
-**4h30 → 45 min → 9h → 56h → 90h**
-:::
-
-## Encadré d'avertissement
-
-:::warning[Ordre obligatoire]
-En cas de pause fractionnée, les pauses doivent être prises dans cet ordre :
-
-1. au moins **15 minutes** ;
-2. puis au moins **30 minutes**.
-:::
-
-## Encadré important
-
-:::danger[À retenir pour l'examen]
-Une pause unique de **30 minutes** après 4h30 de conduite n'est pas suffisante.
 :::
 
 ---
 
-## Chiffres-clés
+## La conduite continue
 
-:::metrics[Les chiffres essentiels]
-4h30 | Conduite continue maximale | Avant une pause réglementaire
-45 min | Pause réglementaire | Possible en 15 min puis 30 min
-9h | Conduite journalière normale
-10h | Conduite journalière dérogatoire | Deux fois par semaine maximum
-56h | Conduite hebdomadaire maximale
-90h | Conduite maximale sur deux semaines
-11h | Repos journalier normal
+La conduite continue correspond au temps de conduite effectué **sans avoir réalisé la pause réglementaire**.
+
+Autrement dit, c'est le temps pendant lequel vous conduisez avant d'être obligé de vous arrêter.
+
+---
+
+### La règle
+
+Vous pouvez conduire **au maximum 4 h 30**.
+
+Au-delà, une pause devient obligatoire.
+
+:::sequence[Cycle de conduite]
+
+Conduite | 4 h 30 maximum | drive
+
+Pause | 45 min minimum | break
+
+Conduite | Nouvelle période | drive
+
+:::
+
+:::info
+
+Après une pause réglementaire, une nouvelle période de conduite continue recommence.
+
+Le compteur des **4 h 30** repart donc de zéro.
+
 :::
 
 ---
 
-## Timeline verticale
+### La pause obligatoire
 
-:::timeline[Déroulement d'une pause fractionnée]
-Début de la conduite | Le conducteur commence sa période de conduite
-Pause de 15 minutes | Première partie de la pause réglementaire
-Reprise de la conduite | Le conducteur reprend temporairement la route
-Pause de 30 minutes | Seconde partie obligatoire de la pause
-Nouveau cycle | Une nouvelle période de conduite peut commencer
+La pause doit durer **au minimum 45 minutes**.
+
+Pendant cette période, le conducteur ne doit effectuer **aucune autre activité professionnelle**.
+
+---
+
+### La pause fractionnée
+
+Au lieu d'une pause unique de **45 minutes**, il est possible de la fractionner.
+
+:::compare[Deux possibilités]
+
+45 min | Une seule pause | Conforme
+
+15 min + 30 min | Deux pauses successives | Conforme
+
+:::
+
+:::warning
+
+En cas de fractionnement, la première pause doit durer **au moins 15 minutes** et la seconde **au moins 30 minutes**.
+
+Elles doivent obligatoirement être prises dans cet ordre.
+
+Une pause de **20 min + 25 min** n'est donc pas conforme.
+
 :::
 
 ---
 
-## Comparaison
+### Exemples
 
-:::compare[Comparaison des repos journaliers]
-Repos normal | 11 heures | Il s'agit de la règle générale
-Repos réduit | 9 heures | Trois fois maximum entre deux repos hebdomadaires
-Repos fractionné | 3h + 9h | Soit une durée totale de 12 heures
+| Situation | Conforme ? |
+|-----------|------------|
+| 4 h 30 → 45 min → Reprise de la conduite | ✅ Oui |
+| 2 h 30 → 15 min → 2 h → 30 min → Reprise | ✅ Oui |
+| 2 h → 20 min → 2 h 30 → 25 min | ❌ Non |
+| 5 h de conduite sans pause | ❌ Non |
+
+---
+
+### Mises en situation
+
+:::scenario[Question]
+
+Vous conduisez pendant **4 h 30**.
+
+Vous prenez ensuite une pause de **45 minutes**.
+
+Pouvez-vous repartir pour une nouvelle période de conduite ?
+
+---
+
+Oui.
+
+La pause réglementaire est complète.
+
+Une nouvelle période de conduite continue peut commencer.
+
 :::
 
 ---
 
-## Séquence horizontale
+:::scenario[Question]
 
-:::sequence[Exemple de journée]
-Conduite | 4h30 | drive
-Pause | 45 min | break
-Conduite | 4h30 | conduite
-Repos journalier | 11h | repos
+Vous conduisez pendant **4 h 30**.
+
+Vous prenez une pause de **15 minutes**, puis reprenez immédiatement la route.
+
+La réglementation est-elle respectée ?
+
+---
+
+La première partie de la pause fractionnée est conforme, mais la pause réglementaire n'est pas encore complète.
+
+Vous devrez prendre une seconde pause d'au moins **30 minutes** avant d'atteindre une nouvelle période de **4 h 30** de conduite.
+
 :::
 
 ---
 
-## Mise en situation
+## La conduite journalière
 
-:::scenario[La pause de 30 minutes est-elle suffisante ?]
-Un conducteur conduit pendant **4h30**.
+La conduite journalière correspond au **temps total de conduite effectué entre deux repos journaliers**, ou entre un repos journalier et un repos hebdomadaire.
 
-Il s'arrête ensuite pendant **30 minutes** avant de reprendre la route.
+En d'autres termes, c'est la quantité totale de conduite que vous pouvez effectuer au cours d'une journée de travail.
 
-Peut-il reprendre une nouvelle période complète de conduite ?
 ---
-**Non.**
 
-Après 4h30 de conduite, la pause doit durer au minimum **45 minutes**.
+### La règle
 
-Une pause unique de 30 minutes n'est donc pas suffisante.
+En règle générale, vous pouvez conduire **jusqu'à 9 heures par jour**.
+
+:::info
+
+Les temps de pause, de disponibilité et de travail ne sont pas comptabilisés dans cette durée.
+
+Seul le **temps de conduite** est pris en compte.
+
 :::
 
 ---
 
-## Checklist
+### La durée prolongée
 
-:::checklist[Conditions de la pause fractionnée]
-Une première pause d'au moins **15 minutes**
-Une seconde pause d'au moins **30 minutes**
-Le respect de l'ordre **15 puis 30**
-Les deux pauses prises avant ou à l'issue des **4h30**
+Deux fois par semaine, la durée de conduite journalière peut être prolongée jusqu'à **10 heures**.
+
+:::compare[Conduite journalière]
+
+9 h | Durée normale | Cas général
+
+10 h | Durée prolongée | Maximum 2 fois par semaine
+
+:::
+
+:::warning
+
+Une troisième journée à **10 heures** au cours de la même semaine n'est pas autorisée.
+
 :::
 
 ---
 
-## Mémo
+### Le repos journalier
 
-:::memory[La suite essentielle]
-**4h30 → 45 min → 9h → 56h → 90h**
----
-Conduite continue → pause → journée → semaine → deux semaines
+À la fin de votre journée de travail, vous devez obligatoirement prendre un repos journalier.
+
+Deux possibilités existent.
+
+:::compare[Repos journalier]
+
+Repos normal | 11 h consécutives | Cas général
+
+Repos réduit | 9 h consécutives | Maximum 3 fois entre deux repos hebdomadaires
+
 :::
 
-## Mémo de calcul
-
-:::memory[Repos journalier fractionné]
-**3h + 9h = 12h**
 ---
-Le repos journalier fractionné dure une heure de plus que le repos journalier normal non fractionné de 11 heures.
+
+### Le repos journalier fractionné
+
+Le repos journalier normal peut être fractionné.
+
+Il est alors composé de :
+
+- une première période de **3 heures minimum** ;
+- suivie d'une seconde période de **9 heures minimum**.
+
+:::sequence[Repos journalier fractionné]
+
+Repos | 3 h minimum | hotel
+
+Activité | Journée de travail | work
+
+Repos | 9 h minimum | hotel
+
+:::
+
+La durée totale du repos est alors de **12 heures**.
+
+---
+
+### Exemples
+
+#### Journée conforme
+
+:::timeline[Journée de conduite]
+
+08 h | Début de journée
+
+08 h → 12 h | 🚍 Conduite (4 h)
+
+12 h → 12 h 45 | ☕ Pause (45 min)
+
+12 h 45 → 15 h 45 | 🚍 Conduite (3 h)
+
+15 h 45 → 16 h 30 | ☕ Pause (45 min)
+
+16 h 30 → 18 h 30 | 🚍 Conduite (2 h)
+
+18 h 30 | Fin de journée (9 h de conduite)
+
 :::
 
 ---
 
-## Tableau Markdown stylé
+#### Journée avec durée prolongée
 
-| Type de repos | Durée minimale | Particularité |
-| --- | ---: | --- |
-| Repos journalier normal | **11h** | Règle générale |
-| Repos journalier réduit | **9h** | Trois fois maximum entre deux repos hebdomadaires |
-| Repos journalier fractionné | **3h + 9h** | 12 heures au total |
-| Repos hebdomadaire normal | **45h** | Repos de référence |
-| Repos hebdomadaire réduit | **24h** | Compensation obligatoire |
+:::timeline[Journée à 10 heures]
+
+08 h | Début de journée
+
+08 h → 10 h 30 | 🚍 Conduite (2 h 30)
+
+10 h 30 → 10 h 45 | ☕ Pause (15 min)
+
+10 h 45 → 12 h 45 | 🚍 Conduite (2 h)
+
+12 h 45 → 13 h 15 | ☕ Pause (30 min)
+
+13 h 15 → 15 h 45 | 🚍 Conduite (2 h 30)
+
+15 h 45 → 16 h 30 | ☕ Pause (45 min)
+
+16 h 30 → 19 h 30 | 🚍 Conduite (3 h)
+
+19 h 30 | Fin de journée (10 h de conduite)
+
+:::
+
+:::info
+
+Cette journée est conforme :
+
+- la conduite continue est respectée ;
+- les pauses réglementaires sont effectuées ;
+- la conduite journalière atteint **10 heures** ;
+- cette durée prolongée ne peut être utilisée que **2 fois par semaine**.
+
+:::
 
 ---
 
-## Vidéo YouTube
+#### Repos journalier fractionné
 
-Remplacer l'identifiant par une véritable vidéo :
+:::timeline[Exemple]
 
-::youtube[dQw4w9WgXcQ]
+20 h | Début de la première période de repos
 
-## Vidéo YouTube avec heure de départ
+20 h → 23 h | 😴 Repos (3 h)
 
-::youtube[https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=30]
+23 h → 01 h | 🔧 Reprise d'activité
 
-## Vidéo Vimeo
+01 h → 10 h | 😴 Repos (9 h)
 
-Remplacer l'identifiant par une véritable vidéo Vimeo :
+10 h | Reprise de la journée
 
-::vimeo[76979871]
+:::
+
+---
+
+### Mises en situation
+
+:::scenario[Question]
+
+Aujourd'hui, vous avez conduit **8 h 30**.
+
+Pouvez-vous encore conduire **30 minutes** ?
+
+---
+
+Oui.
+
+Vous atteindrez alors la durée journalière normale de **9 heures**.
+
+:::
+
+---
+
+:::scenario[Question]
+
+Cette semaine, vous avez déjà effectué **deux journées de 10 heures**.
+
+Aujourd'hui, vous prévoyez une nouvelle journée de **10 heures**.
+
+Est-ce autorisé ?
+
+---
+
+Non.
+
+La conduite journalière ne peut être prolongée jusqu'à **10 heures** que **deux fois par semaine**.
+
+:::
+
+---
+
+:::scenario[Question]
+
+Vous terminez votre journée de travail à **20 h**.
+
+À quelle heure pourrez-vous reprendre votre activité après un repos journalier normal ?
+
+---
+
+À **7 h** le lendemain.
+
+Le repos journalier normal est de **11 heures consécutives**.
+
+:::
+
+---
+
+## La conduite hebdomadaire
+
+La conduite hebdomadaire correspond au **temps total de conduite effectué au cours d'une même semaine**.
+
+La semaine est comprise entre le **lundi à 00 h 00** et le **dimanche à 24 h 00**.
+
+---
+
+### La règle
+
+Vous pouvez conduire **au maximum 56 heures** au cours d'une même semaine.
+
+:::compare[Conduite hebdomadaire]
+
+56 h | Maximum autorisé | Par semaine
+
+:::
+
+:::warning
+
+Dépasser les **56 heures** de conduite au cours d'une semaine est interdit.
+
+:::
+
+---
+
+### La règle des deux semaines
+
+Même si une semaine est limitée à **56 heures**, il existe également une limite sur deux semaines consécutives.
+
+Vous ne pouvez pas dépasser **90 heures** de conduite au total.
+
+:::compare[Deux semaines consécutives]
+
+90 h | Maximum autorisé | Sur deux semaines consécutives
+
+:::
+
+---
+
+### Exemples
+
+#### Exemple conforme
+
+:::timeline[Deux semaines]
+
+Semaine 1 | 🚍 45 h de conduite
+
+Semaine 2 | 🚍 45 h de conduite
+
+Total | ✅ 90 h
+
+:::
+
+---
+
+#### Exemple conforme
+
+:::timeline[Deux semaines]
+
+Semaine 1 | 🚍 56 h de conduite
+
+Semaine 2 | 🚍 34 h de conduite
+
+Total | ✅ 90 h
+
+:::
+
+---
+
+#### Exemple non conforme
+
+:::timeline[Deux semaines]
+
+Semaine 1 | 🚍 56 h de conduite
+
+Semaine 2 | 🚍 40 h de conduite
+
+Total | ❌ 96 h
+
+:::
+
+:::warning
+
+Même si chaque semaine reste inférieure ou égale à **56 heures**, le total des deux semaines dépasse **90 heures**.
+
+La réglementation n'est donc pas respectée.
+
+:::
+
+---
+
+### Le repos hebdomadaire
+
+Chaque conducteur doit prendre un repos hebdomadaire.
+
+Deux types de repos existent.
+
+:::compare[Repos hebdomadaire]
+
+Repos normal | 45 h consécutives minimum | Cas général
+
+Repos réduit | Entre 24 h et moins de 45 h | Avec compensation
+
+:::
+
+---
+
+### L'organisation sur deux semaines
+
+Sur deux semaines consécutives, le conducteur doit prendre au minimum :
+
+- soit **deux repos hebdomadaires normaux** ;
+- soit **un repos hebdomadaire normal et un repos hebdomadaire réduit**.
+
+:::info
+
+Un repos hebdomadaire réduit ne remplace donc pas définitivement le repos normal.
+
+La réduction devra être compensée.
+
+:::
+
+---
+
+### Le repos hebdomadaire réduit
+
+Le repos hebdomadaire réduit doit durer **au moins 24 heures consécutives**.
+
+La différence avec le repos normal de **45 heures** devra être compensée avant la fin de la troisième semaine suivant la semaine concernée.
+
+:::info[Exemple]
+
+Repos pris : **30 h**
+
+Repos normal : **45 h**
+
+Réduction : **15 h**
+
+Les **15 heures manquantes** devront être récupérées en une seule fois et ajoutées à une autre période de repos d'au moins **9 heures**.
+
+:::
+
+---
+
+### Mises en situation
+
+:::scenario[Question]
+
+Cette semaine, vous avez conduit **54 heures**.
+
+Pouvez-vous encore conduire **2 heures** ?
+
+---
+
+Oui.
+
+Vous atteindrez la limite hebdomadaire de **56 heures**.
+
+:::
+
+---
+
+:::scenario[Question]
+
+Vous avez conduit :
+
+- **56 heures** la semaine dernière ;
+- **35 heures** cette semaine.
+
+La réglementation est-elle respectée ?
+
+---
+
+Non.
+
+Vous avez déjà effectué **91 heures** de conduite sur deux semaines consécutives.
+
+La limite maximale est de **90 heures**.
+
+:::
+
+---
+
+:::scenario[Question]
+
+Vous prenez un repos hebdomadaire réduit de **24 heures**.
+
+Les heures manquantes sont-elles définitivement perdues ?
+
+---
+
+Non.
+
+La réduction par rapport au repos normal de **45 heures** devra obligatoirement être compensée avant la fin de la troisième semaine suivante.
+
+:::
+
+---
+
+## Les situations particulières
+
+Certaines situations sont soumises à des règles spécifiques.
+
+Elles restent moins fréquentes, mais il est important de les connaître.
+
+---
+
+### Le double équipage
+
+On parle de **double équipage** lorsque **deux conducteurs** se relaient à bord du même véhicule.
+
+Cette organisation permet de prolonger le temps d'exploitation du véhicule tout en respectant la réglementation.
+
+:::compare[Double équipage]
+
+Conducteurs | 2
+
+Repos journalier | 9 h minimum
+
+Période maximale | Dans une période de 30 h
+
+:::
+
+:::info
+
+Pendant qu'un conducteur conduit, l'autre peut être en disponibilité afin de prendre le relais.
+
+:::
+
+---
+
+### Les transports par ferry ou par train
+
+Lors d'un transport par **ferry** ou par **train**, certaines règles particulières peuvent s'appliquer au repos du conducteur.
+
+:::info
+
+Ces situations sont encadrées par des dispositions spécifiques.
+
+Pour cette première leçon, retenez surtout que le transport par ferry ou par train peut modifier les conditions habituelles de prise du repos.
+
+Les règles détaillées pourront être étudiées dans une leçon complémentaire.
+
+:::
+
+---
+
+### Les circonstances exceptionnelles
+
+Dans certaines circonstances exceptionnelles, un conducteur peut être amené à s'écarter temporairement des règles habituelles afin de protéger la sécurité des personnes, du véhicule ou de son chargement.
+
+:::warning
+
+Cette possibilité reste exceptionnelle.
+
+Elle ne doit jamais être utilisée simplement pour respecter un planning, effectuer une livraison plus rapidement ou compenser un retard prévisible.
+
+:::
+
+---
+
+### Mises en situation
+
+:::scenario[Question]
+
+Deux conducteurs se relaient dans le même véhicule.
+
+Comment appelle-t-on cette organisation ?
+
+---
+
+Il s'agit d'un **double équipage**.
+
+:::
+
+---
+
+:::scenario[Question]
+
+Les transports par ferry ou par train sont-ils toujours soumis exactement aux mêmes conditions de repos qu'un trajet routier classique ?
+
+---
+
+Non.
+
+Des dispositions particulières peuvent s'appliquer à ce type de transport.
+
+:::
+
+---
+
+:::scenario[Question]
+
+Pouvez-vous dépasser votre durée de conduite simplement parce que vous êtes en retard sur votre livraison ?
+
+---
+
+Non.
+
+Un retard de livraison ou un planning mal organisé ne constitue pas, à lui seul, une circonstance exceptionnelle.
+
+:::
+
+---
+
+# À mémoriser
+
+:::tip[Mémo]
+
+Retenez surtout ces valeurs : elles reviennent très souvent lors des QCM et des examens.
+
+:::
+
+| 🚍 Conduite | Durée | 😴 Pause / Repos | Durée |
+|------------|------:|------------------|------:|
+| **Continue** | **4 h 30** | **Pause obligatoire** | **45 min** |
+| | | Pause fractionnée | 15 min + 30 min |
+| | | | |
+| **Journalière** | **9 h** | **Repos journalier normal** | **11 h** |
+| Dérogation | 10 h (2×/sem.) | Repos journalier réduit | 9 h |
+| | | Repos journalier fractionné | 3 h + 9 h |
+| | | | |
+| **Hebdomadaire** | **56 h** | **Repos hebdomadaire normal** | **45 h** |
+| **2 semaines** | **90 h** | Repos hebdomadaire réduit | 24 h + compensation |
   `,
 
   questions: [
@@ -579,6 +987,259 @@ Remplacer l'identifiant par une véritable vidéo Vimeo :
       options: ["11h", "21h", "24h", "45h"],
 
       correctOption: "21h",
+    },
+    {
+      id: "rse01-q18",
+
+      type: "true-false",
+
+      question:
+        "Après une pause réglementaire de 45 minutes, une nouvelle période de conduite continue recommence.",
+
+      correctAnswer: true,
+    },
+    {
+      id: "rse01-q19",
+
+      type: "true-false",
+
+      question:
+        "Une pause de 20 minutes suivie d'une pause de 25 minutes remplace une pause de 45 minutes.",
+
+      correctAnswer: false,
+    },
+    {
+      id: "rse01-q20",
+
+      type: "single-choice",
+
+      question:
+        "Après 2 h 30 de conduite, vous prenez une pause de 15 minutes. Combien pouvez-vous encore conduire avant la prochaine pause réglementaire ?",
+
+      options: ["1 h", "2 h", "2 h 30", "4 h 30"],
+
+      correctOption: "2 h",
+    },
+    {
+      id: "rse01-q21",
+
+      type: "single-choice",
+
+      question:
+        "Vous avez déjà utilisé deux journées de conduite à 10 heures cette semaine. Quelle est votre durée maximale de conduite aujourd'hui ?",
+
+      options: ["8 h", "9 h", "10 h", "11 h"],
+
+      correctOption: "9 h",
+    },
+    {
+      id: "rse01-q22",
+
+      type: "true-false",
+
+      question:
+        "Les temps de disponibilité sont comptabilisés dans la conduite journalière.",
+
+      correctAnswer: false,
+    },
+    {
+      id: "rse01-q23",
+
+      type: "multiple-choice",
+
+      question: "Quelles activités sont enregistrées par le tachygraphe ?",
+
+      options: [
+        "Conduite",
+        "Travail",
+        "Disponibilité",
+        "Repos",
+        "Pause déjeuner",
+      ],
+
+      correctOptions: ["Conduite", "Travail", "Disponibilité", "Repos"],
+    },
+    {
+      id: "rse01-q24",
+
+      type: "single-choice",
+
+      question:
+        "Quel est le principal objectif de la Réglementation Sociale Européenne ?",
+
+      options: [
+        "Réduire la consommation de carburant",
+        "Limiter la fatigue des conducteurs",
+        "Réduire les péages",
+        "Améliorer les performances des véhicules",
+      ],
+
+      correctOption: "Limiter la fatigue des conducteurs",
+    },
+    {
+      id: "rse01-q25",
+
+      type: "single-choice",
+
+      question:
+        "Quel appareil enregistre automatiquement les activités du conducteur ?",
+
+      options: [
+        "Le chronotachygraphe",
+        "Le limiteur de vitesse",
+        "Le GPS",
+        "L'ordinateur de bord",
+      ],
+
+      correctOption: "Le chronotachygraphe",
+    },
+    {
+      id: "rse01-q26",
+
+      type: "true-false",
+
+      question:
+        "Le tachygraphe vérifie automatiquement si le conducteur respecte la réglementation.",
+
+      correctAnswer: false,
+    },
+    {
+      id: "rse01-q27",
+
+      type: "single-choice",
+
+      question:
+        "Quelle activité correspond à un conducteur qui attend son départ sans effectuer de travail mais doit rester disponible ?",
+
+      options: ["Repos", "Disponibilité", "Conduite", "Travail"],
+
+      correctOption: "Disponibilité",
+    },
+    {
+      id: "rse01-q28",
+
+      type: "true-false",
+
+      question:
+        "Le temps de pause est comptabilisé dans la durée de conduite journalière.",
+
+      correctAnswer: false,
+    },
+    {
+      id: "rse01-q29",
+
+      type: "single-choice",
+
+      question:
+        "Vous avez conduit 45 h cette semaine. Combien pouvez-vous encore conduire avant d'atteindre la limite hebdomadaire ?",
+
+      options: ["9 h", "10 h", "11 h", "45 h"],
+
+      correctOption: "11 h",
+    },
+    {
+      id: "rse01-q30",
+
+      type: "true-false",
+
+      question:
+        "Il est possible de prendre un repos journalier normal en une seule période de 11 heures consécutives.",
+
+      correctAnswer: true,
+    },
+    {
+      id: "rse01-q31",
+
+      type: "single-choice",
+
+      question: "Le repos journalier normal peut être fractionné en :",
+
+      options: ["4 h + 7 h", "3 h + 9 h", "5 h + 6 h", "6 h + 6 h"],
+
+      correctOption: "3 h + 9 h",
+    },
+    {
+      id: "rse01-q32",
+
+      type: "true-false",
+
+      question:
+        "Deux conducteurs qui se relaient dans le même véhicule forment un double équipage.",
+
+      correctAnswer: true,
+    },
+    {
+      id: "rse01-q33",
+
+      type: "single-choice",
+
+      question:
+        "Dans un double équipage, le repos journalier minimum doit être pris dans une période de :",
+
+      options: ["24 h", "30 h", "36 h", "48 h"],
+
+      correctOption: "30 h",
+    },
+
+    {
+      id: "rse01-q34",
+
+      type: "text",
+
+      question:
+        "Vous avez conduit 48h la semaine dernière. Combien pouvez-vous conduire au maximum cette semaine ?",
+
+      canonicalAnswer: "42h",
+
+      acceptedAnswers: ["42h", "42 h", "42 heures"],
+    },
+    {
+      id: "rse01-q35",
+
+      type: "text",
+
+      question:
+        "Vous avez déjà conduit 52h cette semaine. Combien pouvez-vous encore conduire au maximum ?",
+
+      canonicalAnswer: "4h",
+
+      acceptedAnswers: ["4h", "4 h", "4 heures"],
+    },
+    {
+      id: "rse01-q36",
+
+      type: "text",
+
+      question:
+        "Vous avez conduit 54h la semaine dernière. Combien pouvez-vous conduire au maximum cette semaine ?",
+
+      canonicalAnswer: "36h",
+
+      acceptedAnswers: ["36h", "36 h", "36 heures"],
+    },
+    {
+      id: "rse01-q37",
+
+      type: "single-choice",
+
+      question:
+        "Vous avez conduit 44h la semaine dernière et 43h cette semaine. Combien pouvez-vous encore conduire cette semaine ?",
+
+      options: ["2h", "3h", "12h", "13h"],
+
+      correctOption: "3h",
+    },
+    {
+      id: "rse01-q38",
+
+      type: "single-choice",
+
+      question:
+        "Vous avez déjà conduit 4h aujourd'hui. Combien pouvez-vous encore conduire avant d'atteindre la durée journalière normale ?",
+
+      options: ["4h", "5h", "6h", "6h30"],
+
+      correctOption: "5h",
     },
   ],
 }

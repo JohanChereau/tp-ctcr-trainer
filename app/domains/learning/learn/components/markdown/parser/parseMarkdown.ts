@@ -13,7 +13,11 @@ import type {
   MarkdownCompareItem,
   MarkdownMetric,
   MarkdownPart,
+  MarkdownScheduleItem,
+  MarkdownScheduleKind,
   MarkdownSequenceItem,
+  MarkdownSummaryItem,
+  MarkdownSummarySection,
   MarkdownTimelineStep,
 } from "./types"
 
@@ -29,9 +33,11 @@ const BLOCK_NAMES = [
   "timeline",
   "compare",
   "sequence",
+  "schedule",
   "scenario",
   "checklist",
   "memory",
+  "summary",
 ] as const
 
 type MarkdownBlockName = (typeof BLOCK_NAMES)[number]
@@ -466,6 +472,13 @@ function createMarkdownBlockPart(
         items: parseSequence(content),
       }
 
+    case "schedule":
+      return {
+        type: "schedule",
+        title,
+        items: parseSchedule(content),
+      }
+
     case "scenario":
       return {
         type: "scenario",
@@ -485,6 +498,13 @@ function createMarkdownBlockPart(
         type: "memory",
         title,
         memory: parseMemory(content),
+      }
+
+    case "summary":
+      return {
+        type: "summary",
+        title,
+        sections: parseSummary(content),
       }
 
     case "info":
@@ -604,6 +624,92 @@ function parseSequence(content: string): MarkdownSequenceItem[] {
 }
 
 /**
+ * Parses schedule rows.
+ *
+ * Expected format:
+ *
+ * ```text
+ * Label | Duration | Type
+ * ```
+ *
+ * Invalid rows and unsupported activity types are ignored.
+ *
+ * @param content - Raw schedule content.
+ * @returns Valid schedule entries with normalized durations in minutes.
+ */
+function parseSchedule(content: string): MarkdownScheduleItem[] {
+  return parseNonEmptyLines(content)
+    .map((line) => {
+      const [label = "", duration = "", rawKind = ""] = parseColumns(line)
+      const kind = parseScheduleKind(rawKind)
+      const durationMinutes = parseDurationMinutes(duration)
+
+      if (!label || !duration || !kind || durationMinutes === undefined) {
+        return undefined
+      }
+
+      return {
+        label,
+        duration,
+        durationMinutes,
+        kind,
+      }
+    })
+    .filter((item): item is MarkdownScheduleItem => item !== undefined)
+}
+
+function parseScheduleKind(value: string): MarkdownScheduleKind | undefined {
+  const normalizedValue = value.trim().toLowerCase()
+  const supportedKinds: MarkdownScheduleKind[] = [
+    "drive",
+    "work",
+    "availability",
+    "break",
+    "rest",
+  ]
+
+  return supportedKinds.find((kind) => kind === normalizedValue)
+}
+
+/**
+ * Converts common French duration formats to minutes.
+ *
+ * Supported examples include `15 min`, `1 h`, `1 h 30`, `2h30` and `2 h 30 min`.
+ */
+function parseDurationMinutes(value: string): number | undefined {
+  const normalizedValue = value
+    .trim()
+    .toLowerCase()
+    .replace(/minutes?/g, "min")
+    .replace(/heures?/g, "h")
+    .replace(/\s+/g, " ")
+
+  const hoursAndMinutesMatch = normalizedValue.match(
+    /^(?:(\d+(?:[.,]\d+)?)\s*h)(?:\s*(\d+)\s*(?:min)?)?$/
+  )
+
+  if (hoursAndMinutesMatch) {
+    const hours = Number(hoursAndMinutesMatch[1].replace(",", "."))
+    const minutes = Number(hoursAndMinutesMatch[2] ?? 0)
+    const totalMinutes = hours * 60 + minutes
+
+    return Number.isFinite(totalMinutes) && totalMinutes > 0
+      ? totalMinutes
+      : undefined
+  }
+
+  const minutesMatch = normalizedValue.match(/^(\d+(?:[.,]\d+)?)\s*min$/)
+
+  if (minutesMatch) {
+    const minutes = Number(minutesMatch[1].replace(",", "."))
+
+    return Number.isFinite(minutes) && minutes > 0 ? minutes : undefined
+  }
+
+  return undefined
+}
+
+/**
  * Parses a scenario into its situation and optional solution.
  *
  * The first line containing only `---` separates both sections.
@@ -652,4 +758,84 @@ function parseMemory(content: string) {
     content: memoryContent,
     explanation,
   }
+}
+
+/**
+ * Parses a revision summary into optional titled sections.
+ *
+ * A section starts with a level-two Markdown heading:
+ *
+ * ```md
+ * ## Section title
+ * ```
+ *
+ * Every other valid line follows this format:
+ *
+ * ```text
+ * Key | Value | Optional detail
+ * ```
+ *
+ * Content without headings is placed in one untitled section, which preserves
+ * compatibility with the original summary syntax.
+ *
+ * Empty sections and malformed entries are ignored.
+ *
+ * @param content - Raw summary block content.
+ * @returns Parsed summary sections.
+ */
+function parseSummary(content: string): MarkdownSummarySection[] {
+  const lines = normalizeLineEndings(content).split("\n")
+
+  const sections: MarkdownSummarySection[] = []
+
+  let currentSection: MarkdownSummarySection = {
+    items: [],
+  }
+
+  function pushCurrentSection(): void {
+    if (currentSection.items.length === 0) {
+      return
+    }
+
+    sections.push(currentSection)
+  }
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim()
+
+    if (!line) {
+      continue
+    }
+
+    const headingMatch = line.match(/^##\s+(.+?)\s*#*\s*$/)
+
+    if (headingMatch) {
+      pushCurrentSection()
+
+      currentSection = {
+        title: headingMatch[1].trim(),
+        items: [],
+      }
+
+      continue
+    }
+
+    const [key = "", value = "", ...detailColumns] = parseColumns(line)
+
+    if (!key || !value) {
+      continue
+    }
+
+    const detail = detailColumns.join(" | ").trim()
+
+    currentSection.items.push({
+      key,
+      value,
+      detail: detail || undefined,
+    })
+  }
+
+  pushCurrentSection()
+
+  return sections
 }

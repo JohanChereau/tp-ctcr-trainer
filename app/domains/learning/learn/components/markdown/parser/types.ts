@@ -25,6 +25,20 @@ export type MarkdownSequenceItem = {
   kind?: string
 }
 
+export type MarkdownScheduleKind =
+  | "drive"
+  | "work"
+  | "availability"
+  | "break"
+  | "rest"
+
+export type MarkdownScheduleItem = {
+  label: string
+  duration: string
+  durationMinutes: number
+  kind: MarkdownScheduleKind
+}
+
 export type MarkdownScenario = {
   situation: string
   solution?: string
@@ -37,6 +51,17 @@ export type MarkdownChecklistItem = {
 export type MarkdownMemory = {
   content: string
   explanation?: string
+}
+
+export type MarkdownSummaryItem = {
+  key: string
+  value: string
+  detail?: string
+}
+
+export type MarkdownSummarySection = {
+  title?: string
+  items: MarkdownSummaryItem[]
 }
 
 export type MarkdownTextPart = {
@@ -79,6 +104,12 @@ export type MarkdownSequencePart = {
   items: MarkdownSequenceItem[]
 }
 
+export type MarkdownSchedulePart = {
+  type: "schedule"
+  title?: string
+  items: MarkdownScheduleItem[]
+}
+
 export type MarkdownScenarioPart = {
   type: "scenario"
   title?: string
@@ -97,6 +128,12 @@ export type MarkdownMemoryPart = {
   memory: MarkdownMemory
 }
 
+export type MarkdownSummaryPart = {
+  type: "summary"
+  title?: string
+  sections: MarkdownSummarySection[]
+}
+
 export type MarkdownPart =
   | MarkdownTextPart
   | MarkdownVideoPart
@@ -105,6 +142,8 @@ export type MarkdownPart =
   | MarkdownTimelinePart
   | MarkdownComparePart
   | MarkdownSequencePart
+  | MarkdownSchedulePart
   | MarkdownScenarioPart
   | MarkdownChecklistPart
   | MarkdownMemoryPart
+  | MarkdownSummaryPart

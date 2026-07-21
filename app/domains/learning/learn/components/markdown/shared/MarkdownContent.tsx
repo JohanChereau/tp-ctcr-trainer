@@ -1,3 +1,4 @@
+import type { Components } from "react-markdown"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 
@@ -8,9 +9,14 @@ import { markdownComponents } from "./markdownComponents"
 type MarkdownContentProps = {
   content: string
   className?: string
+  components?: Components
 }
 
-export function MarkdownContent({ content, className }: MarkdownContentProps) {
+export function MarkdownContent({
+  content,
+  className,
+  components,
+}: MarkdownContentProps) {
   return (
     <div
       className={cn(
@@ -20,7 +26,10 @@ export function MarkdownContent({ content, className }: MarkdownContentProps) {
     >
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        components={markdownComponents}
+        components={{
+          ...markdownComponents,
+          ...components,
+        }}
       >
         {content}
       </ReactMarkdown>

@@ -5,7 +5,9 @@ import { MarkdownCompare } from "./extensions/compare/MarkdownCompare"
 import { MarkdownMemory } from "./extensions/memory/MarkdownMemory"
 import { MarkdownMetrics } from "./extensions/metrics/MarkdownMetrics"
 import { MarkdownScenario } from "./extensions/scenario/MarkdownScenario"
+import { MarkdownSchedule } from "./extensions/schedule/MarkdownSchedule"
 import { MarkdownSequence } from "./extensions/sequence/MarkdownSequence"
+import { MarkdownSummary } from "./extensions/summary/MarkdownSummary"
 import { MarkdownTimeline } from "./extensions/timeline/MarkdownTimeline"
 import type { MarkdownPart } from "./parser/types"
 import { MarkdownContent } from "./shared/MarkdownContent"
@@ -46,6 +48,12 @@ export function MarkdownPartRenderer({ part }: MarkdownPartRendererProps) {
 
     case "memory":
       return <MarkdownMemory {...part} />
+
+    case "summary":
+      return <MarkdownSummary {...part} />
+
+    case "schedule":
+      return <MarkdownSchedule {...part} />
 
     case "text":
       return <MarkdownContent content={part.content} />

@@ -829,6 +829,233 @@ Retenir cette suite facilite la mémorisation.
 Retenir cette suite facilite la mémorisation.
 :::
 
+---
+
+## Schedule
+
+Permet de représenter visuellement le déroulement chronologique d'un service ou d'une journée de travail.
+
+Chaque période est affichée sous forme de bloc dont la largeur est proportionnelle à sa durée.
+
+### Syntaxe
+
+```md
+:::
+
+Conduite | 1 h 30 | drive
+
+Autres tâches | 2 h | work
+
+Conduite | 1 h | drive
+
+Pause | 30 min | break
+
+Autres tâches | 30 min | work
+
+Conduite | 2 h | drive
+
+:::
+```
+
+Chaque ligne suit le format :
+
+```text
+Libellé | Durée | Type
+```
+
+### Types disponibles
+
+| Type           | Description              |
+| -------------- | ------------------------ |
+| `drive`        | Période de conduite      |
+| `work`         | Autres tâches ou travail |
+| `availability` | Disponibilité            |
+| `break`        | Pause                    |
+| `rest`         | Repos                    |
+
+### Formats de durée acceptés
+
+Les durées peuvent être écrites de différentes façons :
+
+```text
+15 min
+30 min
+45 minutes
+1 h
+1h
+1 h 30
+1h30
+2 h
+2h30
+1,5 h
+```
+
+### Rendu
+
+:::schedule[TTE : 7 h · Pause : 30 min]
+
+Conduite | 1 h 30 | drive
+
+Autres tâches | 2 h | work
+
+Conduite | 1 h | drive
+
+Pause | 30 min | break
+
+Autres tâches | 30 min | work
+
+Conduite | 2 h | drive
+
+:::
+
+### Exemples
+
+#### Pause prise en une seule fois
+
+```md
+:::
+
+Conduite | 1 h 30 | drive
+
+Autres tâches | 2 h | work
+
+Conduite | 1 h | drive
+
+Pause | 30 min | break
+
+Autres tâches | 30 min | work
+
+Conduite | 2 h | drive
+
+:::
+```
+
+#### Pause fractionnée en deux fois
+
+```md
+:::
+
+Conduite | 1 h 30 | drive
+
+Autres tâches | 2 h | work
+
+Pause | 15 min | break
+
+Conduite | 1 h | drive
+
+Pause | 15 min | break
+
+Autres tâches | 30 min | work
+
+Conduite | 2 h | drive
+
+:::
+```
+
+#### Pause fractionnée en trois fois
+
+```md
+:::
+
+Conduite | 1 h 30 | drive
+
+Pause | 15 min | break
+
+Autres tâches | 2 h | work
+
+Pause | 15 min | break
+
+Conduite | 1 h | drive
+
+Autres tâches | 30 min | work
+
+Pause | 15 min | break
+
+Conduite | 2 h | drive
+
+:::
+```
+
+---
+
+## Summary
+
+Permet d’afficher une fiche de révision regroupant les informations essentielles à retenir sous forme de clés, valeurs et précisions.
+
+Les éléments peuvent être organisés en plusieurs sections à l’aide de titres Markdown de niveau 2.
+
+Chaque ligne suit le format :
+
+```text
+Clé | Valeur | Précision facultative
+```
+
+### Syntaxe simple
+
+```md
+:::
+
+Amplitude maximale | 12 h | Entre deux repos journaliers successifs.
+
+Temps de travail effectif | 10 h | Limite journalière habituelle.
+
+Pause obligatoire | 30 min | Dès que le TTE atteint 6 heures.
+
+:::
+```
+
+### Syntaxe avec sections
+
+```md
+:::
+
+## Temps de travail
+
+Amplitude maximale | 12 h | Entre deux repos journaliers successifs.
+
+Temps de travail effectif | 10 h | Limite journalière habituelle.
+
+## Pauses
+
+Pause obligatoire | 30 min | Dès que le TTE atteint 6 heures.
+
+Conduite continue | 4 h 30 | Puis interruption de 45 minutes.
+
+## Repos
+
+Repos journalier normal | 11 h | Peut être réduit sous certaines conditions.
+
+Repos hebdomadaire normal | 45 h | Pris après six périodes de 24 heures au maximum.
+
+:::
+```
+
+### Rendu
+
+:::summary[L'essentiel à retenir]
+
+## Temps de travail
+
+Amplitude maximale | 12 h | Entre deux repos journaliers successifs.
+
+Temps de travail effectif | 10 h | Limite journalière habituelle.
+
+## Pauses
+
+Pause obligatoire | 30 min | Dès que le TTE atteint 6 heures.
+
+Conduite continue | 4 h 30 | Puis interruption de 45 minutes.
+
+## Repos
+
+Repos journalier normal | 11 h | Peut être réduit sous certaines conditions.
+
+Repos hebdomadaire normal | 45 h | Pris après six périodes de 24 heures au maximum.
+
+:::
+
+---
+
 # Bonnes pratiques
 
 ## Blocs de code
