@@ -28,7 +28,7 @@ export function MarkdownSummary({ title, sections }: MarkdownSummaryProps) {
   const hasSeveralSections = populatedSections.length > 1
 
   return (
-    <section className="not-prose relative overflow-hidden rounded-xl border border-sky-200 bg-linear-to-br from-sky-50 via-background to-cyan-50 p-5 shadow-sm sm:p-6 dark:border-sky-900 dark:from-sky-950/30 dark:via-background dark:to-cyan-950/30">
+    <section className="not-prose relative max-w-full min-w-0 overflow-hidden rounded-xl border border-sky-200 bg-linear-to-br from-sky-50 via-background to-cyan-50 p-5 shadow-sm sm:p-6 dark:border-sky-900 dark:from-sky-950/30 dark:via-background dark:to-cyan-950/30">
       <div
         className="absolute -top-12 -right-12 size-40 rounded-full bg-sky-200/40 blur-3xl dark:bg-sky-700/20"
         aria-hidden="true"
@@ -39,8 +39,8 @@ export function MarkdownSummary({ title, sections }: MarkdownSummaryProps) {
         aria-hidden="true"
       />
 
-      <div className="relative">
-        <header className="flex items-start justify-between gap-4">
+      <div className="relative min-w-0">
+        <header className="flex min-w-0 items-start justify-between gap-4">
           <div className="flex min-w-0 items-center gap-3">
             <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-300">
               <BookCheck className="size-5" aria-hidden="true" />
@@ -72,7 +72,7 @@ export function MarkdownSummary({ title, sections }: MarkdownSummaryProps) {
           </div>
         </header>
 
-        <div className="mt-5 space-y-7">
+        <div className="mt-5 min-w-0 space-y-7">
           {populatedSections.map((section, sectionIndex) => (
             <SummarySection
               key={`${section.title ?? "summary"}-${sectionIndex}`}
@@ -93,15 +93,15 @@ type SummarySectionProps = {
 
 function SummarySection({ section, showTitle }: SummarySectionProps) {
   return (
-    <section>
+    <section className="min-w-0">
       {showTitle && section.title && (
-        <header className="mb-3 flex items-center gap-3">
+        <header className="mb-3 flex min-w-0 items-center gap-3">
           <h4 className="shrink-0 text-sm font-semibold text-sky-800 dark:text-sky-200">
             {section.title}
           </h4>
 
           <span
-            className="h-px flex-1 bg-sky-200/80 dark:bg-sky-900"
+            className="h-px min-w-0 flex-1 bg-sky-200/80 dark:bg-sky-900"
             aria-hidden="true"
           />
 
@@ -112,7 +112,7 @@ function SummarySection({ section, showTitle }: SummarySectionProps) {
         </header>
       )}
 
-      <dl className="grid gap-3 lg:grid-cols-2">
+      <dl className="grid min-w-0 gap-3 lg:grid-cols-2">
         {section.items.map((item, itemIndex) => (
           <SummaryItem
             key={`${item.key}-${item.value}-${itemIndex}`}
@@ -132,37 +132,35 @@ type SummaryItemProps = {
 
 function SummaryItem({ item, index }: SummaryItemProps) {
   return (
-    <div className="group flex min-w-0 flex-col rounded-xl border border-sky-200/80 bg-background/80 p-4 shadow-sm backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-md sm:p-5 dark:border-sky-900 dark:bg-background/70 dark:hover:border-sky-800">
-      <div className="flex items-start gap-3">
+    <div className="group max-w-full min-w-0 overflow-hidden rounded-xl border border-sky-200/80 bg-background/80 p-4 shadow-sm backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-md sm:p-5 dark:border-sky-900 dark:bg-background/70 dark:hover:border-sky-800">
+      <div className="flex min-w-0 items-start gap-3">
         <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700 transition-colors group-hover:bg-sky-200 dark:bg-sky-900 dark:text-sky-300 dark:group-hover:bg-sky-800">
           <Check className="size-4" aria-hidden="true" />
         </span>
 
-        <div className="min-w-0 flex-1">
-          <dt>
-            <MarkdownContent
-              content={item.key}
-              className="prose-sm font-semibold text-foreground *:my-0"
-            />
-          </dt>
-
-          <dd className="mt-2">
-            <MarkdownContent
-              content={item.value}
-              className="prose-xl font-bold tracking-tight text-sky-700 *:my-0 dark:text-sky-300"
-            />
-          </dd>
-        </div>
+        <dt className="min-w-0 flex-1">
+          <MarkdownContent
+            content={item.key}
+            className="prose-sm min-w-0 font-semibold text-foreground *:my-0"
+          />
+        </dt>
 
         <span className="shrink-0 text-xs font-medium text-sky-700/50 tabular-nums dark:text-sky-300/50">
           {String(index + 1).padStart(2, "0")}
         </span>
       </div>
 
+      <dd className="mt-3 max-w-full min-w-0 overflow-hidden">
+        <MarkdownContent
+          content={item.value}
+          className="summary-formula max-w-full min-w-0 text-center font-bold tracking-tight text-sky-700 *:my-0 dark:text-sky-300"
+        />
+      </dd>
+
       {item.detail && (
         <MarkdownContent
           content={item.detail}
-          className="prose-sm mt-3 border-t border-sky-200/70 pt-3 leading-relaxed text-muted-foreground *:my-0 dark:border-sky-900"
+          className="prose-sm mt-3 min-w-0 border-t border-sky-200/70 pt-3 leading-relaxed text-muted-foreground *:my-0 dark:border-sky-900"
         />
       )}
     </div>
