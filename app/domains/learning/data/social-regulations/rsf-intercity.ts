@@ -970,21 +970,21 @@ Conducteur hors RSE | **20 min consécutives** | Dès que le TTE atteint 6 heure
       id: "rsf-intercity-01-q12",
       type: "multiple-choice",
       question:
-        "Quelles affirmations sont correctes concernant les prolongations du travail journalier à 12 heures ?",
+        "Quelles affirmations sont correctes concernant les prolongations de la durée quotidienne de travail jusqu’à 12 heures ?",
       options: [
-        "Une première prolongation peut intervenir une fois par semaine",
-        "Une seconde prolongation exige notamment un travail réparti sur au moins 5 jours",
-        "La seconde prolongation est limitée à 6 fois sur 12 semaines",
+        "La durée quotidienne peut être portée à 12 h une première fois dans la semaine dans les conditions prévues",
+        "Une seconde prolongation à 12 h dans la même semaine exige notamment un travail réparti sur au moins 5 jours",
+        "Cette seconde prolongation est limitée à 6 fois sur 12 semaines",
         "Le salarié peut travailler 12 heures tous les jours sans condition",
-        "La prolongation transforme automatiquement l’amplitude en 12 heures",
+        "Une durée de travail de 12 h signifie automatiquement une amplitude de 12 h",
       ],
       correctOptions: [
-        "Une première prolongation peut intervenir une fois par semaine",
-        "Une seconde prolongation exige notamment un travail réparti sur au moins 5 jours",
-        "La seconde prolongation est limitée à 6 fois sur 12 semaines",
+        "La durée quotidienne peut être portée à 12 h une première fois dans la semaine dans les conditions prévues",
+        "Une seconde prolongation à 12 h dans la même semaine exige notamment un travail réparti sur au moins 5 jours",
+        "Cette seconde prolongation est limitée à 6 fois sur 12 semaines",
       ],
       explanation:
-        "La durée de travail et l’amplitude sont deux notions différentes. Les prolongations à 12 heures restent encadrées.",
+        "La durée quotidienne normale est de 10 heures. Elle peut être portée à 12 heures dans les conditions prévues. Une seconde prolongation dans la même semaine est possible si le travail est réparti sur au moins 5 jours, dans la limite de 6 fois sur 12 semaines.",
       tags: ["salarié", "durée journalière", "conditions"],
     },
     {
@@ -1267,7 +1267,7 @@ Conducteur hors RSE | **20 min consécutives** | Dès que le TTE atteint 6 heure
       id: "rsf-intercity-01-q36",
       type: "text",
       question:
-        "Quelle est la période habituelle du travail de nuit pour un conducteur salarié ?",
+        "Selon l'accord de branche applicable au transport routier de voyageurs, quelle est la période habituelle du travail de nuit ?",
       canonicalAnswer: "De 21 h à 6 h",
       acceptedAnswers: [
         "de 21 h à 6 h",
@@ -1276,13 +1276,15 @@ Conducteur hors RSE | **20 min consécutives** | Dès que le TTE atteint 6 heure
         "21h-6h",
         "21 h - 6 h",
       ],
+      explanation:
+        "L'accord de branche retient habituellement la période comprise entre 21 h et 6 h.",
       tags: ["travail de nuit"],
     },
     {
       id: "rsf-intercity-01-q37",
       type: "true-false",
       question:
-        "Un accord d’entreprise peut définir une autre période de nuit de 9 heures consécutives comprise entre 21 h et 7 h.",
+        "Un accord d'entreprise peut substituer à la période conventionnelle de nuit une autre période de 9 heures consécutives comprise entre 21 h et 7 h.",
       correctAnswer: true,
       tags: ["travail de nuit"],
     },
@@ -1358,25 +1360,27 @@ Conducteur hors RSE | **20 min consécutives** | Dès que le TTE atteint 6 heure
       id: "rsf-intercity-01-q44",
       type: "single-choice",
       question:
-        "Un conducteur non soumis à la RSE atteint 6 heures de TTE. Quelle pause minimale doit-il recevoir ?",
+        "Un conducteur effectue exactement 6 heures de TTE dans sa journée. Quelle pause minimale liée au temps de travail doit-il recevoir ?",
       options: [
-        "15 minutes fractionnables",
-        "20 minutes consécutives",
-        "30 minutes fractionnables",
-        "45 minutes consécutives",
+        "20 minutes",
+        "30 minutes",
+        "45 minutes",
+        "Aucune pause au titre de cette règle",
       ],
-      correctOption: "20 minutes consécutives",
-      tags: ["pause", "hors RSE"],
+      correctOption: "30 minutes",
+      explanation:
+        "Lorsque le total des heures de travail est compris entre 6 et 9 heures, la pause minimale est de 30 minutes.",
+      tags: ["pause", "tte", "piège"],
     },
     {
       id: "rsf-intercity-01-q45",
       type: "true-false",
       question:
-        "La pause de 20 minutes applicable au conducteur hors RSE peut toujours être remplacée par deux pauses de 10 minutes.",
+        "Une pause obligatoire de 30 minutes liée au TTE peut être fractionnée en trois périodes de 10 minutes.",
       correctAnswer: false,
       explanation:
-        "La règle étudiée prévoit une pause consécutive de 20 minutes, sauf disposition plus favorable ou organisation légalement applicable.",
-      tags: ["pause", "hors RSE", "piège"],
+        "Les pauses liées au TTE peuvent être fractionnées, mais chaque période doit durer au moins 15 minutes.",
+      tags: ["pause", "fractionnement", "piège"],
     },
     {
       id: "rsf-intercity-01-q46",

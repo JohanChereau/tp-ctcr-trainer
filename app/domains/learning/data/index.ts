@@ -8,6 +8,7 @@ import { maneuversCategory } from "./maneuvers"
 import { circulationCategory } from "./circulation"
 import { roadCodeCategory } from "./road-code"
 import { mapsAndProfessionalCalculationsCategory } from "./maps-and-professional-calculations"
+import { reducedMobilityCategory } from "./reduced-mobility"
 
 export const learningCategories = [
   writtenCategory,
@@ -20,6 +21,7 @@ export const learningCategories = [
   circulationCategory,
   socialRegulationsCategory,
   mapsAndProfessionalCalculationsCategory,
+  reducedMobilityCategory,
 ]
 
 export function getCategoryById(categoryId: string) {
