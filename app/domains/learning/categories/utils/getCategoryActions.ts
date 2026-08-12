@@ -214,6 +214,17 @@ export function getCategoryActions(
         },
       ]
 
+    case "reduced-mobility":
+      return [
+        {
+          title: "Consulter la leçon",
+          description:
+            "Révisez la prise en charge et l'accompagnement des personnes à mobilité réduite.",
+          href: `/learning/${category.id}/revision`,
+          icon: BookOpen,
+        },
+      ]
+
     default:
       return []
   }

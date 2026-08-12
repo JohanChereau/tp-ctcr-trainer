@@ -136,15 +136,76 @@
   }
 }
 
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    max-width: 100%;
+    overflow-x: clip;
+    @apply font-sans;
+  }
+
+  body {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: clip;
+    @apply bg-background text-foreground;
+  }
+
+  #root {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
 @layer components {
   /*
-   * Display formulas can be wider than the lesson container.
-   * Horizontal scrolling prevents them from breaking the mobile layout.
+   * Prevent block formulas from expanding their container.
    */
   .prose .katex-display {
     max-width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-block: 0.5rem;
+    margin-inline: 0;
+  }
+
+  /*
+   * Keep summary formulas responsive on small screens.
+   */
+  .summary-formula {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .summary-formula > *,
+  .summary-formula p,
+  .summary-formula .katex-display {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .summary-formula p,
+  .summary-formula .katex-display {
+    margin: 0;
+  }
+
+  .summary-formula .katex {
+    font-size: clamp(0.82rem, 4.4vw, 1.35rem);
+  }
+
+  @media (min-width: 640px) {
+    .summary-formula .katex {
+      font-size: 1.35rem;
+    }
   }
 }
