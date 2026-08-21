@@ -1,3 +1,5 @@
+export type QuizContext = "rse" | "rsf-intercity" | "rsf-urban"
+
 export type BaseQuestion = {
   id: string
 
@@ -12,6 +14,8 @@ export type BaseQuestion = {
   explanation?: string
 
   tags?: string[]
+
+  quizContext?: QuizContext
 }
 
 export type TextQuestion = BaseQuestion & {
@@ -83,6 +87,8 @@ export type Lesson = {
   title: string
 
   contentType: LessonContentType
+
+  quizContext?: QuizContext
 
   questions: Question[]
 

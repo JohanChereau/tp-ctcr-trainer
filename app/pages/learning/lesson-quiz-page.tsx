@@ -1,8 +1,8 @@
-import { useParams, useNavigate } from "react-router"
+import { useNavigate, useParams } from "react-router"
 
-import { getLessonById } from "~/domains/learning/data"
+import { getLessonById, getLessonQuestions } from "~/domains/learning/data"
+
 import { QuizBackButton } from "~/domains/learning/quiz/components/QuizBackButton"
-
 import { QuizPlayer } from "~/domains/learning/quiz/components/QuizPlayer"
 
 import { AppLayout } from "~/layouts/AppLayout"
@@ -13,6 +13,8 @@ export default function LessonQuizPage() {
   const navigate = useNavigate()
 
   const lesson = getLessonById(categoryId ?? "", lessonId ?? "")
+
+  const questions = getLessonQuestions(categoryId ?? "", lessonId ?? "")
 
   if (!lesson) {
     return (
@@ -25,9 +27,10 @@ export default function LessonQuizPage() {
   return (
     <AppLayout>
       <QuizBackButton />
+
       <QuizPlayer
         title={lesson.title}
-        questions={lesson.questions}
+        questions={questions}
         onBack={() => navigate(`/learning/${categoryId}/${lessonId}`)}
       />
     </AppLayout>

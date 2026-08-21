@@ -10,6 +10,8 @@ import { roadCodeCategory } from "./road-code"
 import { mapsAndProfessionalCalculationsCategory } from "./maps-and-professional-calculations"
 import { reducedMobilityCategory } from "./reduced-mobility"
 
+import type { Lesson, Question } from "../types/learning"
+
 export const learningCategories = [
   writtenCategory,
   socle1Category,
@@ -34,6 +36,29 @@ export function getLessonById(categoryId: string, lessonId: string) {
   return category?.lessons.find((lesson) => lesson.id === lessonId)
 }
 
+function getQuestionsWithLessonContext(lesson: Lesson): Question[] {
+  return lesson.questions.map((question) => {
+    if (!lesson.quizContext) {
+      return question
+    }
+
+    return {
+      ...question,
+      quizContext: lesson.quizContext,
+    }
+  })
+}
+
+export function getLessonQuestions(categoryId: string, lessonId: string) {
+  const lesson = getLessonById(categoryId, lessonId)
+
+  if (!lesson) {
+    return []
+  }
+
+  return getQuestionsWithLessonContext(lesson)
+}
+
 export function getCategoryQuestions(categoryId: string) {
   const category = getCategoryById(categoryId)
 
@@ -41,13 +66,13 @@ export function getCategoryQuestions(categoryId: string) {
     return []
   }
 
-  return category.lessons.flatMap((lesson) => lesson.questions)
+  return category.lessons.flatMap(getQuestionsWithLessonContext)
 }
 
 export function getAllQuestions() {
   return learningCategories.flatMap((category) =>
     category.lessons.flatMap((lesson) =>
-      lesson.questions.map((question) => ({
+      getQuestionsWithLessonContext(lesson).map((question) => ({
         categoryId: category.id,
 
         lessonId: lesson.id,

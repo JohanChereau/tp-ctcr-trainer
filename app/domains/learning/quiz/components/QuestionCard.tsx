@@ -1,6 +1,8 @@
 import { HelpCircle } from "lucide-react"
 
-import type { Question } from "~/domains/learning/types/learning"
+import { Badge } from "~/components/ui/badge"
+
+import type { Question, QuizContext } from "~/domains/learning/types/learning"
 
 import { HintCard } from "./HintCard"
 
@@ -8,7 +10,37 @@ type QuestionCardProps = {
   question: Question
 }
 
+const quizContextConfig: Record<
+  QuizContext,
+  {
+    label: string
+    className: string
+  }
+> = {
+  rse: {
+    label: "RSE",
+    className:
+      "border-violet-200/80 bg-violet-50/70 text-violet-700 dark:border-violet-900/70 dark:bg-violet-950/30 dark:text-violet-300",
+  },
+
+  "rsf-intercity": {
+    label: "RSF · Interurbain",
+    className:
+      "border-sky-200/80 bg-sky-50/70 text-sky-700 dark:border-sky-900/70 dark:bg-sky-950/30 dark:text-sky-300",
+  },
+
+  "rsf-urban": {
+    label: "RSF · Urbain",
+    className:
+      "border-emerald-200/80 bg-emerald-50/70 text-emerald-700 dark:border-emerald-900/70 dark:bg-emerald-950/30 dark:text-emerald-300",
+  },
+}
+
 export function QuestionCard({ question }: QuestionCardProps) {
+  const quizContext = question.quizContext
+    ? quizContextConfig[question.quizContext]
+    : null
+
   return (
     <article className="relative overflow-hidden rounded-2xl border bg-background/80 shadow-sm sm:rounded-3xl">
       <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-muted/60 to-transparent opacity-80 sm:h-32" />
@@ -32,19 +64,33 @@ export function QuestionCard({ question }: QuestionCardProps) {
             </div>
           </div>
 
-          <details className="group relative sm:hidden">
-            <summary
-              aria-label="Afficher les informations sur le type de réponse"
-              className="flex size-8 cursor-pointer list-none items-center justify-center rounded-full border bg-background/70 text-sm font-bold text-muted-foreground shadow-xs transition-colors hover:bg-muted"
-            >
-              ?
-            </summary>
+          <div className="flex shrink-0 items-center gap-2">
+            {quizContext && (
+              <Badge
+                variant="outline"
+                className={[
+                  "h-6 rounded-full px-2.5 text-[10px] font-semibold tracking-wide shadow-none sm:h-7 sm:px-3 sm:text-xs",
+                  quizContext.className,
+                ].join(" ")}
+              >
+                {quizContext.label}
+              </Badge>
+            )}
 
-            <div className="absolute top-10 right-0 z-10 w-64 rounded-xl border bg-popover p-3 text-xs leading-relaxed text-popover-foreground shadow-lg">
-              Une ou plusieurs réponses peuvent être attendues selon le type de
-              question.
-            </div>
-          </details>
+            <details className="group relative sm:hidden">
+              <summary
+                aria-label="Afficher les informations sur le type de réponse"
+                className="flex size-8 cursor-pointer list-none items-center justify-center rounded-full border bg-background/70 text-sm font-bold text-muted-foreground shadow-xs transition-colors hover:bg-muted"
+              >
+                ?
+              </summary>
+
+              <div className="absolute top-10 right-0 z-10 w-64 rounded-xl border bg-popover p-3 text-xs leading-relaxed text-popover-foreground shadow-lg">
+                Une ou plusieurs réponses peuvent être attendues selon le type
+                de question.
+              </div>
+            </details>
+          </div>
         </div>
 
         {question.image && (
