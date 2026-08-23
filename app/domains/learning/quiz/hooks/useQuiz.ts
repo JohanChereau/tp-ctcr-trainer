@@ -135,28 +135,30 @@ export function useQuiz({ questions, config }: UseQuizOptions) {
 
     switch (currentQuestion.type) {
       case "text":
-        correct = isAnswerCorrect(answer, currentQuestion.acceptedAnswers)
+        correct = isAnswerCorrect(
+          answer,
+          currentQuestion.canonicalAnswer,
+          currentQuestion.acceptedAnswers
+        )
         break
 
       case "true-false":
       case "yes-no":
         correct = answer === String(currentQuestion.correctAnswer)
-
         break
 
       case "single-choice":
         correct = answer === currentQuestion.correctOption
-
         break
 
-      case "multiple-choice":
+      case "multiple-choice": {
         const selected = answer ? (JSON.parse(answer) as string[]) : []
-
         const expected = [...currentQuestion.correctOptions].sort()
 
         correct = JSON.stringify(selected.sort()) === JSON.stringify(expected)
 
         break
+      }
 
       default:
         correct = false
