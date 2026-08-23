@@ -36,7 +36,11 @@ export default function ExamPage() {
     return (
       <AppLayout>
         <BackButton />
-        <QuizSetupCard defaultMode="exam" onStart={setConfig} />
+        <QuizSetupCard
+          defaultMode="exam"
+          onStart={setConfig}
+          totalQuestions={questions.length}
+        />
       </AppLayout>
     )
   }

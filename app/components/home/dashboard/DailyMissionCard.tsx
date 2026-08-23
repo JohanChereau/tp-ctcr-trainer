@@ -6,6 +6,7 @@ import { Button } from "~/components/ui/button"
 
 type DailyMissionCardProps = {
   categoryId: string
+  categoryTitle: string
   weakQuestionsCount: number | null
 }
 
@@ -13,26 +14,27 @@ const MIN_WEAK_QUESTIONS_FOR_MISSION = 5
 
 export function DailyMissionCard({
   categoryId,
+  categoryTitle,
   weakQuestionsCount,
 }: DailyMissionCardProps) {
   const shouldReviewWeakQuestions =
     weakQuestionsCount !== null &&
     weakQuestionsCount >= MIN_WEAK_QUESTIONS_FOR_MISSION
 
+  const categoryLabel = categoryTitle.toLocaleLowerCase("fr-FR")
+
   const mission = shouldReviewWeakQuestions
     ? {
         icon: Target,
         title: "Mission du jour",
-        description:
-          "Travaille tes points faibles sur les fiches écrites pour consolider tes bases avant l'examen.",
+        description: `Travaille tes points faibles en ${categoryLabel} pour consolider tes acquis.`,
         href: `/learning/${categoryId}/weak-questions`,
         buttonLabel: "Lancer la mission",
       }
     : {
         icon: GraduationCap,
         title: "Mission du jour",
-        description:
-          "Lance un quiz global sur les fiches écrites pour continuer à progresser.",
+        description: `Lance un quiz global en ${categoryLabel} pour continuer à progresser.`,
         href: `/learning/${categoryId}/quiz`,
         buttonLabel: "Faire un quiz",
       }
@@ -43,6 +45,7 @@ export function DailyMissionCard({
     <div className="rounded-2xl border bg-muted/30 p-4">
       <div className="mb-3 flex items-center gap-2">
         <Icon className="size-4 text-primary" />
+
         <p className="text-sm font-semibold">{mission.title}</p>
       </div>
 

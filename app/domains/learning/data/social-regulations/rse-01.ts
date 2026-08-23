@@ -7,6 +7,8 @@ export const rse01: Lesson = {
 
   contentType: "markdown",
 
+  quizContext: "rse",
+
   markdown: `
 # Comprendre la Réglementation Sociale Européenne
 

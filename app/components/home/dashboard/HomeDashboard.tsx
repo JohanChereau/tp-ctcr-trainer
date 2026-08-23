@@ -1,5 +1,7 @@
 import { Sparkles } from "lucide-react"
 
+import { dailyMissionConfig } from "~/config/dailyMission"
+
 import { getCategoryById } from "~/domains/learning/data"
 import { useLearningDashboardStats } from "~/domains/learning/stats/hooks/useLearningDashboardStats"
 import { useWeakQuestionsCount } from "~/domains/learning/stats/hooks/useWeakQuestionsCount"
@@ -13,15 +15,18 @@ export function HomeDashboard() {
   const { answeredQuestionsCount, totalAnswers, successRate } =
     useLearningDashboardStats()
 
-  const writtenCategory = getCategoryById("fiches-ecrites-plateau")
+  const dailyMissionCategory = getCategoryById(dailyMissionConfig.categoryId)
 
   const allWeakQuestionsCount = useWeakQuestionsCount(undefined, {
     includeUnanswered: true,
   })
 
-  const writtenWeakQuestionsCount = useWeakQuestionsCount(writtenCategory?.id, {
-    includeUnanswered: true,
-  })
+  const dailyMissionWeakQuestionsCount = useWeakQuestionsCount(
+    dailyMissionCategory?.id,
+    {
+      includeUnanswered: false,
+    }
+  )
 
   const {
     data: trainingCalendar,
@@ -71,10 +76,11 @@ export function HomeDashboard() {
           error={trainingCalendarError}
         />
 
-        {writtenCategory && (
+        {dailyMissionCategory && (
           <DailyMissionCard
-            categoryId={writtenCategory.id}
-            weakQuestionsCount={writtenWeakQuestionsCount}
+            categoryId={dailyMissionCategory.id}
+            categoryTitle={dailyMissionCategory.title}
+            weakQuestionsCount={dailyMissionWeakQuestionsCount}
           />
         )}
       </div>

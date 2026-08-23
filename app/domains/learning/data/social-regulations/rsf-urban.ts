@@ -7,6 +7,8 @@ export const rsfUrban01: Lesson = {
 
   contentType: "markdown",
 
+  quizContext: "rsf-urban",
+
   markdown: `
 # Réglementation Sociale Française (Urbain)
 
@@ -823,11 +825,11 @@ Les chiffres essentiels :
       id: "rsf-urban-01-q18",
       type: "text",
       question:
-        "Dans la situation précédente, quelle est l'amplitude de la journée ?",
+        "Un conducteur effectue 3 h de travail, 1 h de coupure libre, 4 h de travail, 1 h de coupure libre puis 2 h de travail. Quelle est l'amplitude de sa journée ?",
       canonicalAnswer: "11 heures",
       acceptedAnswers: ["11 heures", "11 h", "11h"],
       explanation:
-        "L'amplitude comprend les 9 heures de TTE et les 2 heures de coupure, soit 11 heures.",
+        "L'amplitude correspond au temps écoulé entre le début et la fin de la journée : 3 h + 1 h + 4 h + 1 h + 2 h = 11 h.",
       tags: ["amplitude", "calcul", "situation"],
     },
     {

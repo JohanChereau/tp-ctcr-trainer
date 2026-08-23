@@ -7,6 +7,8 @@ export const rsfIntercity01: Lesson = {
 
   contentType: "markdown",
 
+  quizContext: "rsf-intercity",
+
   markdown: `
 # Réglementation Sociale Française (Interurbain)
 
@@ -1028,16 +1030,27 @@ Conducteur hors RSE | **20 min consécutives** | Dès que le TTE atteint 6 heure
       id: "rsf-intercity-01-q17",
       type: "text",
       question: "Comment calcule-t-on simplement l’amplitude d’un service ?",
-      canonicalAnswer:
-        "Heure de fin du service moins heure de début du service",
+      canonicalAnswer: "Heure de fin du service − heure de début du service",
       acceptedAnswers: [
+        "heure de fin du service moins heure de début du service",
         "heure de fin moins heure de début",
         "fin du service moins début du service",
+        "heure de fin - heure de début",
+        "heure de fin du service - heure de début du service",
+        "fin - début",
+        "fin du service - début du service",
+        "heure fin - heure début",
+        "heure de fin – heure de début",
+        "heure de fin du service – heure de début du service",
+        "heure de fin − heure de début",
+        "heure de fin du service − heure de début du service",
         "temps entre le début et la fin du service",
         "intervalle entre le début et la fin du service",
+        "différence entre l'heure de fin et l'heure de début",
+        "différence entre heure de fin et heure de début",
       ],
       explanation:
-        "L’amplitude représente l’intervalle total entre le début et la fin du service.",
+        "L’amplitude correspond à l’intervalle total entre le début et la fin du service : heure de fin − heure de début.",
       tags: ["amplitude", "définition"],
     },
     {
