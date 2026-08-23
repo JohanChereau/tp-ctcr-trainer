@@ -24,7 +24,7 @@ export function HomeDashboard() {
   const dailyMissionWeakQuestionsCount = useWeakQuestionsCount(
     dailyMissionCategory?.id,
     {
-      includeUnanswered: true,
+      includeUnanswered: false,
     }
   )
 
