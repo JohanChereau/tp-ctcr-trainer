@@ -36,7 +36,11 @@ export default function QuizPage() {
     return (
       <AppLayout>
         <BackButton />
-        <QuizSetupCard defaultMode="training" onStart={setConfig} />
+        <QuizSetupCard
+          defaultMode="training"
+          onStart={setConfig}
+          totalQuestions={questions.length}
+        />
       </AppLayout>
     )
   }
