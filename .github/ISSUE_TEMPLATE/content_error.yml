@@ -1,0 +1,45 @@
+name: Erreur de contenu
+description: Signaler une erreur, une imprécision ou une information obsolète
+title: "[Contenu] "
+labels:
+  - content
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Les réglementations et modalités de formation peuvent évoluer. Merci de joindre une source fiable lorsque cela est possible.
+
+  - type: input
+    id: lesson
+    attributes:
+      label: Fiche ou leçon concernée
+      placeholder: RSE, RSF urbain, fiche écrite 12...
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Information actuellement affichée
+      description: Copiez uniquement le passage nécessaire pour identifier l'erreur.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correction proposée
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source ou référence
+      description: Texte officiel, référentiel, publication administrative, etc.
+      placeholder: Titre de la source, article, date, lien...
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexte supplémentaire

@@ -23,11 +23,11 @@ Je m'installe au poste de conduite.
 
 J'allume le contact.
 
-Le frein de parc est en position.
+Le frein de parc est enclenché.
 
 ![Frein de parc](/images/socle_1/frein_de_parc.png)
 
-*Commande du frein de parc.*
+*Commande du frein de parc enclenchée.*
 
 Le témoin du frein de parc est bien allumé sur le tableau de bord, donc le véhicule est bien immobilisé.
 
@@ -47,23 +47,37 @@ Je vérifie la présence de la lampe autonome.
 
 *Lampe autonome de sécurité présente à son emplacement.*
 
-Je vérifie la présence de la trousse de secours.
+Je vérifie la présence des inscriptions réglementaires :
+
+* Interdiction de parler au conducteur.
+* Vitesse maximale autorisée.
+* Port obligatoire de la ceinture de sécurité.
+
+Pour le port obligatoire de la ceinture de sécurité, je contrôle sa présence sur l'ensemble du vitrage ainsi que sur la lunette arrière, en montrant les inscriptions correspondantes.
+
+> ***Lors du socle 1, il n'est pas nécessaire de citer chaque inscription : je montre simplement leur présence aux emplacements correspondants.***
+
+Je vérifie la présence de la trousse de secours ainsi que de son pictogramme.
 
 ![Trousse de secours](/images/socle_1/trousse_secours.png)
 
-*Trousse de secours réglementaire.*
+*Trousse de secours et pictogramme permettant de l'identifier.*
 
-Je vérifie la présence de l'extincteur.
+Je vérifie la présence de l'extincteur ainsi que de son pictogramme.
 
-Je me dirige vers le fond du véhicule afin de vérifier la sellerie et les ceintures de sécurité.
+Je me dirige vers le fond du véhicule en vérifiant le bon état de la sellerie et des ceintures de sécurité.
 
 ![Équipements de sécurité et aménagement intérieur](/images/socle_1/interieur.png)
 
-*Vue de l'habitacle passagers : sellerie, ceintures de sécurité, marteaux-pics, inscriptions réglementaires et extincteur.*
+*Vue de l'habitacle passagers : sellerie, ceintures de sécurité, marteaux-pics, pictogrammes de sécurité et extincteur.*
 
-Pas d'anomalie.
+Arrivé au fond du véhicule : pas d'anomalie.
 
-Je fais ensuite le retour en indiquant l'emplacement des marteaux-pics (marteaux brise-vitre) ainsi que des inscriptions réglementaires, notamment celles présentes au niveau des issues de secours : pas d'anomalie.
+Sur le retour, je vérifie la présence des marteaux-pics ainsi que des pictogrammes liés aux différentes issues de secours, notamment au niveau des fenêtres et des trappes de toit.
+
+> Lors du socle 1, je montre les différents pictogrammes sans avoir besoin de les identifier individuellement.
+
+Ils sont tous présents : pas d'anomalie.
 
 J'allume les feux de croisement.
 
@@ -95,7 +109,7 @@ Le répétiteur de feux de détresse, les feux de position latéraux ainsi que l
 
 Roue avant, roue arrière : pas d'anomalie.
 
-Je me penche sous le véhicule (dos droit, jambes fléchies) : absence de tâche sous le véhicule, donc pas d'anomalie.
+Je me penche sous le véhicule (dos droit, jambes fléchies) : absence de tache sous le véhicule, donc pas d'anomalie.
 
 Nous allons maintenant passer à la face avant du véhicule.
 
@@ -115,7 +129,7 @@ La carrosserie : pas d'anomalie.
 
 Les feux de position, les feux de croisement ainsi que les feux de détresse : pas d'anomalie.
 
-Je me penche sous le véhicule (dos droit, jambes fléchies) : absence de tâche sous le véhicule, donc pas d'anomalie.
+Je me penche sous le véhicule (dos droit, jambes fléchies) : absence de tache sous le véhicule, donc pas d'anomalie.
 
 Nous allons maintenant passer au côté gauche du véhicule.
 
@@ -169,7 +183,7 @@ Les feux rouges et les feux de détresse inférieurs : pas d'anomalie.
 
 Les feux de gabarit arrière : pas d'anomalie.
 
-Je me penche sous le véhicule (dos droit, jambes fléchies) : absence de tâche sous le véhicule, donc pas d'anomalie.
+Je me penche sous le véhicule (dos droit, jambes fléchies) : absence de tache sous le véhicule, donc pas d'anomalie.
 
 Je demande au jury :
 
@@ -198,7 +212,7 @@ Feux stop : pas d'anomalie.
 ---
 
 # Socle 1 terminé
-  `,
+`,
 
   questions: [
     {

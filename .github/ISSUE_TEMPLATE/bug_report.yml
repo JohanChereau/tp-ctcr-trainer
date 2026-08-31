@@ -1,0 +1,60 @@
+name: Bug technique
+description: Signaler un problème de fonctionnement de CTCR Trainer
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de fournir suffisamment d'informations pour pouvoir reproduire le problème.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Que s'est-il passé ?
+      placeholder: Décrivez le problème observé.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Étapes pour reproduire
+      placeholder: |
+        1. Ouvrir...
+        2. Cliquer sur...
+        3. Observer...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportement attendu
+    validations:
+      required: true
+
+  - type: input
+    id: route
+    attributes:
+      label: Page ou route concernée
+      placeholder: /learning/...
+
+  - type: input
+    id: browser
+    attributes:
+      label: Navigateur
+      placeholder: Chrome 152, Firefox, Safari...
+
+  - type: input
+    id: device
+    attributes:
+      label: Appareil
+      placeholder: Windows 11, Android, iPhone...
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Captures ou informations supplémentaires

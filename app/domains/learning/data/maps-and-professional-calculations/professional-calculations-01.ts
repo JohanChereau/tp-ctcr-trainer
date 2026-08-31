@@ -1040,5 +1040,373 @@ Moyenne simple | $\dfrac{\text{somme des valeurs}}{\text{nombre de valeurs}}$
 :::
   `,
 
-  questions: [],
+  questions: [
+    {
+      id: "calculs-01-q01",
+      type: "single-choice",
+      question:
+        "Quelle formule permet de calculer la vitesse moyenne à partir de la distance et du temps ?",
+      options: ["v = d × t", "v = d ÷ t", "v = t ÷ d", "v = d + t"],
+      correctOption: "v = d ÷ t",
+      explanation:
+        "La vitesse se calcule en divisant la distance parcourue par le temps : v = d ÷ t.",
+      tags: ["vitesse", "formule"],
+    },
+
+    {
+      id: "calculs-01-q02",
+      type: "single-choice",
+      question:
+        "Un autocar parcourt 150 km en 2 h. Quelle est sa vitesse moyenne ?",
+      options: ["60 km/h", "75 km/h", "80 km/h", "300 km/h"],
+      correctOption: "75 km/h",
+      explanation: "v = d ÷ t = 150 ÷ 2 = 75 km/h.",
+      tags: ["vitesse", "calcul"],
+    },
+
+    {
+      id: "calculs-01-q03",
+      type: "single-choice",
+      question:
+        "Un autocar roule à une vitesse moyenne de 80 km/h pendant 2 h 30. Quelle distance parcourt-il ?",
+      options: ["160 km", "180 km", "200 km", "240 km"],
+      correctOption: "200 km",
+      explanation: "2 h 30 = 2,5 h. Puis d = v × t = 80 × 2,5 = 200 km.",
+      tags: ["distance", "durée", "conversion"],
+    },
+
+    {
+      id: "calculs-01-q04",
+      type: "single-choice",
+      question:
+        "Un trajet de 180 km est effectué à une vitesse moyenne de 60 km/h. Quelle est sa durée ?",
+      options: ["2 h", "2 h 30", "3 h", "3 h 30"],
+      correctOption: "3 h",
+      explanation: "t = d ÷ v = 180 ÷ 60 = 3 h.",
+      tags: ["temps", "vitesse", "calcul"],
+    },
+
+    {
+      id: "calculs-01-q05",
+      type: "single-choice",
+      question:
+        "Pour utiliser une vitesse exprimée en km/h dans la formule d = v × t, comment doit être exprimé le temps ?",
+      options: [
+        "En secondes",
+        "En minutes",
+        "En heures",
+        "L'unité n'a aucune importance",
+      ],
+      correctOption: "En heures",
+      explanation:
+        "Avec une vitesse en km/h et une distance en kilomètres, le temps doit être exprimé en heures.",
+      tags: ["unités", "formule"],
+    },
+
+    {
+      id: "calculs-01-q06",
+      type: "single-choice",
+      question: "À combien d'heures décimales correspondent 90 minutes ?",
+      options: ["0,90 h", "1,30 h", "1,50 h", "1,90 h"],
+      correctOption: "1,50 h",
+      explanation:
+        "90 ÷ 60 = 1,5 h. Attention : 1 h 30 correspond à 1,50 h et non à 1,30 h.",
+      tags: ["conversion", "durée", "piège"],
+    },
+
+    {
+      id: "calculs-01-q07",
+      type: "single-choice",
+      question: "À quelle durée correspond 6,15 h ?",
+      options: ["6 h 09 min", "6 h 15 min", "6 h 25 min", "6 h 50 min"],
+      correctOption: "6 h 09 min",
+      explanation:
+        "La partie décimale vaut 0,15 h. 0,15 × 60 = 9 minutes. Donc 6,15 h = 6 h 09 min.",
+      tags: ["centièmes", "conversion", "piège"],
+    },
+
+    {
+      id: "calculs-01-q08",
+      type: "single-choice",
+      question: "Quelle écriture décimale correspond à 6 h 15 min ?",
+      options: ["6,15 h", "6,20 h", "6,25 h", "6,30 h"],
+      correctOption: "6,25 h",
+      explanation: "15 ÷ 60 = 0,25. Donc 6 h 15 min = 6,25 h.",
+      tags: ["centièmes", "conversion", "piège"],
+    },
+
+    {
+      id: "calculs-01-q09",
+      type: "single-choice",
+      question: "À combien de centièmes d'heure correspondent 9 minutes ?",
+      options: ["9 centièmes", "12 centièmes", "15 centièmes", "20 centièmes"],
+      correctOption: "15 centièmes",
+      explanation: "9 × 100 ÷ 60 = 15 centièmes d'heure.",
+      tags: ["centièmes", "conversion"],
+    },
+
+    {
+      id: "calculs-01-q10",
+      type: "single-choice",
+      question: "À combien de minutes correspondent 25 centièmes d'heure ?",
+      options: ["15 minutes", "20 minutes", "25 minutes", "30 minutes"],
+      correctOption: "15 minutes",
+      explanation:
+        "25 × 60 ÷ 100 = 15 minutes. Un centième d'heure ne correspond pas à une minute.",
+      tags: ["centièmes", "conversion", "piège"],
+    },
+
+    {
+      id: "calculs-01-q11",
+      type: "single-choice",
+      question:
+        "Un autocar consomme 84 L pour parcourir 300 km. Quelle est sa consommation moyenne ?",
+      options: ["25 L/100 km", "28 L/100 km", "30 L/100 km", "35,7 L/100 km"],
+      correctOption: "28 L/100 km",
+      explanation: "Consommation = (84 ÷ 300) × 100 = 28 L/100 km.",
+      tags: ["carburant", "consommation"],
+    },
+
+    {
+      id: "calculs-01-q12",
+      type: "single-choice",
+      question:
+        "Un autocar consomme 25 L/100 km. Combien de litres sont nécessaires pour parcourir 240 km ?",
+      options: ["50 L", "60 L", "65 L", "96 L"],
+      correctOption: "60 L",
+      explanation: "Litres nécessaires = (240 × 25) ÷ 100 = 60 L.",
+      tags: ["carburant", "consommation"],
+    },
+
+    {
+      id: "calculs-01-q13",
+      type: "single-choice",
+      question:
+        "Un véhicule dispose de 75 L de carburant et consomme 25 L/100 km. Quelle distance peut-il théoriquement parcourir ?",
+      options: ["187,5 km", "250 km", "300 km", "375 km"],
+      correctOption: "300 km",
+      explanation: "Distance = (75 × 100) ÷ 25 = 300 km.",
+      tags: ["carburant", "distance"],
+    },
+
+    {
+      id: "calculs-01-q14",
+      type: "single-choice",
+      question:
+        "60 L de carburant sont achetés au prix de 1,80 € par litre. Quel est le coût total ?",
+      options: ["90 €", "108 €", "120 €", "133,33 €"],
+      correctOption: "108 €",
+      explanation: "Coût = quantité × prix au litre = 60 × 1,80 = 108 €.",
+      tags: ["carburant", "coût"],
+    },
+
+    {
+      id: "calculs-01-q15",
+      type: "single-choice",
+      question:
+        "Un autocar consomme 30 L/100 km et doit parcourir 400 km. Le carburant coûte 1,75 €/L. Quel sera le coût théorique du carburant pour ce trajet ?",
+      options: ["120 €", "175 €", "210 €", "233,33 €"],
+      correctOption: "210 €",
+      explanation:
+        "Il faut d'abord calculer la quantité : (400 × 30) ÷ 100 = 120 L. Puis le coût : 120 × 1,75 = 210 €.",
+      tags: ["carburant", "coût", "calcul"],
+    },
+
+    {
+      id: "calculs-01-q16",
+      type: "single-choice",
+      question:
+        "Un véhicule consomme 20 L pour 80 km. À consommation identique, combien consommera-t-il pour 200 km ?",
+      options: ["40 L", "50 L", "60 L", "80 L"],
+      correctOption: "50 L",
+      explanation: "Produit en croix : (20 × 200) ÷ 80 = 50 L.",
+      tags: ["proportionnalité", "produit-en-croix"],
+    },
+
+    {
+      id: "calculs-01-q17",
+      type: "single-choice",
+      question:
+        "Un réservoir contient encore 75 L sur une capacité totale de 300 L. Quel pourcentage de carburant reste-t-il ?",
+      options: ["20 %", "25 %", "30 %", "40 %"],
+      correctOption: "25 %",
+      explanation: "Pourcentage = (75 ÷ 300) × 100 = 25 %.",
+      tags: ["pourcentage", "carburant"],
+    },
+
+    {
+      id: "calculs-01-q18",
+      type: "single-choice",
+      question:
+        "La réserve représente 10 % d'un réservoir de 300 L. Quelle quantité cela représente-t-il ?",
+      options: ["10 L", "20 L", "30 L", "60 L"],
+      correctOption: "30 L",
+      explanation: "300 × 10 ÷ 100 = 30 L.",
+      tags: ["pourcentage", "carburant"],
+    },
+
+    {
+      id: "calculs-01-q19",
+      type: "single-choice",
+      question:
+        "Un autocar parcourt 120 km en 2 h puis 180 km en 3 h. Quelle est sa vitesse moyenne sur l'ensemble du trajet ?",
+      options: ["50 km/h", "60 km/h", "65 km/h", "75 km/h"],
+      correctOption: "60 km/h",
+      explanation:
+        "Distance totale = 120 + 180 = 300 km. Temps total = 2 + 3 = 5 h. Vitesse moyenne = 300 ÷ 5 = 60 km/h.",
+      tags: ["moyenne", "vitesse"],
+    },
+
+    {
+      id: "calculs-01-q20",
+      type: "true-false",
+      question:
+        "Pour calculer la vitesse moyenne d'un trajet comportant plusieurs parties, il suffit toujours d'additionner les différentes vitesses puis de les diviser par leur nombre.",
+      correctAnswer: false,
+      explanation:
+        "Non. La vitesse moyenne du trajet se calcule à partir de la distance totale divisée par le temps total. Faire simplement la moyenne des vitesses peut donner un résultat faux.",
+      tags: ["moyenne", "vitesse", "piège"],
+    },
+
+    {
+      id: "calculs-01-q21",
+      type: "single-choice",
+      question:
+        "Un trajet de 170 km doit être effectué à une vitesse moyenne de 80 km/h. Quelle durée théorique faut-il prévoir ?",
+      options: [
+        "2 h 05 min",
+        "2 h 07 min 30 s",
+        "2 h 12 min",
+        "2 h 17 min 30 s",
+      ],
+      correctOption: "2 h 07 min 30 s",
+      explanation:
+        "170 ÷ 80 = 2,125 h. La partie décimale 0,125 × 60 = 7,5 minutes, soit 7 min 30 s.",
+      tags: ["temps", "vitesse", "conversion"],
+    },
+
+    {
+      id: "calculs-01-q22",
+      type: "multiple-choice",
+      question:
+        "Avant de valider le résultat d'un calcul professionnel, que faut-il notamment vérifier ?",
+      options: [
+        "Que les unités sont compatibles",
+        "Que le résultat possède une unité",
+        "Que le résultat est cohérent avec la situation",
+        "Que l'arrondi a été effectué à la fin",
+        "Qu'il comporte obligatoirement deux chiffres après la virgule",
+      ],
+      correctOptions: [
+        "Que les unités sont compatibles",
+        "Que le résultat possède une unité",
+        "Que le résultat est cohérent avec la situation",
+        "Que l'arrondi a été effectué à la fin",
+      ],
+      explanation:
+        "Un résultat professionnel doit être obtenu avec des unités compatibles, comporter son unité, rester cohérent et n'être arrondi qu'à la fin lorsque cela est nécessaire.",
+      tags: ["méthode", "unités", "arrondi"],
+    },
+    {
+      id: "calculs-01-q23",
+      type: "single-choice",
+      question:
+        "Un autocar doit parcourir 287 km à une vitesse moyenne de 70 km/h. Quelle est la durée théorique du trajet ?",
+      options: ["4 h 06 min", "4 h 10 min", "4 h 18 min", "4 h 24 min"],
+      correctOption: "4 h 06 min",
+      explanation:
+        "t = d ÷ v = 287 ÷ 70 = 4,1 h. La partie décimale vaut 0,1 × 60 = 6 minutes. Le trajet dure donc 4 h 06 min.",
+      tags: ["temps", "vitesse", "conversion", "difficile"],
+    },
+
+    {
+      id: "calculs-01-q24",
+      type: "single-choice",
+      question:
+        "Un autocar parcourt 156 km en 2 h 24 min. Quelle est sa vitesse moyenne ?",
+      options: ["62,5 km/h", "65 km/h", "67,5 km/h", "70 km/h"],
+      correctOption: "65 km/h",
+      explanation:
+        "2 h 24 min = 2 + (24 ÷ 60) = 2,4 h. Puis v = 156 ÷ 2,4 = 65 km/h.",
+      tags: ["vitesse", "durée", "conversion", "difficile"],
+    },
+
+    {
+      id: "calculs-01-q25",
+      type: "single-choice",
+      question:
+        "Un autocar parcourt 195 km à 65 km/h puis 170 km à 85 km/h. Quelle est sa vitesse moyenne sur l'ensemble du trajet ?",
+      options: ["72 km/h", "73 km/h", "75 km/h", "76 km/h"],
+      correctOption: "73 km/h",
+      explanation:
+        "Premier trajet : 195 ÷ 65 = 3 h. Second trajet : 170 ÷ 85 = 2 h. Distance totale = 365 km et temps total = 5 h. Vitesse moyenne = 365 ÷ 5 = 73 km/h.",
+      tags: ["vitesse", "moyenne", "multi-étapes", "difficile"],
+    },
+
+    {
+      id: "calculs-01-q26",
+      type: "single-choice",
+      question:
+        "Un autocar consomme 31 L/100 km. Il doit parcourir 465 km et le conducteur souhaite conserver 40 L dans le réservoir à l'arrivée. Quelle quantité minimale de carburant doit être disponible au départ ?",
+      options: ["144,15 L", "174,15 L", "184,15 L", "195,00 L"],
+      correctOption: "184,15 L",
+      explanation:
+        "Carburant consommé = (465 × 31) ÷ 100 = 144,15 L. Il faut conserver 40 L à l'arrivée : 144,15 + 40 = 184,15 L.",
+      tags: ["carburant", "consommation", "multi-étapes", "difficile"],
+    },
+
+    {
+      id: "calculs-01-q27",
+      type: "single-choice",
+      question:
+        "Un autocar possède un réservoir de 420 L rempli à 35 %. Il consomme 28 L/100 km. Quelle distance peut-il théoriquement parcourir avec le carburant disponible ?",
+      options: ["420 km", "500 km", "525 km", "540 km"],
+      correctOption: "525 km",
+      explanation:
+        "Carburant disponible = 420 × 35 ÷ 100 = 147 L. Distance réalisable = (147 × 100) ÷ 28 = 525 km.",
+      tags: [
+        "carburant",
+        "pourcentage",
+        "distance",
+        "multi-étapes",
+        "difficile",
+      ],
+    },
+
+    {
+      id: "calculs-01-q28",
+      type: "single-choice",
+      question:
+        "Un trajet comporte 210 km parcourus à 70 km/h, une pause de 45 min, puis 255 km parcourus à 85 km/h. Quelle est la durée totale entre le début et la fin du trajet, pause comprise ?",
+      options: ["6 h 00", "6 h 15", "6 h 45", "7 h 00"],
+      correctOption: "6 h 45",
+      explanation:
+        "210 ÷ 70 = 3 h. 255 ÷ 85 = 3 h. Temps de conduite = 6 h. Avec 45 min de pause, la durée totale est de 6 h 45.",
+      tags: ["temps", "vitesse", "pause", "multi-étapes", "difficile"],
+    },
+
+    {
+      id: "calculs-01-q29",
+      type: "single-choice",
+      question:
+        "Un autocar doit effectuer 540 km. Les 180 premiers kilomètres sont parcourus à 60 km/h et les 360 km restants à 80 km/h. Quelle est la vitesse moyenne sur l'ensemble du trajet ?",
+      options: ["70 km/h", "72 km/h", "74 km/h", "75 km/h"],
+      correctOption: "72 km/h",
+      explanation:
+        "Premier trajet : 180 ÷ 60 = 3 h. Second trajet : 360 ÷ 80 = 4,5 h. Temps total = 7,5 h. Vitesse moyenne = 540 ÷ 7,5 = 72 km/h.",
+      tags: ["vitesse", "moyenne", "multi-étapes", "difficile"],
+    },
+
+    {
+      id: "calculs-01-q30",
+      type: "single-choice",
+      question:
+        "Un autocar parcourt 630 km. Sa consommation moyenne est de 32 L/100 km. Le carburant coûte 1,74 €/L. Quel est le coût théorique du carburant consommé pendant le trajet ?",
+      options: ["334,08 €", "350,78 €", "360,12 €", "365,40 €"],
+      correctOption: "350,78 €",
+      explanation:
+        "Carburant consommé = (630 × 32) ÷ 100 = 201,6 L. Coût = 201,6 × 1,74 = 350,784 €, soit 350,78 € après arrondi au centime.",
+      tags: ["carburant", "coût", "arrondi", "multi-étapes", "difficile"],
+    },
+  ],
 }
