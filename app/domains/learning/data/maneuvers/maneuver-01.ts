@@ -74,176 +74,181 @@ Pendant toute la manœuvre :
   questions: [
     {
       id: "maneuver01-q01",
-
-      type: "multiple-choice",
-
-      question: "Qui va réussir sa manœuvre du premier coup ?",
-
+      type: "single-choice",
+      question:
+        "Quel est l'objectif du test de maniabilité de la catégorie D ?",
       options: [
-        "Moi 😎",
-        "Toujours moi 😎",
-        "Évidemment moi 😎",
-        "Le voisin 🤝",
+        "Évaluer la conduite à vitesse élevée",
+        "S'assurer de l'aptitude à réaliser une manœuvre en marche arrière décrivant une courbe",
+        "Évaluer uniquement la précision du stationnement en marche avant",
+        "Contrôler la connaissance du Code de la route",
       ],
-
-      correctOptions: [
-        "Moi 😎",
-        "Toujours moi 😎",
-        "Évidemment moi 😎",
-        "Le voisin 🤝",
-      ],
-
+      correctOption:
+        "S'assurer de l'aptitude à réaliser une manœuvre en marche arrière décrivant une courbe",
       explanation:
-        "L'objectif n'est pas d'être meilleur que les autres, mais de réussir sa propre manœuvre. Toi comme ton voisin pouvez y arriver. 🚍💪",
+        "Le test de maniabilité vise à vérifier l'aptitude du candidat à réaliser une manœuvre en marche arrière décrivant une courbe et à positionner le véhicule de manière sûre.",
+      tags: ["manoeuvre", "examen"],
     },
 
     {
       id: "maneuver01-q02",
-
       type: "single-choice",
-
       question:
-        "Quel est le principal point de pivot d'un autocar pendant une manœuvre ?",
-
-      options: [
-        "Les roues avant",
-        "Les roues arrière",
-        "Le pare-chocs",
-        "Le volant",
-      ],
-
-      correctOption: "Les roues arrière",
+        "Quelle est la durée maximale prévue pour réaliser le test de maniabilité ?",
+      options: ["3 minutes", "5 minutes", "7 minutes", "10 minutes"],
+      correctOption: "5 minutes",
+      explanation:
+        "Le candidat ne doit pas dépasser 5 minutes pour réaliser le test de maniabilité.",
+      tags: ["manoeuvre", "examen", "temps"],
     },
 
     {
       id: "maneuver01-q03",
-
       type: "single-choice",
-
-      question: "Quel rétroviseur est le plus important pendant une manœuvre ?",
-
+      question:
+        "À quel moment le chronomètre du test de maniabilité est-il déclenché ?",
       options: [
-        "Le principal",
-        "Le grand angle",
-        "L'antéviseur",
-        "Ils sont tous importants selon la situation",
+        "Lorsque le candidat commence la marche arrière",
+        "Dès l'entrée en mouvement du véhicule",
+        "Lorsque le véhicule franchit le premier obstacle",
+        "Au signal du candidat après son premier arrêt",
       ],
-
-      correctOption: "Ils sont tous importants selon la situation",
+      correctOption: "Dès l'entrée en mouvement du véhicule",
+      explanation:
+        "L'expert déclenche le chronomètre dès l'entrée en mouvement du véhicule. L'arrêt du chronomètre se fait sur indication du candidat à la fin de l'exercice.",
+      tags: ["manoeuvre", "examen", "temps"],
     },
 
     {
       id: "maneuver01-q04",
-
       type: "single-choice",
-
       question:
-        "Combien de temps as-tu pour réaliser la manœuvre (à partir de la marche arrière) ?",
-
+        "À quelle allure les déplacements doivent-ils être réalisés pendant le test de maniabilité ?",
       options: [
-        "3 minutes 😰",
-        "5 minutes 😎 Ça passe largement !",
-        "10 minutes 😴",
-        "Autant que je veux 😂",
+        "À allure normale",
+        "À allure réduite",
+        "À une vitesse minimale de 10 km/h",
+        "L'allure n'est pas encadrée",
       ],
-
-      correctOption: "5 minutes 😎 Ça passe largement !",
+      correctOption: "À allure réduite",
+      explanation:
+        "Le texte prévoit que les déplacements du véhicule sont réalisés à allure réduite.",
+      tags: ["manoeuvre", "securite"],
     },
 
     {
       id: "maneuver01-q05",
-
       type: "single-choice",
-
-      question: "Un repère ne se passe pas comme prévu. Que fais-tu ?",
-
+      question:
+        "Le candidat constate que sa trajectoire doit être corrigée. Peut-il effectuer une marche avant ?",
       options: [
-        "Je panique 😱",
-        "Je respire, je me replace et je continue 😎",
-        "J'abandonne 😭",
-        "Je ferme les yeux 🙈",
+        "Non, toute marche avant entraîne l'échec",
+        "Oui, une seule fois maximum",
+        "Oui, une ou plusieurs marches avant sont possibles pour rectifier la trajectoire",
+        "Oui, mais uniquement sur autorisation de l'expert",
       ],
-
-      correctOption: "Je respire, je me replace et je continue 😎",
+      correctOption:
+        "Oui, une ou plusieurs marches avant sont possibles pour rectifier la trajectoire",
+      explanation:
+        "Le candidat peut rectifier sa trajectoire par une ou plusieurs marches avant. Celles-ci doivent toutefois respecter le tracé prévu par la fiche de maniabilité et s'effectuer en direction du ou des obstacles précédents.",
+      tags: ["manoeuvre", "trajectoire", "examen"],
     },
 
     {
       id: "maneuver01-q06",
-
-      type: "single-choice",
-
-      question: "Le meilleur rythme pendant une manœuvre est :",
-
+      type: "multiple-choice",
+      question:
+        "Pendant le test de maniabilité, quelles actions le candidat peut-il effectuer de sa propre initiative ?",
       options: [
-        "Le plus vite possible 🏎️",
-        "Doucement, avec des repères et toujours en mouvement 👍",
-        "À fond puis on verra 😅",
-        "En roue libre 😂",
+        "S'arrêter",
+        "Descendre du véhicule après l'avoir immobilisé",
+        "Regarder en vision directe",
+        "Déplacer un obstacle gênant",
       ],
-
-      correctOption: "Doucement, avec des repères et toujours en mouvement 👍",
+      correctOptions: [
+        "S'arrêter",
+        "Descendre du véhicule après l'avoir immobilisé",
+        "Regarder en vision directe",
+      ],
+      explanation:
+        "Le candidat peut s'arrêter, descendre après immobilisation du véhicule, regarder en vision directe et rectifier sa trajectoire. Il ne peut évidemment pas déplacer les obstacles du parcours.",
+      tags: ["manoeuvre", "examen", "securite"],
     },
 
     {
       id: "maneuver01-q07",
-
       type: "multiple-choice",
-
-      question: "Qui est le patron du plateau aujourd'hui ? 😎",
-
-      options: ["Moi 💪", "Encore moi 💪", "Toujours moi 💪", "Le stress 😅"],
-
-      correctOptions: ["Moi 💪", "Encore moi 💪", "Toujours moi 💪"],
+      question:
+        "Parmi les situations suivantes, lesquelles entraînent l'échec au test de maniabilité ?",
+      options: [
+        "Dépasser le temps imparti",
+        "Déplacer, renverser ou incliner un obstacle avec le véhicule",
+        "Sortir de l'aire de manœuvre",
+        "S'arrêter volontairement pendant la manœuvre",
+      ],
+      correctOptions: [
+        "Dépasser le temps imparti",
+        "Déplacer, renverser ou incliner un obstacle avec le véhicule",
+        "Sortir de l'aire de manœuvre",
+      ],
+      explanation:
+        "Le dépassement du temps, le déplacement d'un obstacle par le véhicule et la sortie de l'aire de manœuvre font partie des causes d'échec. Un arrêt volontaire n'est pas, à lui seul, une cause d'échec.",
+      tags: ["manoeuvre", "examen", "echec"],
     },
 
     {
       id: "maneuver01-q08",
-
-      type: "multiple-choice",
-
-      question: "Ton état d'esprit juste avant de reculer ?",
-
-      options: ["Calme 😌", "Concentré 🎯", "Confiant 😎", "Paniqué 😱"],
-
-      correctOptions: ["Calme 😌", "Concentré 🎯", "Confiant 😎"],
+      type: "single-choice",
+      question: "Comment est évalué le résultat du test de maniabilité ?",
+      options: [
+        "Par une note sur 20",
+        "Par une note de 0 à 3",
+        "Par un résultat binaire : bon ou échec",
+        "Selon le nombre de fautes commises",
+      ],
+      correctOption: "Par un résultat binaire : bon ou échec",
+      explanation:
+        "Le résultat du test de maniabilité n'est pas modulable : il est binaire, soit bon, soit échec.",
+      tags: ["manoeuvre", "examen", "evaluation"],
     },
 
     {
       id: "maneuver01-q09",
-
-      type: "multiple-choice",
-
-      question: "Tu es capable de réussir cette manœuvre ?",
-
+      type: "single-choice",
+      question:
+        "Dans le cadre des épreuves anticipées du TP CTCR, que se passe-t-il en cas d'échec au premier test de maniabilité ?",
       options: [
-        "Oui 💪",
-        "Évidemment 😎",
-        "Sans aucun doute 🚍",
-        "J'espère... 😬",
+        "Le candidat est définitivement éliminé du titre",
+        "Un deuxième essai est proposé immédiatement après le premier",
+        "Le candidat doit attendre obligatoirement la session suivante",
+        "L'échec peut être compensé par l'épreuve de conduite",
       ],
-
-      correctOptions: ["Oui 💪", "Évidemment 😎", "Sans aucun doute 🚍"],
+      correctOption:
+        "Un deuxième essai est proposé immédiatement après le premier",
+      explanation:
+        "Pour les épreuves anticipées du TP CTCR, un deuxième test de maniabilité est proposé immédiatement après le premier en cas d'échec.",
+      tags: ["manoeuvre", "tp-ctcr", "rattrapage"],
     },
 
     {
       id: "maneuver01-q10",
-
       type: "multiple-choice",
-
-      question: "Tu entres sur le plateau avec quelle mentalité ?",
-
+      question:
+        "Quelles règles doivent notamment être respectées pour réussir le test de maniabilité ?",
       options: [
-        "Je vais gérer. 😎",
-        "Je connais mes repères. 🎯",
-        "Je prends mon temps et ça va le faire. 💪",
-        "Je vais improviser... 😅",
+        "Ne pas dépasser 5 minutes",
+        "Ne pas déplacer, renverser ou incliner un obstacle avec le véhicule",
+        "Ne pas sortir de l'aire de manœuvre",
+        "Ne jamais effectuer de marche avant",
       ],
-
       correctOptions: [
-        "Je vais gérer. 😎",
-        "Je connais mes repères. 🎯",
-        "Je prends mon temps et ça va le faire. 💪",
+        "Ne pas dépasser 5 minutes",
+        "Ne pas déplacer, renverser ou incliner un obstacle avec le véhicule",
+        "Ne pas sortir de l'aire de manœuvre",
       ],
+      explanation:
+        "Le test doit être réalisé dans le temps imparti, sans déplacer les obstacles ni sortir de l'aire de manœuvre. Les marches avant de correction sont autorisées dans les conditions prévues par le parcours.",
+      tags: ["manoeuvre", "examen", "echec"],
     },
   ],
 }

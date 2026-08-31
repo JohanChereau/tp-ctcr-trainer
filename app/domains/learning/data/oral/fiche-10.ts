@@ -91,7 +91,7 @@ Pour limiter les risques :
 
 ## Connaissance du véhicule
 
-  ![Angles morts](/images/lesson-content/angles_morts.jpg)
+  ![Angles morts](/images/lesson-content/angles_morts.png)
 
 Les angles morts correspondent aux zones que le conducteur ne peut pas voir directement ou à l'aide des rétroviseurs.
 

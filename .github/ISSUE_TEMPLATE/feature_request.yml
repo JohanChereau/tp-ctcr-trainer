@@ -1,0 +1,31 @@
+name: Proposition d'amélioration
+description: Proposer une fonctionnalité ou une amélioration UX
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Besoin
+      description: Quel problème ou besoin utilisateur cherchez-vous à résoudre ?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposition
+      description: Comment imaginez-vous la fonctionnalité ?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives envisagées
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexte, maquettes ou captures

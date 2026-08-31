@@ -44,14 +44,14 @@ Vérifier la présence de la pochette contenant les documents de bord.
 ## 3. Mise en marche du véhicule
 
 - Démarrer le moteur en contrôlant les rétroviseurs.
+- Vérifier l'absence d'anomalie.
+- Identifier les éventuels voyants restant allumés.
 
 > **J'annonce :**
 >
 > « Pas d'anomalie au démarrage.
 >
-> Il me reste uniquement le témoin du frein de parc qui est allumé.
->
-> Ma pression d'air est suffisante, je vais donc pouvoir m'installer au poste de conduite. »
+> Il me reste uniquement le témoin du frein de parc qui est allumé. »
 
 ---
 
@@ -67,7 +67,7 @@ Mettre ensuite :
 
 - La ceinture de sécurité.
 
-> ⚠️ Respecter impérativement cet ordre de réglage.
+> ⚠️ Régler le siège avant les rétroviseurs.
 
 ---
 
@@ -81,10 +81,13 @@ Vérifier que :
 
 - Les portes sont bien fermées.
 - Les soutes sont bien fermées.
+- La pression d'air du système de freinage est suffisante.
 
 > **J'annonce :**
 >
-> « Les portes et les soutes sont bien fermées. »
+> « Les portes et les soutes sont bien fermées.
+>
+> Ma pression d'air est suffisante pour assurer un freinage efficace. »
 
 Demander aux passagers :
 
@@ -104,202 +107,207 @@ Avant de mettre le véhicule en mouvement :
 
 - Allumer les feux si les conditions l'exigent.
 - Mettre le clignotant pour signaler le départ.
-  `,
+`,
 
   questions: [
     {
       id: "circulation-01-q01",
       type: "multiple-choice",
-      question:
-        "Avant le départ en circulation, que dois-je vérifier après avoir démarré le véhicule ?",
+      question: "Après avoir démarré le véhicule, que doit faire le candidat ?",
       options: [
-        "L'absence de fumée anormale",
-        "Les voyants restés allumés",
-        "La pression d'air",
-        "La couleur des sièges",
+        "Annoncer les voyants restés allumés",
+        "Signaler immédiatement toute anomalie",
+        "Accélérer fortement pour vérifier le moteur",
+        "Positionner le chronotachygraphe sur repos",
       ],
       correctOptions: [
-        "L'absence de fumée anormale",
-        "Les voyants restés allumés",
-        "La pression d'air",
+        "Annoncer les voyants restés allumés",
+        "Signaler immédiatement toute anomalie",
       ],
       explanation:
-        "Après le démarrage, j'annonce les éventuelles anomalies : fumée, voyants et pression d'air.",
-      tags: ["circulation", "départ"],
+        "Après la mise en marche du moteur, le candidat annonce les voyants restés allumés et signale immédiatement toute anomalie.",
+      tags: ["circulation", "départ", "véhicule"],
     },
 
     {
       id: "circulation-01-q02",
       type: "multiple-choice",
       question:
-        "Quels réglages dois-je contrôler pour mon installation au poste de conduite ?",
+        "Quels réglages le candidat effectue-t-il au besoin après la mise en marche du moteur ?",
       options: [
         "Le siège",
         "Le volant",
         "Les rétroviseurs",
-        "La ceinture de sécurité",
-        "La radio",
+        "L'autoradio",
+        "L'éclairage intérieur des passagers",
       ],
-      correctOptions: [
-        "Le siège",
-        "Le volant",
-        "Les rétroviseurs",
-        "La ceinture de sécurité",
-      ],
+      correctOptions: ["Le siège", "Le volant", "Les rétroviseurs"],
       explanation:
-        "Je dois être bien installé, bien voir et pouvoir atteindre toutes les commandes.",
-      tags: ["installation", "sécurité"],
+        "Après la mise en marche du moteur, le candidat règle au besoin son siège, son volant et ses rétroviseurs.",
+      tags: ["circulation", "installation", "sécurité"],
     },
 
     {
       id: "circulation-01-q03",
       type: "multiple-choice",
-      question: "Que dois-je vérifier concernant les portes avant le départ ?",
+      question:
+        "Pour un véhicule de catégorie D, que doit vérifier le candidat concernant les accès au véhicule ?",
       options: [
-        "Elles s'ouvrent correctement",
-        "Elles se ferment correctement",
-        "Elles sont bien fermées avant de partir",
-        "Elles sont de la bonne couleur",
+        "Leur ouverture",
+        "Leur bon fonctionnement",
+        "Uniquement leur aspect extérieur",
+        "Uniquement la porte conducteur",
       ],
-      correctOptions: [
-        "Elles s'ouvrent correctement",
-        "Elles se ferment correctement",
-        "Elles sont bien fermées avant de partir",
-      ],
+      correctOptions: ["Leur ouverture", "Leur bon fonctionnement"],
       explanation:
-        "Je contrôle le bon fonctionnement des portes puis j'annonce qu'elles sont correctement fermées.",
-      tags: ["portes", "sécurité"],
+        "Pour les catégories D1 et D, le candidat vérifie l'ouverture et le bon fonctionnement des accès au véhicule, depuis le tableau de bord ou manuellement lorsque l'accès ne dispose pas d'une commande depuis celui-ci.",
+      tags: ["circulation", "portes", "sécurité"],
     },
 
     {
       id: "circulation-01-q04",
       type: "multiple-choice",
       question:
-        "Que dois-je annoncer pour le chronotachygraphe numérique en examen ?",
+        "Que doit faire le candidat concernant le chronotachygraphe numérique avant le départ ?",
       options: [
-        "Il est à la date et à l'heure du jour",
-        "Il est positionné sur autres tâches",
-        "Il passera automatiquement en conduite dès que le véhicule roule",
-        "Je suis dispensé de carte conducteur car je suis en examen",
-        "Je dois obligatoirement insérer ma carte conducteur",
+        "Indiquer à l'expert qu'il est dispensé de carte",
+        "Vérifier le jour indiqué sur l'appareil",
+        "Vérifier l'heure indiquée sur l'appareil",
+        "S'assurer que l'appareil est sur « autres tâches »",
+        "Indiquer qu'il enregistrera automatiquement la conduite dès les premiers tours de roues",
+        "Insérer obligatoirement sa carte conducteur",
       ],
       correctOptions: [
-        "Il est à la date et à l'heure du jour",
-        "Il est positionné sur autres tâches",
-        "Il passera automatiquement en conduite dès que le véhicule roule",
-        "Je suis dispensé de carte conducteur car je suis en examen",
+        "Indiquer à l'expert qu'il est dispensé de carte",
+        "Vérifier le jour indiqué sur l'appareil",
+        "Vérifier l'heure indiquée sur l'appareil",
+        "S'assurer que l'appareil est sur « autres tâches »",
+        "Indiquer qu'il enregistrera automatiquement la conduite dès les premiers tours de roues",
       ],
       explanation:
-        "En examen, on annonce le fonctionnement du chronotachygraphe et la dispense de carte conducteur.",
-      tags: ["tachygraphe", "examen"],
+        "Avec un chronotachygraphe numérique, le candidat indique sa dispense de carte, vérifie le jour et l'heure, s'assure de la position « autres tâches » et indique que les déplacements seront automatiquement enregistrés en conduite dès les premiers tours de roues.",
+      tags: ["circulation", "tachygraphe", "examen"],
     },
 
     {
       id: "circulation-01-q05",
-      type: "multiple-choice",
+      type: "single-choice",
       question:
-        "Avant de partir, que dois-je annoncer ou vérifier pour la sécurité des passagers ?",
+        "Que doit vérifier le candidat concernant les documents de bord ?",
       options: [
-        "Les portes sont fermées",
-        "Les soutes sont fermées",
-        "Les passagers ont bien attaché leur ceinture",
-        "Les passagers ont choisi leur musique",
+        "La présence du porte-documents contenant les pièces obligatoires",
+        "Uniquement le certificat d'immatriculation",
+        "Uniquement l'attestation d'assurance",
+        "Aucun document n'est à vérifier",
       ],
-      correctOptions: [
-        "Les portes sont fermées",
-        "Les soutes sont fermées",
-        "Les passagers ont bien attaché leur ceinture",
-      ],
+      correctOption:
+        "La présence du porte-documents contenant les pièces obligatoires",
       explanation:
-        "Avant le départ, je m'assure que le véhicule est fermé et que les passagers sont correctement ceinturés.",
-      tags: ["sécurité", "passagers"],
+        "Le candidat doit s'assurer de la présence du porte-documents contenant les pièces obligatoires prévues pour le véhicule d'examen.",
+      tags: ["circulation", "documents", "véhicule"],
     },
 
     {
       id: "circulation-01-q06",
-      type: "true-false",
+      type: "multiple-choice",
       question:
-        "Avant de partir, je dois penser aux feux si nécessaire et au clignotant pour signaler mon départ.",
-      correctAnswer: true,
+        "Parmi ces éléments, lesquels font partie des vérifications générales spécifiques à un véhicule de catégorie D ?",
+      options: [
+        "La sellerie",
+        "Les ceintures de sécurité",
+        "La lampe autonome",
+        "La boîte de secours",
+        "Les marteaux pics",
+        "L'extincteur",
+        "La couleur de la carrosserie",
+      ],
+      correctOptions: [
+        "La sellerie",
+        "Les ceintures de sécurité",
+        "La lampe autonome",
+        "La boîte de secours",
+        "Les marteaux pics",
+        "L'extincteur",
+      ],
       explanation:
-        "Oui. Je dois adapter les feux aux conditions et signaler clairement mon départ.",
-      tags: ["départ", "signalisation"],
+        "Pour les catégories D1 et D, les vérifications générales portent notamment sur la sellerie, les ceintures, la lampe autonome, la boîte de secours, les inscriptions, les marteaux pics et l'extincteur.",
+      tags: ["circulation", "véhicule", "sécurité"],
     },
 
     {
       id: "circulation-01-q07",
       type: "multiple-choice",
       question:
-        "Qui va réussir son départ en circulation proprement et calmement ?",
+        "Quels feux font partie des contrôles prévus lors des vérifications du véhicule ?",
       options: [
-        "Moi, parce que je suis préparé",
-        "Moi, parce que je reste prudent",
-        "Moi, parce que je contrôle la situation",
-        "L'inspecteur à ma place",
+        "Les feux stop",
+        "Les feux de détresse",
+        "Les feux de croisement",
+        "Les feux de gabarit",
+        "Uniquement les feux de route",
       ],
       correctOptions: [
-        "Moi, parce que je suis préparé",
-        "Moi, parce que je reste prudent",
-        "Moi, parce que je contrôle la situation",
+        "Les feux stop",
+        "Les feux de détresse",
+        "Les feux de croisement",
+        "Les feux de gabarit",
       ],
       explanation:
-        "Départ propre, calme, contrôles faits : tu sais quoi faire.",
-      tags: ["confiance", "mental"],
+        "Le candidat vérifie l'absence d'anomalie sur les feux stop, de détresse, de croisement et de gabarit.",
+      tags: ["circulation", "feux", "véhicule"],
     },
 
     {
       id: "circulation-01-q08",
-      type: "multiple-choice",
+      type: "single-choice",
       question:
-        "Quel état d'esprit je garde pendant l'épreuve de circulation ?",
+        "Que doit faire le candidat concernant l'immobilisation du véhicule au début des vérifications ?",
       options: [
-        "Je reste calme",
-        "Je reste prudent",
-        "Je prends mon temps",
-        "Je contrôle la situation",
-        "Je panique dès qu'il y a une voiture",
+        "S'assurer que le véhicule est bien immobilisé",
+        "Desserrer immédiatement le frein de parc",
+        "Mettre obligatoirement le moteur en marche",
+        "Faire avancer légèrement le véhicule",
       ],
-      correctOptions: [
-        "Je reste calme",
-        "Je reste prudent",
-        "Je prends mon temps",
-        "Je contrôle la situation",
-      ],
+      correctOption: "S'assurer que le véhicule est bien immobilisé",
       explanation:
-        "Zen, propre, prudent. L'objectif n'est pas d'aller vite, mais de conduire en sécurité.",
-      tags: ["confiance", "circulation"],
+        "Le candidat s'assure, au besoin en mettant le contact, que le véhicule est correctement immobilisé en contrôlant la commande et/ou le voyant correspondant.",
+      tags: ["circulation", "immobilisation", "sécurité"],
     },
 
     {
       id: "circulation-01-q09",
       type: "multiple-choice",
-      question: "Pourquoi je vais y arriver ?",
+      question:
+        "Quelles caractéristiques du véhicule le candidat doit-il annoncer lors des vérifications ?",
       options: [
-        "Parce que je connais ma procédure",
-        "Parce que je fais mes contrôles",
-        "Parce que je conduis avec prudence",
-        "Parce que je suis le meilleur",
-        "Parce que je ferme les yeux et j'espère",
+        "La longueur",
+        "La largeur",
+        "La hauteur",
+        "Le poids maximum",
+        "Le nombre de places assises",
+        "La cylindrée du moteur",
       ],
       correctOptions: [
-        "Parce que je connais ma procédure",
-        "Parce que je fais mes contrôles",
-        "Parce que je conduis avec prudence",
-        "Parce que je suis le meilleur",
+        "La longueur",
+        "La largeur",
+        "La hauteur",
+        "Le poids maximum",
+        "Le nombre de places assises",
       ],
       explanation:
-        "La confiance vient de la préparation : procédure, contrôles, prudence et mental solide.",
-      tags: ["mental", "motivation"],
+        "Le candidat annonce les dimensions et le poids maximum du véhicule. Pour le transport de voyageurs, il annonce également le nombre de places assises.",
+      tags: ["circulation", "véhicule", "dimensions"],
     },
 
     {
       id: "circulation-01-q10",
       type: "true-false",
-      question: "Je suis prudent, zen, préparé, et je vais réussir.",
+      question:
+        "En circulation, le conducteur et les passagers doivent porter leur ceinture de sécurité lorsque leur siège en est équipé, sauf exception prévue par la réglementation.",
       correctAnswer: true,
       explanation:
-        "Exactement. Tu sais quoi faire, tu prends ton temps, tu contrôles et tu avances proprement.",
-      tags: ["motivation", "confiance"],
+        "Le Code de la route impose en circulation le port de la ceinture au conducteur et aux passagers lorsque leur siège en est équipé, sous réserve des exemptions réglementaires.",
+      tags: ["circulation", "ceinture", "sécurité"],
     },
   ],
 }
